@@ -10,3 +10,7 @@ table > tbody tr td{
 text-align: center;
 
 }
+
+.inline{
+	display: inline;
+}
