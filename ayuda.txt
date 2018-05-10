@@ -1,0 +1,1 @@
+navigator.notification.alert("intentando migrar usuarios",null,"Mensaje desarrollo","Aceptar");     
