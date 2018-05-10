@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ItaRegistroTrampas</title>
+			<meta charset="utf-8">		
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="css/jquery.mobile-1.4.5.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="css/estilos.css">
+</head>
+<body>
+<!--PANTALLA LOGIN-->
+<div data-role="page" id="login">
+<div data-role="header"><h2>ItaRegistroTrampas</h2></div> 
+<div data-role="main" class="ui-content">
+<div id="imagenita">
+    <img src="Imagenes\01.jpg" width=70px>
+</div>
+<h3>Autentificación:</h3>
+                                <table>
+                                <tr>
+                                    <td><b class="etiquetaverde">Usuario:</b></td>
+                                    <td><input type="text" class="entrada_texto" id="txtusuario" placeholder="Nombre Usuario" value=""></td>
+                                </tr>
+                                <tr>
+                                    <td><b class="etiquetaverde">Contraseña:</b></td>
+                                    <td><input type="password" class="entrada_texto" id="txtcontrasena" placeholder="Contraseña" value=""></td>
+                                </tr>
+                                                                <tr>
+                                    <td><b class="etiquetaverde">Numero de empleado que realiza:</b></td>
+                                    <td><input type="number" class="entrada_texto" id="txtnumero_Empleado_realiza" placeholder="# Empleado" value=""></td>
+                                </tr>
+                                 <tr>       
+                                    <td colspan="2"><input type="submit" class="btnverde" value="Autentificar" id="btnautentificar">
+
+                                    <!--<ul data-role="listview">
+                                    <li>
+                                    <select id="Origenes">
+                                                  
+                                    </select>
+                                    </li>
+                                    </ul>-->
+
+                                    </td>
+                                </tr>                                
+                                </table>
+   </div>
+   <div data-role="footer" data-position="fixed"><span style="font-size:8pt;">Sistemas 2017 PK</span></div>
+</div>
+<!--PANTALLA CAPTURA-->
+<div data-role="page" id="Registro">
+<div data-role="header"><h2>Menú de opciones</h2></div> 
+<div data-role="main" class="ui-content">
+
+
+
+</div>
+<div data-role="footer" data-position="fixed">    
+            <div data-role="navbar">
+                                <ul>
+                                    <li><a href="#" id="BtnSalir">Salir</a></li>
+                                    <li><a href="#myPopup" data-rel="popup" data-position-to="window" id="btnGuardar">Guardar</a></li>                        
+                                </ul>
+
+                                    <div data-role="popup" id="myPopup" class="ui-content">
+      <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+     <a href="#" class="parpadea" id="btnGuardarReg">Guardar Registro</a>
+    </div>
+
+
+                            </div><!-- /navbar -->
+            </div>
+</div>
+
+
+<div data-role="page" id="Configuración">
+<div data-role="header"><h2>Configuración</h2></div> 
+<div data-role="main" class="ui-content">
+<input type="text" placeholder="Registrados localmente" id="NumUsuarios" readonly> 
+</div>
+</div>
+
+
+
+<script src="phonegap.js"></script>
+<script src="js/jquery-1.12.2.min.js"></script>
+<script src="js/jquery.mobile-1.4.5.min.js"></script>
+<script src="js/actions.js"></script>
+<!--<script src="js/datos.js"></script>-->
+<!--<script src="js/almacenamiento.js"></script>-->
+<!--<script src="js/servidor.js"></script>-->
+</body>
+</html>
