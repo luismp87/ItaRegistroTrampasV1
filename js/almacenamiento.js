@@ -21,7 +21,7 @@ var almacen = {
 										//alert("Reserva guardada en espera de sincronización");
 										navigator.notification.alert("Se guardo la información en el dispositivo", null, "Correcto", "Aceptar");
 									},
-/*FUNCION PARA GUARDAR EN BASE DE DATOS*/
+/*FUNCION PARA GUARDAR EN BASE DE DATOS LOS USUARIO QUE SE TRAEN DEL WEB SERVICE*/
 	guardarUsuario: function(myArray){	
 	navigator.notification.alert("entro a guardarUsuario",null,"Mensaje desarrollo","Aceptar");   	
 		almacen.myArray	= myArray;        
@@ -40,7 +40,7 @@ var almacen = {
     											}
         									}
 									},
-    /*FUNCION PARA LEER EN BASE DE DATOS*/
+ /*FUNCION PARA LEER EN BASE DE DATOS EN ESPECIFICO EL NUMERO DE USUARIO QUE ESTAN EN LA TABLA USUARIOS*/
 	leerNumeroUsuarios: function(){ 
 	navigator.notification.alert("entro a leerNumeroUsuarios",null,"Mensaje desarrollo","Aceptar");   	 
 			almacen.db = window.openDatabase("ItaSHRT","1.0","ItaSHRT Storage",20000);    
@@ -68,5 +68,77 @@ var almacen = {
 //navigator.notification.alert("almacen.numerodefilas: " + almacen.numerodefilas, null, "Correcto", "Aceptar");
 										});
 										
-		}	
-		}																			
+									},	
+//FUNCION PARA BUSCAR EL USUARIO Y CONTRASEÑA DE USUARIO EN LOCAL SI ES QUE LO ENCUENTRA EN LOCAL VA Y LO CONSULTA EN EL WEBSERVICE 		
+		leerinformacionUsuario: function(tx){
+			almacen.db = window.openDatabase("ItaSHRT","1.0","ItaSHRT Storage",20000);
+			almacen.db.transaction(almacen.CreaSINOExiste, almacen.error, null);
+			almacen.db.transaction(almacen.leerinfoUsuario, almacen.error, null);
+
+	},
+									leerinfoUsuario: function(tx){
+										
+									tx.executeSql("SELECT usuario,pass,origen FROM usuarios where upper(usuario) = upper('" +$('#txtusuario').val()+ "') and upper(pass) = upper('" +$('#txtcontrasena').val()+ "')", [], function(tx2, t){
+									var encontroUsuario = 0;
+									var usuariof = "";
+									var origenf = "";
+											for(i = 0; i < t.rows.length; i++)
+									{
+									encontroUsuario= 1;
+									usuariof = t.rows.item(i).usuario;
+									origenf = t.rows.item(i).origen;
+									}
+
+										if(encontroUsuario == 0)
+										{
+											navigator.notification.alert("Verifique su usuario y contraseña", null, "Advertencia", "Aceptar");
+										}
+										else if(encontroUsuario >= 1)
+										{
+									/////		
+									///Area autentificacion base de datos
+									/////
+									almacen.numero_Empleado_Que_Revisa =  $('#txtnumero_Empleado_Que_Revisa').val();
+									$.ajax({
+									                method: 'POST',
+									                url: 'http://servidoriis.laitaliana.com.mx/LM/wsshregistrotrampas/WebService1.asmx/validaNumeroEmpleado',              
+									                data: {numeroEmpleado: almacen.numero_Empleado_Que_Revisa},
+									                dataType: "json",
+									                success: function (msg){
+									                    $.mobile.loading("hide");
+									                    $.each(msg,function(i,item){
+									                    	if(msg[i].Respuesta == "encontro")
+									                            {                             	
+									                        		//$('#textREVISO').val(""+ msg[i].Nombre);
+									                        		window.localStorage.setItem("Nombre_usuario_revisa",""+ msg[i].Nombre);
+									                        		window.localStorage.setItem("usuario",usuariof);
+																	window.localStorage.setItem("origen",origenf);
+																	//$("#textORIGEN").text("Origen de usuario: " + window.localStorage.getItem("origen").toUpperCase());
+																	$('#txtusuario').val(""); 
+									        						$('#txtcontrasena').val("");
+									        						$('#txtnumero_Empleado_realiza').val("");
+									 								window.location.href = '#MenuOpciones';        
+									                            }
+									                            else
+									                            {
+																	navigator.notification.alert("Verifique el número de empleado.",null,"Error","Aceptar");///*PARAMOVIL
+									                            }
+									                    	
+									                    }); 
+									         
+									        },
+									        error: function(jq, txt){
+									                    //alert("Error al migrar los usuarios del servidor, cierre y vuelva a abrir la aplicación para reintentar actualizar ó verifique su cobertura" +jq + txt.responseText);///*PARAWEB
+									                    navigator.notification.alert("Error al migrar los usuarios del servidor, cierre y vuelva a abrir la aplicación para reintentar actualizar ó verifique su cobertura" + jq + txt.responseText,null,"Error al migrar verifique su cobertura","Aceptar");///*PARAMOVIL
+									                }
+									            });
+									/////
+
+
+
+										}
+									//navigator.notification.alert("almacen.numerodefilas: " + almacen.numerodefilas, null, "Correcto", "Aceptar");
+																			});
+										
+										}	
+}																		

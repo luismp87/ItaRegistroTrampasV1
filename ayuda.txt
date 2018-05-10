@@ -1,1 +1,9 @@
 navigator.notification.alert("intentando migrar usuarios",null,"Mensaje desarrollo","Aceptar");     
+
+
+variables almacenadas
+
+Nombre_usuario_revisa
+usuario
+origen
+ya_se_migraron_usuarios

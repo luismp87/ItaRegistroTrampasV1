@@ -10,12 +10,12 @@
 <body>
 <!--PANTALLA LOGIN-->
 <div data-role="page" id="login">
-<div data-role="header"><h2>ItaRegistroTrampas</h2></div> 
-<div data-role="main" class="ui-content">
-<div id="imagenita">
-    <img src="Imagenes\01.jpg" width=70px>
-</div>
-<h3>Autentificación:</h3>
+                                <div data-role="header"><h2>ItaRegistroTrampas</h2></div> 
+                                <div data-role="main" class="ui-content">
+                                <div id="imagenita">
+                                <img src="Imagenes\01.jpg" width=70px>
+                                </div>
+                                <h3>Autentificación:</h3>
                                 <table>
                                 <tr>
                                     <td><b class="etiquetaverde">Usuario:</b></td>
@@ -30,38 +30,43 @@
                                     <td><input type="number" class="entrada_texto" id="txtnumero_Empleado_realiza" placeholder="# Empleado" value=""></td>
                                 </tr>
                                  <tr>       
-                                    <td colspan="2"><input type="submit" class="btnverde" value="Autentificar" id="btnautentificar">                                
+                                    <td colspan="2"><input type="submit" class="btnverde" value="Autentificar" href="#MenuOpciones" id="btnautentificar">                                
                                     </td>
                                 </tr>                                
                                 </table>
-   </div>
-   <div data-role="footer" data-position="fixed"><span style="font-size:8pt;">Sistemas 2017 PK</span></div>
+                                </div>
+                                <div data-role="footer" data-position="fixed"><span style="font-size:8pt;">Sistemas 2018 PK</span></div>
 </div>
-<!--PANTALLA CAPTURA-->
-<div data-role="page" id="Registro">
-<div data-role="header"><h2>Menú de opciones</h2></div> 
-<div data-role="main" class="ui-content">
-
-
-
+<!--PANTALLA MENU DE OPCIONES-->
+<div data-role="page" id="MenuOpciones">
+                                <div data-role="header"><h2>Menú de opciones</h2></div> 
+                                <div data-role="main" class="ui-content">
+                                    <div data-role="controlgroup" data-type="horizontal">
+                                      <p>Seleccione una opcion:</p>
+                                      <a id="Registrar_trampas" href="" class="ui-btn">Registrar Trampa</a>
+                                      <a id="Manto_catalogos" class="ui-btn">Manto. Catalogos</a>
+                                      <a id="Migrar_a_servidor" class="ui-btn">Migrar Info. A Server</a>
+                                    </div>
+                                </div>
+                                <div data-role="footer" data-position="fixed">    
+                                    <div data-role="navbar">
+                                        <ul>
+                                            <li><a href="#" id="BtnSalir">Cerrar SESION</a></li>                                                    
+                                        </ul>                                
+                                    </div>
+                                    </div>
 </div>
-<div data-role="footer" data-position="fixed">    
-            <div data-role="navbar">
-                                <ul>
-                                    <li><a href="#" id="BtnSalir">Salir</a></li>
-                                    <li><a href="#myPopup" data-rel="popup" data-position-to="window" id="btnGuardar">Guardar</a></li>                        
-                                </ul>
+<!--MANTENIMIENTO DE CATALOGOS-->
+<div data-role="page" id="MenuOpciones">
+                                <div data-role="header"><h2>Menú de opciones</h2></div> 
+                                <div data-role="main" class="ui-content">
+<label>Trampas:</label>
+<input type="text" name="">
 
-                                    <div data-role="popup" id="myPopup" class="ui-content">
-      <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
-     <a href="#" class="parpadea" id="btnGuardarReg">Guardar Registro</a>
-    </div>
+<a id="Migrar_trampas_a_celular" class="ui-btn">Remoto > Local</a>
+<a id="Eliminar_trampas_a_celular" class="ui-btn">Eliminar de Local</a>
 
-
-                            </div><!-- /navbar -->
-            </div>
-</div>
-
+</div>                                    
 
 <div data-role="page" id="Configuración">
 <div data-role="header"><h2>Configuración</h2></div> 

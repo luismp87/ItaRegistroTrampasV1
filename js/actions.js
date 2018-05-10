@@ -3,8 +3,8 @@ var fn = {
 		document.addEventListener("deviceready",fn.init,false);
 	},
 	init: function(){ 
-    //$('#textREVISO').val(""+ window.localStorage.getItem("revisa"));          
-        if(window.localStorage.getItem("yamigrousuarios") != "SI")
+    //$('#textREVISO').val(""+ window.localStorage.getItem("Nombre_usuario_revisa"));          
+        if(window.localStorage.getItem("ya_se_migraron_usuarios") != "SI")
         {          
         fn.btnMigrarUsuarios();  
         }
@@ -28,7 +28,6 @@ var fn = {
  
 	},
         btnMigrarUsuarios: function(){    
-        navigator.notification.alert("intentando migrar usuarios",null,"Mensaje desarrollo","Aceptar");     
         var myArray = new Array(60); 
         var registros = $('#NumUsuarios').val();  
         if(registros == 0)
@@ -46,7 +45,7 @@ var fn = {
                     }); 
                     almacen.guardarUsuario(myArray);
                     almacen.leerNumeroUsuarios();  
-                    window.localStorage.setItem("yamigrousuarios","SI");
+                    window.localStorage.setItem("ya_se_migraron_usuarios","SI");
                     navigator.notification.alert("Migración Correcta de Usuarios",null,"Listo","Aceptar");               
         },
         error: function(jq, txt){
@@ -80,7 +79,7 @@ var fn = {
         }   
     },
     estaRegistrado: function(){
-        var usr = window.localStorage.getItem("user");
+        var usr = window.localStorage.getItem("usuario");
         if(usr == undefined || usr == '' || usr == null)
         {
             return false;
