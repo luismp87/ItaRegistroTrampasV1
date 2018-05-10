@@ -20,7 +20,8 @@ var fn = {
         //window.location.href = '#Registro';     
         }
         //PARA MOVIL
-        $('#btnautentificar').tap(fn.autentificarSQL);          
+        $('#btnautentificar').tap(fn.autentificarSQL); 
+        $('#BtnCerrarSesion').tap(fn.CerrarSesion);           
         
         //PARA MOVIL
          document.addEventListener("online", almacen.leerinformacionregistrada_en_movil, false);
@@ -88,7 +89,13 @@ var fn = {
         {
             return true;
         }
+    },
+    CerrarSesion:function(){
+         window.localStorage.setItem("user",'');
+         window.localStorage.setItem("revisa",'');
+         window.location.href = '#login';   
     }
+
 };
 //$(fn.init);
 $(fn.ready);
