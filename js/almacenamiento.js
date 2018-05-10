@@ -94,11 +94,12 @@ var almacen = {
 											navigator.notification.alert("Verifique su usuario y contraseña", null, "Advertencia", "Aceptar");
 										}
 										else if(encontroUsuario >= 1)
-										{
+										{											
 									/////		
 									///Area autentificacion base de datos
 									/////
 									almacen.numero_Empleado_Que_Revisa =  $('#txtnumero_Empleado_Que_Revisa').val();
+									navigator.notification.alert("el usuario si esta en local" + almacen.numero_Empleado_Que_Revisa,null,"Mensaje desarrollo","Aceptar");     
 									$.ajax({
 									                method: 'POST',
 									                url: 'http://servidoriis.laitaliana.com.mx/LM/wsshregistrotrampas/WebService1.asmx/validaNumeroEmpleado',              
