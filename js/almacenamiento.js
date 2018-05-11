@@ -226,7 +226,7 @@ var almacen = {
 			almacen.db.transaction(almacen.CreaSINOExisteTipo_Trampas, almacen.error, null);
 			almacen.db.transaction(almacen.ConsultaTipo_Trampa, almacen.error, null);
 		},
-									ConsultaTrampa: function(tx){
+									ConsultaTipo_Trampa: function(tx){
 										tx.executeSql("SELECT count(*) as filas FROM tipo_trampa", [], function(tx2, t){
 											for(i = 0; i < t.rows.length; i++){
 												$("#Num_tipo_de_trampas_en_local").val("" + t.rows.item(i).filas); 
