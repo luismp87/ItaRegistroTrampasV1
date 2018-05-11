@@ -165,11 +165,12 @@ var almacen = {
 			
 			almacen.db = window.openDatabase("ItaSHRT","1.0","ItaSHRT Storage",20000);
 			almacen.db.transaction(almacen.CreaSINOExisteTrampas, almacen.error, null);
-			almacen.db.transaction(almacen.ConsultaHidrante, almacen.error, null);
+			almacen.db.transaction(almacen.ConsultaTrampa, almacen.error, null);
 		},
-									ConsultaHidrante: function(tx){
+									ConsultaTrampa: function(tx){
 										tx.executeSql("SELECT count(*) as filas FROM trampas", [], function(tx2, t){
 											for(i = 0; i < t.rows.length; i++){
+												navigator.notification.alert("entro al for",null,"Mensaje desarrollo","Aceptar");     
 												$("#Num_trampas_en_local").val("" + t.rows.item(i).filas); 
 										
 

@@ -113,9 +113,7 @@ var fn = {
                     $.each(msg,function(i,item){
                         myArray[i] = msg[i].ID_TRAMPA + "','" + msg[i].NUM_TRAMPA + "','" + msg[i].TIPO_TRAMPA + "','" + msg[i].UBICACION + "','"+ "','" + msg[i].OBSERVACIONES + "','"+ "','" + msg[i].PLANTA + "','"+ "','" + msg[i].CONTROL + "','"+ "','" + msg[i].CINTURON + "','"+ "','" + msg[i].ACTIVA ;
                     }); 
-                    navigator.notification.alert("intentando guardar en celular",null,"Mensaje desarrollo","Aceptar");     
                     almacen.guardarTRAMPA(myArray);
-                    navigator.notification.alert("intentando leer desde el celular",null,"Mensaje desarrollo","Aceptar");
                     almacen.leerTrampa();  
                     navigator.notification.alert("Migración Correcta",null,"Listo","Aceptar");               
         },
