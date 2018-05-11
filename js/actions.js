@@ -136,6 +136,7 @@ var fn = {
         Eliminar_trampas_de_celular : function(){
             almacen.eliminarTrampas();
             almacen.leerTrampas();  
+            navigator.notification.alert("Se vacío la información local",null,"Listo","Aceptar");
         }
 
 };
