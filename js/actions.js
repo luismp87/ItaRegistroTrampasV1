@@ -95,8 +95,8 @@ var fn = {
         }
     },
     CerrarSesion:function(){
-         window.localStorage.setItem("user",'');
-         window.localStorage.setItem("revisa",'');
+         window.localStorage.setItem("usuario",'');
+         window.localStorage.setItem("Nombre_usuario_revisa",'');
          window.location.href = '#login';   
     },
     Migrar_trampas_a_celular:function(){
