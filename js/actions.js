@@ -107,6 +107,7 @@ var fn = {
                 $.mobile.loading("show",{theme: 'b'});
 //MIGRACION DE TRAMPA                
                 $.ajax({
+                    async: true,
                 method: 'POST',
                 url: 'http://servidoriis.laitaliana.com.mx/LM/wsshregistrotrampas/WebService1.asmx/enviarcatalogocompletodetrampas',              
                 //data: {usuario: nom, contrasena: passw},
@@ -126,6 +127,7 @@ var fn = {
                     });
 //MIGRACION DE TIPO_TRAMPA
                 $.ajax({
+                    async: true,
                 method: 'POST',
                 url: 'http://servidoriis.laitaliana.com.mx/LM/wsshregistrotrampas/WebService1.asmx/enviarcatalogocompletodetipos_de_trampas',              
                 dataType: "json",
