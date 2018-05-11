@@ -10,10 +10,7 @@ var almacen = {
 										tx.executeSql("CREATE TABLE IF NOT EXISTS usuarios (usuario,pass,origen)");										
 									},
     CreaSINOExisteTrampas: function(tx){
-										tx.executeSql("CREATE TABLE IF NOT EXISTS trampas (id_trampa,num_trampa,tipo_trampa,ubicación,observaciones,planta,control,cinturón,activa)");										
-									},
-    CreaSINOExisteTipo_Trampas: function(tx){
-										tx.executeSql("CREATE TABLE IF NOT EXISTS tipo_trampa (tipo_trampa,descripcion)");										
+										tx.executeSql("CREATE TABLE IF NOT EXISTS trampas (id_trampa,num_trampa,tipo_trampa,ubicacion,observaciones,planta,control,cinturon,activa,descripcion_tipo_trampa,descripcion_planta,cliente,direccion_planta,descripcion_control_trampa)");										
 									},									
 	error: function(){
 										//alert("Error al acceder a la Base de Datos");
@@ -153,13 +150,13 @@ var almacen = {
 			
 		},
 									GuardarTrampa: function(tx){
-										tx.executeSql("CREATE TABLE IF NOT EXISTS trampas (id_trampa,num_trampa,tipo_trampa,ubicación,observaciones,planta,control,cinturón,activa)");
+										tx.executeSql("CREATE TABLE IF NOT EXISTS trampas (id_trampa,num_trampa,tipo_trampa,ubicacion,observaciones,planta,control,cinturon,activa,descripcion_tipo_trampa,descripcion_planta,cliente,direccion_planta,descripcion_control_trampa)");
 										    //navigator.notification.alert("longitud " +almacen.myArray.length ,null,"Listo","Aceptar");      
 										    for(i = 0; i<almacen.myArray.length; i++) 
 										    {
 										    	if((almacen.myArray[i] != "") && (almacen.myArray[i] != undefined))
 										    	{
-										    		tx.executeSql("INSERT INTO trampas (id_trampa,num_trampa,tipo_trampa,ubicación,observaciones,planta,control,cinturón,activa) VALUES ('"+almacen.myArray[i]+"')");
+										    		tx.executeSql("INSERT INTO trampas (id_trampa,num_trampa,tipo_trampa,ubicacion,observaciones,planta,control,cinturon,activa,descripcion_tipo_trampa,descripcion_planta,cliente,direccion_planta,descripcion_control_trampa) VALUES ('"+almacen.myArray[i]+"')");
     											}
         									}        
 									},		
@@ -200,61 +197,5 @@ var almacen = {
 		},
 									EliminarTrampas: function(tx){
 									tx.executeSql("DELETE FROM trampas");
-	},
-/*ALMACENA LA INFORMACION DE LOS TIPOS DE TRAMPAS EN EL CELULAR*/
-		guardarTIPO_TRAMPA: function(myArray){
-		almacen.myArray	= myArray;        
-			almacen.db = window.openDatabase("ItaSHRT","1.0","ItaSHRT Storage",20000);
-			almacen.db.transaction(almacen.GuardarTipo_Trampa, almacen.error, null);
-			
-		},
-									GuardarTipo_Trampa: function(tx){
-										tx.executeSql("CREATE TABLE IF NOT EXISTS tipo_trampa (tipo_trampa,descripcion)");
-										    //navigator.notification.alert("longitud " +almacen.myArray.length ,null,"Listo","Aceptar");      
-										    for(i = 0; i<almacen.myArray.length; i++) 
-										    {
-										    	if((almacen.myArray[i] != "") && (almacen.myArray[i] != undefined))
-										    	{
-										    		tx.executeSql("INSERT INTO tipo_trampa (tipo_trampa,descripcion) VALUES ('"+almacen.myArray[i]+"')");
-    											}
-        									}        
-									},
-/*FUNCION PARA LEER EN BASE DE DATOS*/
-	leerTipo_Trampa: function(){
-			
-			almacen.db = window.openDatabase("ItaSHRT","1.0","ItaSHRT Storage",20000);
-			almacen.db.transaction(almacen.CreaSINOExisteTipo_Trampas, almacen.error, null);
-			almacen.db.transaction(almacen.ConsultaTipo_Trampa, almacen.error, null);
-		},
-									ConsultaTipo_Trampa: function(tx){
-										tx.executeSql("SELECT count(*) as filas FROM tipo_trampa", [], function(tx2, t){
-											for(i = 0; i < t.rows.length; i++){
-												$("#Num_tipo_de_trampas_en_local").val("" + t.rows.item(i).filas); 
-										
-
-												/*navigator.notification.confirm("Personas: " + t.rows.item(i).pr + "\n"
-																			   + "Días: " + t.rows.item(i).di + "\n"
-																			   + "Tipo de Habitación: " + t.rows.item(i).th,
-																			  function(btn){
-																				  if(btn == 1) navigator.vibrate(500);
-																				  if(btn == 2) navigator.notification.beep(1);
-																			  }, "Tabla Reservas","Vibrar,Sonar,Cancelar");*/
-												//server.sincronizar(t.rows.item(i).pr,t.rows.item(i).di,t.rows.item(i).th);
-												//alert("id_ext: " + t.rows.item(i).id_ext);
-												//navigator.notification.alert("id_ext: " + t.rows.item(i).id_ext, null, "Correcto", "Aceptar");
-											}
-
-//navigator.notification.alert("almacen.numerodefilas: " + almacen.numerodefilas, null, "Correcto", "Aceptar");
-										});
-										
-		},
-/*FUNCION PARA ELIMINAR CATALOGO DE LOS TIPOS DE TRAMPAS EN BASE DE DATOS DEL CELULAR*/
-		eliminarTipos_Trampas: function(tx){
-			almacen.db = window.openDatabase("ItaSHRT","1.0","ItaSHRT Storage",20000);
-			almacen.db.transaction(almacen.CreaSINOExisteTipo_Trampas, almacen.error, null);
-			almacen.db.transaction(almacen.EliminarTipo_Trampa, almacen.error, null);
-		},
-									EliminarTipo_Trampa: function(tx){
-									tx.executeSql("DELETE FROM tipo_trampa");
 	}										
 }																		

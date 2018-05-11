@@ -99,8 +99,7 @@ var fn = {
          window.location.href = '#login';   
     },
     Migrar_trampas_a_celular:function(){
-        var myArray = new Array(1200); 
-        var myArray2 = new Array(15); 
+        var myArray = new Array(1200);         
         var registros = $('#Num_trampas_en_local').val();  
         if(registros == 0)
             {
@@ -115,7 +114,9 @@ var fn = {
                 success: function (msg){
                     $.mobile.loading("hide");
                     $.each(msg,function(i,item){
-                        myArray[i] = msg[i].ID_TRAMPA + "','" + msg[i].NUM_TRAMPA + "','" + msg[i].TIPO_TRAMPA + "','" + msg[i].UBICACION + "','" + msg[i].OBSERVACIONES + "','" + msg[i].PLANTA + "','" + msg[i].CONTROL + "','" + msg[i].CINTURON + "','" + msg[i].ACTIVA ;
+                        
+                                myArray[i] = msg[i].ID_TRAMPA + "','" + msg[i].NUM_TRAMPA + "','" + msg[i].TIPO_TRAMPA + "','" + msg[i].UBICACION + "','" + msg[i].OBSERVACIONES + "','" + msg[i].PLANTA + "','" + msg[i].CONTROL + "','" + msg[i].CINTURON + "','" + msg[i].ACTIVA + "','" + msg[i].DESCRIPCION_TIPO_TRAMPA+ "','" + msg[i].DESCRIPCION_PLANTA+ "','" + msg[i].CLIENTE+ "','" + msg[i].DIRECCION_PLANTA+ "','" + msg[i].DESCRIPCION_CONTROL_TRAMPA;
+                            
                     }); 
                     almacen.guardarTRAMPA(myArray);
                     almacen.leerTrampa();  
@@ -125,24 +126,7 @@ var fn = {
                     navigator.notification.alert(jq + txt.responseText,null,"Error 1","Aceptar");
                 }
                     });
-//MIGRACION DE TIPO_TRAMPA
-                $.ajax({
-                    async: true,
-                method: 'POST',
-                url: 'http://servidoriis.laitaliana.com.mx/LM/wsshregistrotrampas/WebService1.asmx/enviarcatalogocompletodetipos_de_trampas',              
-                dataType: "json",
-                success: function (msg){
-                    $.mobile.loading("hide");
-                    $.each(msg,function(i,item){
-                        myArray2[i] = msg[i].TIPO_TRAMPA + "','" + msg[i].DESCRIPCION;
-                    }); 
-                    almacen.guardarTIPO_TRAMPA(myArray2);
-                    almacen.leerTipo_Trampa();  
-                },
-                error: function(jq, txt){
-                    navigator.notification.alert(jq + txt.responseText,null,"Error 2","Aceptar");
-                }
-                    });
+
                     }
                     else
                     {
