@@ -158,9 +158,7 @@ var almacen = {
 										    	{
 										    		tx.executeSql("INSERT INTO trampas (id_trampa,num_trampa,tipo_trampa,ubicación,observaciones,planta,control,cinturón,activa) VALUES ('"+almacen.myArray[i]+"')");
     											}
-        									}
-        									navigator.notification.alert("en el insert",null,"Mensaje desarrollo","Aceptar");     
-        
+        									}        
 									},		
 /*FUNCION PARA LEER EN BASE DE DATOS*/
 	leerTrampa: function(){

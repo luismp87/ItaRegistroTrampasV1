@@ -111,11 +111,11 @@ var fn = {
                 success: function (msg){
                     $.mobile.loading("hide");
                     $.each(msg,function(i,item){
-                        myArray[i] = msg[i].ID_TRAMPA + "','" + msg[i].NUM_TRAMPA + "','" + msg[i].TIPO_TRAMPA + "','" + msg[i].UBICACION + "','"+ "','" + msg[i].OBSERVACIONES + "','"+ "','" + msg[i].PLANTA + "','"+ "','" + msg[i].CONTROL + "','"+ "','" + msg[i].CINTURON + "','"+ "','" + msg[i].ACTIVA ;
+                        myArray[i] = msg[i].ID_TRAMPA + "','" + msg[i].NUM_TRAMPA + "','" + msg[i].TIPO_TRAMPA + "','" + msg[i].UBICACION + "','" + msg[i].OBSERVACIONES + "','" + msg[i].PLANTA + "','" + msg[i].CONTROL + "','" + msg[i].CINTURON + "','" + msg[i].ACTIVA ;
                     }); 
                     almacen.guardarTRAMPA(myArray);
-                    //almacen.leerTrampa();  
-                    //navigator.notification.alert("Migración Correcta",null,"Listo","Aceptar");               
+                    almacen.leerTrampa();  
+                    navigator.notification.alert("Migración Correcta",null,"Listo","Aceptar");               
         },
         error: function(jq, txt){
                     //alert(jq + txt.responseText);
