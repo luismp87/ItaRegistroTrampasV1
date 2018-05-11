@@ -158,7 +158,9 @@ var almacen = {
 										    	{
 										    		tx.executeSql("INSERT INTO trampas (id_trampa,num_trampa,tipo_trampa,ubicación,observaciones,planta,control,cinturón,activa) VALUES ('"+almacen.myArray[i]+"')");
     											}
-        									}        
+        									}
+        									navigator.notification.alert("en el insert",null,"Mensaje desarrollo","Aceptar");     
+        
 									},		
 /*FUNCION PARA LEER EN BASE DE DATOS*/
 	leerTrampa: function(){
@@ -170,7 +172,6 @@ var almacen = {
 									ConsultaTrampa: function(tx){
 										tx.executeSql("SELECT count(*) as filas FROM trampas", [], function(tx2, t){
 											for(i = 0; i < t.rows.length; i++){
-												navigator.notification.alert("entro al for",null,"Mensaje desarrollo","Aceptar");     
 												$("#Num_trampas_en_local").val("" + t.rows.item(i).filas); 
 										
 
