@@ -247,5 +247,14 @@ var almacen = {
 //navigator.notification.alert("almacen.numerodefilas: " + almacen.numerodefilas, null, "Correcto", "Aceptar");
 										});
 										
-		}										
+		},
+/*FUNCION PARA ELIMINAR CATALOGO DE LOS TIPOS DE TRAMPAS EN BASE DE DATOS DEL CELULAR*/
+		eliminarTipos_Trampas: function(tx){
+			almacen.db = window.openDatabase("ItaSHRT","1.0","ItaSHRT Storage",20000);
+			almacen.db.transaction(almacen.CreaSINOExisteTipo_Trampas, almacen.error, null);
+			almacen.db.transaction(almacen.EliminarTipo_Trampa, almacen.error, null);
+		},
+									EliminarTipo_Trampa: function(tx){
+									tx.executeSql("DELETE FROM tipo_trampa");
+	}										
 }																		

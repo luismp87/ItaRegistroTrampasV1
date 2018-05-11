@@ -133,9 +133,7 @@ var fn = {
                     $.each(msg,function(i,item){
                         myArray[i] = msg[i].TIPO_TRAMPA + "','" + msg[i].DESCRIPCION;
                     }); 
-                    navigator.notification.alert("intentando migrar tipo trampas",null,"Mensaje desarrollo","Aceptar");     
                     almacen.guardarTIPO_TRAMPA(myArray);
-                    navigator.notification.alert("intentando leer tipo trampas",null,"Mensaje desarrollo","Aceptar");     
                     almacen.leerTipo_Trampa();  
                 },
                 error: function(jq, txt){
@@ -151,7 +149,9 @@ var fn = {
     },
         Eliminar_trampas_de_celular : function(){
             almacen.eliminarTrampas();
+            almacen.eliminarTipos_Trampas();
             almacen.leerTrampa();  
+            almacen.leerTipo_Trampa(); 
             navigator.notification.alert("Se vacío la información local",null,"Listo","Aceptar");
         }
 
