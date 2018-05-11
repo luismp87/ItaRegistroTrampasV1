@@ -161,7 +161,7 @@ var almacen = {
         									}        
 									},		
 /*FUNCION PARA LEER EN BASE DE DATOS*/
-	leerTrampa: function(){
+	leerTrampas: function(){
 			
 			almacen.db = window.openDatabase("ItaSHRT","1.0","ItaSHRT Storage",20000);
 			almacen.db.transaction(almacen.CreaSINOExisteTrampas, almacen.error, null);
@@ -193,7 +193,7 @@ var almacen = {
 		eliminarTrampas: function(tx){
 			almacen.db = window.openDatabase("ItaSHRT","1.0","ItaSHRT Storage",20000);
 			almacen.db.transaction(almacen.CreaSINOExisteTrampas, almacen.error, null);
-			almacen.db.transaction(almacen.EliminarTrampas, almacen.error, almacen.Correcto);
+			almacen.db.transaction(almacen.EliminarTrampas, almacen.error, null);
 		},
 									EliminarTrampas: function(tx){
 									tx.executeSql("DELETE FROM trampas");
