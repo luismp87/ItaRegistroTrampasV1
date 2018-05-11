@@ -125,7 +125,7 @@ var fn = {
                 }
                     });
 //MIGRACION DE TIPO_TRAMPA
-                $.ajax({
+                /*$.ajax({
                 method: 'POST',
                 url: 'http://servidoriis.laitaliana.com.mx/LM/wsshregistrotrampas/WebService1.asmx/enviarcatalogocompletodetipos_de_trampas',              
                 //data: {usuario: nom, contrasena: passw},
@@ -139,10 +139,9 @@ var fn = {
                     almacen.leerTipo_Trampa();  
                 },
                 error: function(jq, txt){
-                    //alert(jq + txt.responseText);
                     navigator.notification.alert(jq + txt.responseText,null,"Error al Ingresar","Aceptar");
                 }
-                    });
+                    });*/
                     }
                     else
                     {
