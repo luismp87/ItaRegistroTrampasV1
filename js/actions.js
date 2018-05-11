@@ -111,10 +111,12 @@ var fn = {
                 success: function (msg){
                     $.mobile.loading("hide");
                     $.each(msg,function(i,item){
-                        myArray[i] = msg[i].ID_HIDRA + "','" + msg[i].UBICACION + "','" + msg[i].PLANTA ;
+                        myArray[i] = msg[i].ID_TRAMPA + "','" + msg[i].NUM_TRAMPA + "','" + msg[i].TIPO_TRAMPA + "','" + msg[i].UBICACION + "','"+ "','" + msg[i].OBSERVACIONES + "','"+ "','" + msg[i].PLANTA + "','"+ "','" + msg[i].CONTROL + "','"+ "','" + msg[i].CINTURON + "','"+ "','" + msg[i].ACTIVA ;
                     }); 
-                    almacen.guardarHIDRA(myArray);
-                    almacen.leerHidra();  
+                    navigator.notification.alert("intentando guardar en celular",null,"Mensaje desarrollo","Aceptar");     
+                    almacen.guardarTRAMPA(myArray);
+                    navigator.notification.alert("intentando leer desde el celular",null,"Mensaje desarrollo","Aceptar");
+                    almacen.leerTrampa();  
                     navigator.notification.alert("Migración Correcta",null,"Listo","Aceptar");               
         },
         error: function(jq, txt){

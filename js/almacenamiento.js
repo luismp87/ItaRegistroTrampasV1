@@ -26,7 +26,6 @@ var almacen = {
 									},
 /*FUNCION PARA GUARDAR EN BASE DE DATOS LOS USUARIO QUE SE TRAEN DEL WEB SERVICE*/
 	guardarUsuario: function(myArray){	
-	navigator.notification.alert("entro a guardarUsuario",null,"Mensaje desarrollo","Aceptar");   	
 		almacen.myArray	= myArray;        
 			almacen.db = window.openDatabase("ItaSHRT","1.0","ItaSHRT Storage",20000);
 			almacen.db.transaction(almacen.GuardarUsuario, almacen.error, null);
@@ -45,7 +44,6 @@ var almacen = {
 									},
  /*FUNCION PARA LEER EN BASE DE DATOS EN ESPECIFICO EL NUMERO DE USUARIO QUE ESTAN EN LA TABLA USUARIOS*/
 	leerNumeroUsuarios: function(){ 
-	navigator.notification.alert("entro a leerNumeroUsuarios",null,"Mensaje desarrollo","Aceptar");   	 
 			almacen.db = window.openDatabase("ItaSHRT","1.0","ItaSHRT Storage",20000);    
 			almacen.db.transaction(almacen.CreaSINOExiste, almacen.error, null);    
 			almacen.db.transaction(almacen.ConsultaNumeroDeUsuario, almacen.error, null);  
@@ -102,7 +100,6 @@ var almacen = {
 									///Area autentificacion base de datos
 									/////
 									almacen.numero_Empleado_Que_Revisa =  $('#txtnumero_Empleado_Que_Revisa').val();
-									navigator.notification.alert("el usuario si esta en local" + almacen.numero_Empleado_Que_Revisa,null,"Mensaje desarrollo","Aceptar");     
 									$.ajax({
 									                method: 'POST',
 									                url: 'http://servidoriis.laitaliana.com.mx/LM/wsshregistrotrampas/WebService1.asmx/validaNumeroEmpleado',              
@@ -146,7 +143,7 @@ var almacen = {
 										
 										},
 /*ALMACEN LA INFORMACION DE LAS TRAMPAS EN EL CELULAR*/
-		guardarHIDRA: function(myArray){
+		guardarTRAMPA: function(myArray){
 		almacen.myArray	= myArray;        
 			almacen.db = window.openDatabase("ItaSHRT","1.0","ItaSHRT Storage",20000);
 			almacen.db.transaction(almacen.GuardarTrampa, almacen.error, null);
