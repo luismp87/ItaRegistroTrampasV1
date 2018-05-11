@@ -131,10 +131,10 @@ var fn = {
                 success: function (msg){
                     $.mobile.loading("hide");
                     $.each(msg,function(i,item){
-                        myArray2[i] = msg[i].TIPO_TRAMPA + "','" + msg[i].DESCRIPCION;
+                        myArray[i] = msg[i].TIPO_TRAMPA + "','" + msg[i].DESCRIPCION;
                     }); 
                     navigator.notification.alert("intentando migrar tipo trampas",null,"Mensaje desarrollo","Aceptar");     
-                    almacen.guardarTIPO_TRAMPA(myArray2);
+                    almacen.guardarTIPO_TRAMPA(myArray);
                     navigator.notification.alert("intentando leer tipo trampas",null,"Mensaje desarrollo","Aceptar");     
                     almacen.leerTipo_Trampa();  
                 },
