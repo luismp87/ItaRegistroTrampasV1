@@ -104,6 +104,7 @@ var fn = {
         if(registros == 0)
             {
                 $.mobile.loading("show",{theme: 'b'});
+//MIGRACION DE TRAMPA                
                 $.ajax({
                 method: 'POST',
                 url: 'http://servidoriis.laitaliana.com.mx/LM/wsshregistrotrampas/WebService1.asmx/enviarcatalogocompletodetrampas',              
@@ -115,17 +116,33 @@ var fn = {
                         myArray[i] = msg[i].ID_TRAMPA + "','" + msg[i].NUM_TRAMPA + "','" + msg[i].TIPO_TRAMPA + "','" + msg[i].UBICACION + "','" + msg[i].OBSERVACIONES + "','" + msg[i].PLANTA + "','" + msg[i].CONTROL + "','" + msg[i].CINTURON + "','" + msg[i].ACTIVA ;
                     }); 
                     almacen.guardarTRAMPA(myArray);
-                    almacen.leerTrampas();  
+                    almacen.leerTrampa();  
                     navigator.notification.alert("Migración Correcta",null,"Listo","Aceptar");               
-        },
-        error: function(jq, txt){
+                },
+                error: function(jq, txt){
                     //alert(jq + txt.responseText);
                     navigator.notification.alert(jq + txt.responseText,null,"Error al Ingresar","Aceptar");
                 }
-            });
-                    //navigator.notification.alert("a guardar",null,"Error al Ingresar","Aceptar");    
-                            //almacen.guardarEXT(fn.id_ext, fn.ubicacion,fn.capacidad,fn.clase,fn.agente,fn.marca,fn.frecarga,fn.ffabricacion,fn.fproxservicio);
-                    
+                    });
+//MIGRACION DE TIPO_TRAMPA
+                $.ajax({
+                method: 'POST',
+                url: 'http://servidoriis.laitaliana.com.mx/LM/wsshregistrotrampas/WebService1.asmx/enviarcatalogocompletodetipos_de_trampas',              
+                //data: {usuario: nom, contrasena: passw},
+                dataType: "json",
+                success: function (msg){
+                    $.mobile.loading("hide");
+                    $.each(msg,function(i,item){
+                        myArray2[i] = msg[i].TIPO_TRAMPA + "','" + msg[i].DESCRIPCION;
+                    }); 
+                    almacen.guardarTIPO_TRAMPA(myArray2);
+                    almacen.leerTipo_Trampa();  
+                },
+                error: function(jq, txt){
+                    //alert(jq + txt.responseText);
+                    navigator.notification.alert(jq + txt.responseText,null,"Error al Ingresar","Aceptar");
+                }
+                    });
                     }
                     else
                     {
@@ -135,7 +152,7 @@ var fn = {
     },
         Eliminar_trampas_de_celular : function(){
             almacen.eliminarTrampas();
-            almacen.leerTrampas();  
+            almacen.leerTrampa();  
             navigator.notification.alert("Se vacío la información local",null,"Listo","Aceptar");
         }
 
