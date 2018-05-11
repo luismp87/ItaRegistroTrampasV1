@@ -117,7 +117,7 @@ var almacen = {
 																	//$("#textORIGEN").text("Origen de usuario: " + window.localStorage.getItem("origen").toUpperCase());
 																	$('#txtusuario').val(""); 
 									        						$('#txtcontrasena').val("");
-									        						$('#txtnumero_Empleado_realiza').val("");
+									        						$('#txtnumero_Empleado_Que_Revisa').val("");									        						
 									 								window.location.href = '#MenuOpciones';        
 									                            }
 									                            else

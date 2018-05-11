@@ -17,13 +17,14 @@ var fn = {
         else
         {
         //$("#textORIGEN").text("Origen de usuario: " + window.localStorage.getItem("origen").toUpperCase());
-        //window.location.href = '#Registro';     
+        window.location.href = '#MenuOpciones';     
         }
         //PARA MOVIL
         $('#btnautentificar').tap(fn.autentificarSQL); 
         $('#BtnCerrarSesion').tap(fn.CerrarSesion);
         $('#BtnMigrar_trampas_a_celular').tap(fn.Migrar_trampas_a_celular);
         $('#BtnEliminar_trampas_de_celular').tap(fn.Eliminar_trampas_de_celular);
+        $('#BtnManto_catalogos').tap(fn.Manto_catalogos);
                    
         
         //PARA MOVIL
@@ -135,11 +136,13 @@ var fn = {
 
     },
         Eliminar_trampas_de_celular : function(){
-            almacen.eliminarTrampas();
-            almacen.eliminarTipos_Trampas();
-            almacen.leerTrampa();  
-            almacen.leerTipo_Trampa(); 
+            almacen.eliminarTrampas();            
+            almacen.leerTrampa();              
             navigator.notification.alert("Se vacío la información local",null,"Listo","Aceptar");
+        },
+        Manto_catalogos : function(){
+            almacen.leerTrampa();    
+            window.location.href = '#Opcion_manto_catalogos';         
         }
 
 };
