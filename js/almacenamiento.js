@@ -188,5 +188,14 @@ var almacen = {
 //navigator.notification.alert("almacen.numerodefilas: " + almacen.numerodefilas, null, "Correcto", "Aceptar");
 										});
 										
-		}	
+		},
+/*FUNCION PARA ELIMINAR CATALOGO DE LAS TRAMPAS EN BASE DE DATOS DEL CELULAR*/
+		eliminarTrampas: function(tx){
+			almacen.db = window.openDatabase("ItaSHRT","1.0","ItaSHRT Storage",20000);
+			almacen.db.transaction(almacen.CreaSINOExisteTrampas, almacen.error, null);
+			almacen.db.transaction(almacen.eliminarTrampas, almacen.error, almacen.Correcto);
+		},
+									eliminarTrampas: function(tx){
+									tx.executeSql("DELETE FROM trampas");
+	}	
 }																		

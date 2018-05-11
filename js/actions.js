@@ -23,6 +23,7 @@ var fn = {
         $('#btnautentificar').tap(fn.autentificarSQL); 
         $('#BtnCerrarSesion').tap(fn.CerrarSesion);
         $('#BtnMigrar_trampas_a_celular').tap(fn.Migrar_trampas_a_celular);
+        $('#BtnEliminar_trampas_de_celular').tap(fn.Eliminar_trampas_de_celular);
                    
         
         //PARA MOVIL
@@ -131,7 +132,11 @@ var fn = {
                        navigator.notification.alert("Se tienen registros en la base de datos, antes eliminelos",null,"Advertencia","Aceptar");    
                     }
 
-    }
+    },
+        Eliminar_trampas_de_celular : function(){
+            almacen.eliminarTrampas();
+            almacen.leerTrampas();  
+        }
 
 };
 //$(fn.init);
