@@ -125,23 +125,24 @@ var fn = {
                 }
                     });
 //MIGRACION DE TIPO_TRAMPA
-                /*$.ajax({
+                $.ajax({
                 method: 'POST',
                 url: 'http://servidoriis.laitaliana.com.mx/LM/wsshregistrotrampas/WebService1.asmx/enviarcatalogocompletodetipos_de_trampas',              
-                //data: {usuario: nom, contrasena: passw},
                 dataType: "json",
                 success: function (msg){
                     $.mobile.loading("hide");
                     $.each(msg,function(i,item){
                         myArray2[i] = msg[i].TIPO_TRAMPA + "','" + msg[i].DESCRIPCION;
                     }); 
+                    navigator.notification.alert("intentando migrar tipo trampas",null,"Mensaje desarrollo","Aceptar");     
                     almacen.guardarTIPO_TRAMPA(myArray2);
+                    navigator.notification.alert("intentando leer tipo trampas",null,"Mensaje desarrollo","Aceptar");     
                     almacen.leerTipo_Trampa();  
                 },
                 error: function(jq, txt){
                     navigator.notification.alert(jq + txt.responseText,null,"Error al Ingresar","Aceptar");
                 }
-                    });*/
+                    });
                     }
                     else
                     {
