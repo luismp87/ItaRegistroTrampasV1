@@ -120,8 +120,7 @@ var fn = {
                     navigator.notification.alert("Migración Correcta",null,"Listo","Aceptar");               
                 },
                 error: function(jq, txt){
-                    //alert(jq + txt.responseText);
-                    navigator.notification.alert(jq + txt.responseText,null,"Error al Ingresar","Aceptar");
+                    navigator.notification.alert(jq + txt.responseText,null,"Error 1","Aceptar");
                 }
                     });
 //MIGRACION DE TIPO_TRAMPA
@@ -140,7 +139,7 @@ var fn = {
                     almacen.leerTipo_Trampa();  
                 },
                 error: function(jq, txt){
-                    navigator.notification.alert(jq + txt.responseText,null,"Error al Ingresar","Aceptar");
+                    navigator.notification.alert(jq + txt.responseText,null,"Error 2","Aceptar");
                 }
                     });
                     }
