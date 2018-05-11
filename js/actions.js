@@ -99,7 +99,8 @@ var fn = {
          window.location.href = '#login';   
     },
     Migrar_trampas_a_celular:function(){
-        var myArray = new Array(1500); 
+        var myArray = new Array(1200); 
+        var myArray2 = new Array(15); 
         var registros = $('#Num_trampas_en_local').val();  
         if(registros == 0)
             {
@@ -131,9 +132,9 @@ var fn = {
                 success: function (msg){
                     $.mobile.loading("hide");
                     $.each(msg,function(i,item){
-                        myArray[i] = msg[i].TIPO_TRAMPA + "','" + msg[i].DESCRIPCION;
+                        myArray2[i] = msg[i].TIPO_TRAMPA + "','" + msg[i].DESCRIPCION;
                     }); 
-                    almacen.guardarTIPO_TRAMPA(myArray);
+                    almacen.guardarTIPO_TRAMPA(myArray2);
                     almacen.leerTipo_Trampa();  
                 },
                 error: function(jq, txt){
