@@ -153,7 +153,16 @@ var fn = {
         cordova.plugins.barcodeScanner.scan(
           function (result) {             
                             $("#txt_id_trampa").val("" + result.text); 
-                            consulta_info_trampa();
+        var id = $('#txt_id_trampa').val();    
+  
+        if(id != ''){   
+            $.mobile.loading("show",{theme: 'b'});
+            almacen.LeerInformacionTRAMPA();
+            $.mobile.loading("hide");
+        }
+        else{
+            navigator.notification.alert("Ingrese el ID de la trampa",null,"Error al Ingresar","Aceptar");
+        }
           }, 
           function (error) {
               navigator.notification.alert("Scanning failed: " + error,null,"Error","Aceptar");
@@ -161,27 +170,20 @@ var fn = {
           }
        );
 
-        },
-    consulta_info_trampa : function(){   
-    navigator.notification.alert("entro a consulta_info_trampa",null,"Mensaje desarrollo","Aceptar");       
-
-    navigator.notification.alert("txt_id_trampa: " + $('#txt_id_trampa').val(),null,"Mensaje desarrollo","Aceptar");       
-    var id = $('#txt_id_trampa').val();    
-    navigator.notification.alert("id: " + id,null,"Mensaje desarrollo","Aceptar");     
-  
+        },    
+    Buscar_info_trampa : function(){
+        var id = $('#txt_id_trampa').val();  
+        navigator.notification.alert("entro",null,"Mensaje desarrollo","Aceptar");     
+navigator.notification.alert("id: " + id,null,"Mensaje desarrollo","Aceptar");     
+    
         if(id != ''){   
             $.mobile.loading("show",{theme: 'b'});
-            navigator.notification.alert("antes de intentar consultar",null,"Mensaje desarrollo","Aceptar"); 
             almacen.LeerInformacionTRAMPA();
             $.mobile.loading("hide");
         }
         else{
             navigator.notification.alert("Ingrese el ID de la trampa",null,"Error al Ingresar","Aceptar");
-        }   
-    },
-    Buscar_info_trampa : function(){
-       navigator.notification.alert("entro a Buscar_info_trampa",null,"Mensaje desarrollo","Aceptar"); 
-       consulta_info_trampa(); 
+        }
     },
     Registrar_trampas : function(){
         window.location.href = '#Busqueda_por_id_de_trampa'; 
