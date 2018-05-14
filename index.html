@@ -8,6 +8,25 @@
         <link rel="stylesheet" type="text/css" href="css/estilos.css">
 </head>
 <body>
+<!--PANTALLA MENU DE OPCIONES-->
+<div data-role="page" id="MenuOpciones">
+                                <div data-role="header"><h2>Menú de opciones</h2></div> 
+                                <div data-role="main" class="ui-content">
+                                    <div data-role="controlgroup" data-type="vertical">
+                                      <p>Seleccione una opcion:</p>
+                                      <a id="BtnRegistrar_trampas" href="" class="ui-btn">Registrar Trampa</a>
+                                      <a id="BtnManto_catalogos" class="ui-btn">Manto. Catalogos</a>
+                                      <a id="Migrar_a_servidor" class="ui-btn">Migrar Info. A Server</a>
+                                    </div>
+                                </div>
+                                <div data-role="footer" data-position="fixed">    
+                                    <div data-role="navbar">
+                                        <ul>
+                                            <li><a href="#" id="BtnCerrarSesion">Cerrar SESION</a></li>                                                    
+                                        </ul>                                
+                                    </div>
+                                    </div>
+</div>
 <!--PANTALLA LOGIN-->
 <div data-role="page" id="login">
                                 <div data-role="header"><h2>ItaRegistroTrampas</h2></div> 
@@ -36,25 +55,6 @@
                                 </table>
                                 </div>
                                 <div data-role="footer" data-position="fixed"><span style="font-size:8pt;">Sistemas 2018 PK</span></div>
-</div>
-<!--PANTALLA MENU DE OPCIONES-->
-<div data-role="page" id="MenuOpciones">
-                                <div data-role="header"><h2>Menú de opciones</h2></div> 
-                                <div data-role="main" class="ui-content">
-                                    <div data-role="controlgroup" data-type="vertical">
-                                      <p>Seleccione una opcion:</p>
-                                      <a id="BtnRegistrar_trampas" href="" class="ui-btn">Registrar Trampa</a>
-                                      <a id="BtnManto_catalogos" class="ui-btn">Manto. Catalogos</a>
-                                      <a id="Migrar_a_servidor" class="ui-btn">Migrar Info. A Server</a>
-                                    </div>
-                                </div>
-                                <div data-role="footer" data-position="fixed">    
-                                    <div data-role="navbar">
-                                        <ul>
-                                            <li><a href="#" id="BtnCerrarSesion">Cerrar SESION</a></li>                                                    
-                                        </ul>                                
-                                    </div>
-                                    </div>
 </div>
 <!--MANTENIMIENTO DE CATALOGOS-->
 <div data-role="page" id="Opcion_manto_catalogos">
