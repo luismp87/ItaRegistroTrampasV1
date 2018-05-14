@@ -162,9 +162,11 @@ var fn = {
        );
 
         },
-    consulta_info_trampa : function(){         
-        var id = $('#txt_id_trampa').val();    
-        navigator.notification.alert("id: " + id,null,"Mensaje desarrollo","Aceptar");     
+    consulta_info_trampa : function(){   
+        
+    navigator.notification.alert("txt_id_trampa: " + $('#txt_id_trampa').val(),null,"Mensaje desarrollo","Aceptar");       
+    var id = $('#txt_id_trampa').val();    
+    navigator.notification.alert("id: " + id,null,"Mensaje desarrollo","Aceptar");     
   
         if(id != ''){   
             $.mobile.loading("show",{theme: 'b'});
