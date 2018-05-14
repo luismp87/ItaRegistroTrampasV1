@@ -91,9 +91,6 @@ var fn = {
     },
     estaRegistrado: function(){        
         var usr = window.localStorage.getItem("usuario");
-
-        navigator.notification.alert("var usr: " + usr,null,"Mensaje desarrollo","Aceptar");     
-
         if(usr == undefined || usr == '' || usr == null)
         {
             return false;
@@ -166,9 +163,12 @@ var fn = {
 
         },
     consulta_info_trampa : function(){         
-        var id = $('#txt_id_trampa').val();      
+        var id = $('#txt_id_trampa').val();    
+        navigator.notification.alert("id: " + id,null,"Mensaje desarrollo","Aceptar");     
+  
         if(id != ''){   
             $.mobile.loading("show",{theme: 'b'});
+            navigator.notification.alert("antes de intentar consultar",null,"Mensaje desarrollo","Aceptar"); 
             almacen.LeerInformacionTRAMPA();
             $.mobile.loading("hide");
         }
@@ -178,6 +178,7 @@ var fn = {
         }   
     },
     Buscar_info_trampa : function(){
+       navigator.notification.alert("entro a Buscar_info_trampa",null,"Mensaje desarrollo","Aceptar"); 
        consulta_info_trampa(); 
     },
     Registrar_trampas : function(){
