@@ -8,9 +8,7 @@ var fn = {
         {          
         fn.btnMigrarUsuarios();  
         }
-        
-        navigator.notification.alert("verifica variable" + fn.estaRegistrado(),null,"Mensaje desarrollo","Aceptar");     
-        
+                
 
         if(fn.estaRegistrado() == false)
         {
@@ -91,7 +89,6 @@ var fn = {
     },
     estaRegistrado: function(){
         var usr = window.localStorage.getItem("usuario");
-        navigator.notification.alert("var usr" + usr,null,"Mensaje desarrollo","Aceptar");     
 
         if(usr == undefined || usr == '' || usr == null)
         {
