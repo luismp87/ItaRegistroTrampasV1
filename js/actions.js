@@ -28,10 +28,10 @@ var fn = {
         $('#BtnLeerCodigo').tap(fn.LeerCodigo);
         $('#BtnBuscar_info_trampa').tap(fn.Buscar_info_trampa);
         $('#BtnRegistrar_trampas').tap(fn.Registrar_trampas);
+        $('#BtnCaptura').tap(fn.Captura);
+
         
-        
-        
-                   
+    
         
         //PARA MOVIL
          document.addEventListener("online", almacen.leerinformacionregistrada_en_movil, false);
@@ -192,6 +192,25 @@ var fn = {
         $("#UBICACION").text("");
         $("#txt_id_trampa").val(""); 
         window.location.href = '#Busqueda_por_id_de_trampa'; 
+    },
+    Captura: function(){
+        var tipo_trampa = $('#TIPO_TRAMPA').val();
+        if(tipo_trampa == "1") || (tipo_trampa == "4")
+        {
+            window.location.href = '#Trampa_tipo_CEBO'; 
+        }
+        else if(tipo_trampa == "2")
+        {
+            window.location.href = '#Trampa_tipo_GOMA'; 
+        }
+        else if(tipo_trampa == "6")
+        {
+            window.location.href = '#Trampa_tipo_LUZ_NEGRA'; 
+        }
+        else if(tipo_trampa == "3") || (tipo_trampa == "5")
+        {
+            window.location.href = '#Trampa_tipo_MECANICA'; 
+        }
     }
 };
 //$(fn.init);
