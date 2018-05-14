@@ -1,9 +1,11 @@
-.Informacion, .entrada_texto{
+.entrada_texto{
     color: black !important;
     font-family: fantasy;        
 }
-table > tbody tr td{
-  font-family: fantasy;    
+
+.texto_informativo{
+color:green !important;; 
+font: bold;
 }
 
 #imagenita{
@@ -11,6 +13,3 @@ text-align: center;
 
 }
 
-.inline{
-	display: inline;
-}

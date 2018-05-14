@@ -184,6 +184,12 @@ var fn = {
         }
     },
     Registrar_trampas : function(){
+        $("#DESCRIPCION_PLANTA").text("");
+        $("#DIRECCION_PLANTA").text("");
+        $("#DESCRIPCION_TIPO_TRAMPA").text("");
+        $("#DESCRIPCION_CONTROL_TRAMPA").text("");
+        $("#UBICACION").text("");
+        $("#txt_id_trampa").val(""); 
         window.location.href = '#Busqueda_por_id_de_trampa'; 
     }
 };
