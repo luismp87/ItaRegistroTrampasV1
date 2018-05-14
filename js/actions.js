@@ -27,6 +27,8 @@ var fn = {
         $('#BtnManto_catalogos').tap(fn.Manto_catalogos);
         $('#BtnLeerCodigo').tap(fn.LeerCodigo);
         $('#BtnBuscar_info_trampa').tap(fn.Buscar_info_trampa);
+        $('#BtnRegistrar_trampas').tap(fn.Registrar_trampas);
+        
         
         
                    
@@ -175,6 +177,9 @@ var fn = {
     },
     Buscar_info_trampa : function(){
        Buscar_info_trampa(); 
+    },
+    Registrar_trampas : function(){
+        window.location.href = '#Busqueda_por_id_de_trampa'; 
     }
 };
 //$(fn.init);
