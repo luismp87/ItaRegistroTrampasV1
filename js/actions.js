@@ -209,10 +209,11 @@ var fn = {
         {
             window.location.href = '#Trampa_tipo_LUZ_NEGRA'; 
         }
-        else if((tipo_trampa == '3' || tipo_trampa == '5'))
+        else if((tipo_trampa == '3') || (tipo_trampa == '5'))
         {
             window.location.href = '#Trampa_tipo_MECANICA'; 
         }
+        navigator.notification.alert("paso los ifs TIPO_TRAMPA: " + tipo_trampa,null,"Mensaje desarrollo","Aceptar"); 
     }
 };
 //$(fn.init);
