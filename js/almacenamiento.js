@@ -206,10 +206,9 @@ var almacen = {
 
 	},
 									leerinformacionTRAMPA: function(tx){
-	navigator.notification.alert("leerinformacionTRAMPA",null,"Mensaje desarrollo","Aceptar");     
 
 									tx.executeSql("SELECT descripcion_planta,descripcion_tipo_trampa,descripcion_control_trampa,ubicacion FROM trampas where upper(id_trampa) = upper('" +$('#txt_id_trampa').val()+ "')", [], function(tx2, t){
-									var encontroEXT = 0;
+									var encontroTRAMPA = 0;
 											for(i = 0; i < t.rows.length; i++){
 									encontroTRAMPA= 1;
 									navigator.vibrate(500);

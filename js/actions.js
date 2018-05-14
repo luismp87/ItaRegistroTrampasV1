@@ -173,8 +173,6 @@ var fn = {
         },    
     Buscar_info_trampa : function(){
         var id = $('#txt_id_trampa').val();  
-        navigator.notification.alert("entro",null,"Mensaje desarrollo","Aceptar");     
-navigator.notification.alert("id: " + id,null,"Mensaje desarrollo","Aceptar");     
     
         if(id != ''){   
             $.mobile.loading("show",{theme: 'b'});
