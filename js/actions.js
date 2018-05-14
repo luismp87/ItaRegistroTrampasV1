@@ -163,7 +163,8 @@ var fn = {
 
         },
     consulta_info_trampa : function(){   
-        
+    navigator.notification.alert("entro a consulta_info_trampa",null,"Mensaje desarrollo","Aceptar");       
+
     navigator.notification.alert("txt_id_trampa: " + $('#txt_id_trampa').val(),null,"Mensaje desarrollo","Aceptar");       
     var id = $('#txt_id_trampa').val();    
     navigator.notification.alert("id: " + id,null,"Mensaje desarrollo","Aceptar");     
@@ -176,7 +177,6 @@ var fn = {
         }
         else{
             navigator.notification.alert("Ingrese el ID de la trampa",null,"Error al Ingresar","Aceptar");
-            //alert("Ingrese el ID del extintor");
         }   
     },
     Buscar_info_trampa : function(){
