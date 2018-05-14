@@ -87,6 +87,8 @@ var fn = {
     },
     estaRegistrado: function(){
         var usr = window.localStorage.getItem("usuario");
+        navigator.notification.alert("var usr" + usr,null,"Mensaje desarrollo","Aceptar");     
+
         if(usr == undefined || usr == '' || usr == null)
         {
             return false;
