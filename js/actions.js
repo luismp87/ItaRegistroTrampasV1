@@ -199,26 +199,32 @@ var fn = {
 
         if(tipo_trampa == "1")
         {
+            navigator.notification.alert("1",null,"Mensaje desarrollo","Aceptar"); 
             window.location.href = '#Trampa_tipo_CEBO'; 
         }
         else if(tipo_trampa == "4")
         {
+            navigator.notification.alert("4",null,"Mensaje desarrollo","Aceptar"); 
             window.location.href = '#Trampa_tipo_CEBO'; 
         }
         else if(tipo_trampa == "2")
         {
+            navigator.notification.alert("2",null,"Mensaje desarrollo","Aceptar"); 
             window.location.href = '#Trampa_tipo_GOMA'; 
         }
         else if(tipo_trampa == "6")
         {
+            navigator.notification.alert("6",null,"Mensaje desarrollo","Aceptar"); 
             window.location.href = '#Trampa_tipo_LUZ_NEGRA'; 
         }
         else if(tipo_trampa == "3")
         {
+            navigator.notification.alert("3",null,"Mensaje desarrollo","Aceptar"); 
             window.location.href = '#Trampa_tipo_MECANICA'; 
         }
         else if(tipo_trampa == "5")
         {
+            navigator.notification.alert("5",null,"Mensaje desarrollo","Aceptar"); 
             window.location.href = '#Trampa_tipo_MECANICA'; 
         }
         else
