@@ -197,7 +197,7 @@ var fn = {
         var tipo_trampa = $('#TIPO_TRAMPA').text();
         navigator.notification.alert("TIPO_TRAMPA: " + tipo_trampa,null,"Mensaje desarrollo","Aceptar");     
 
-        if(tipo_trampa == '1' || tipo_trampa == '4')
+        if((tipo_trampa == '1') || (tipo_trampa == '4'))
         {
             window.location.href = '#Trampa_tipo_CEBO'; 
         }
@@ -209,7 +209,7 @@ var fn = {
         {
             window.location.href = '#Trampa_tipo_LUZ_NEGRA'; 
         }
-        else if(tipo_trampa == '3' || tipo_trampa == '5')
+        else if((tipo_trampa == '3' || tipo_trampa == '5'))
         {
             window.location.href = '#Trampa_tipo_MECANICA'; 
         }
