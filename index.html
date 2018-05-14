@@ -14,9 +14,10 @@
                                 <div data-role="main" class="ui-content">
                                     <div data-role="controlgroup" data-type="vertical">
                                       <p><b>Seleccione una opcion:</b></p>
-                                      <a id="BtnRegistrar_trampas" href="" class="ui-btn">Registrar Trampa</a>
-                                      <a id="BtnManto_catalogos" class="ui-btn">Manto. Catalogos</a>
-                                      <a id="Migrar_a_servidor" class="ui-btn">Migrar Info. A Server</a>
+                                      <a id="BtnRegistrar_trampas" href="" class="ui-btn ui-icon-search ui-btn-icon-left">Registrar Trampa</a>
+                                      <br>
+                                      <a id="BtnManto_catalogos" class="ui-btn ui-icon-alert ui-btn-icon-left">Manto. Catalogos</a>
+                                      <a id="Migrar_a_servidor" class="ui-btn ui-icon-alert ui-btn-icon-left">Migrar Info. A Server</a>
                                     </div>
                                 </div>
                                 <div data-role="footer" data-position="fixed">    
@@ -38,15 +39,15 @@
                                 <table>
                                 <tr>
                                     <td><b class="etiquetaverde">Usuario:</b></td>
-                                    <td><input type="text" class="entrada_texto" id="txtusuario" placeholder="Nombre Usuario" value=""></td>
+                                    <td><input type="text" class="texto_informativo" id="txtusuario" placeholder="Nombre Usuario" value=""></td>
                                 </tr>
                                 <tr>
                                     <td><b class="etiquetaverde">Contraseña:</b></td>
-                                    <td><input type="password" class="entrada_texto" id="txtcontrasena" placeholder="Contraseña" value=""></td>
+                                    <td><input type="password" class="texto_informativo" id="txtcontrasena" placeholder="Contraseña" value=""></td>
                                 </tr>
                                                                 <tr>
                                     <td><b class="etiquetaverde">Numero de empleado que realiza:</b></td>
-                                    <td><input type="number" class="entrada_texto" id="txtnumero_Empleado_Que_Revisa" placeholder="# Empleado" value=""></td>
+                                    <td><input type="number" class="texto_informativo" id="txtnumero_Empleado_Que_Revisa" placeholder="# Empleado" value=""></td>
                                 </tr>
                                  <tr>       
                                     <td colspan="2"><input type="submit" class="btnverde" value="Autentificar"  id="btnautentificar">                                
@@ -62,7 +63,7 @@
                                <div data-role="main" class="ui-content">
                                 <div class="ui-field-contain">
                                 <label><b>Trampas:</b></label>
-                                <input type="text" id="Num_trampas_en_local" name="" readonly>
+                                <input type="text" class="texto_informativo" id="Num_trampas_en_local" name="" readonly>
                                 </div>
                                 
 
@@ -84,16 +85,22 @@
                                <div data-role="main" class="ui-content">
                                 <div class="ui-field-contain">
                                 
-                                <input type="text" class="entrada_texto" id="txt_id_trampa" placeholder="ID de la trampa">
+                                <input type="text" class="texto_informativo" id="txt_id_trampa" placeholder="ID de la trampa">
                                 
                                 <a id="BtnLeerCodigo" href="#" class="ui-btn ui-icon-search ui-btn-icon-left">Leer desde C.B</a>    
 
                                 <a id="BtnBuscar_info_trampa" href="#" class="ui-btn ui-icon-search ui-btn-icon-left">Buscar</a>     
 
                                 <label><b>Planta: </b><span id="DESCRIPCION_PLANTA" class="texto_informativo"></span></label> 
+                                <br>
                                 <label><b>Dirección: </b><span id="DIRECCION_PLANTA" class="texto_informativo"></span></label>
-                                <label><b>Tipo de trampa: </b><span id="DESCRIPCION_TIPO_TRAMPA" class="texto_informativo"></span></label>
+                                <br>
+                                <label><b>Número de tipo de trampa: </b><span id="DESCRIPCION_TIPO_TRAMPA" class="texto_informativo"></span></label>
+                                <br>
+                                <label><b>Descripción ipo de trampa: </b><span id="DESCRIPCION_TIPO_TRAMPA" class="texto_informativo"></span></label>
+                                <br>
                                 <label><b>Control de trampa: </b><span id="DESCRIPCION_CONTROL_TRAMPA" class="texto_informativo"></span></label> 
+                                <br>
                                 <label><b>Ubicación: </b><span id="UBICACION" class="texto_informativo"></span></label> 
 
 
@@ -101,6 +108,38 @@
                                 </div>
 </div>    
 
+<!--CEBOS-->
+<div data-role="page" id="Trampa_tipo_CEBO">
+                               <div data-role="header"><h2>Status de la trampa</h2></div> 
+                               <div data-role="main" class="ui-content">
+                               <div class="ui-field-contain">
+                               </div>
+                               </div>
+</div>
+<!--GOMAS-->
+<div data-role="page" id="Trampa_tipo_GOMA">
+                               <div data-role="header"><h2>Status de la trampa</h2></div> 
+                               <div data-role="main" class="ui-content">
+                               <div class="ui-field-contain">
+                               </div>
+                               </div>
+</div>
+<!--LUZ NEGRA-->
+<div data-role="page" id="Trampa_tipo_LUZ_NEGRA">
+                               <div data-role="header"><h2>Status de la trampa</h2></div> 
+                               <div data-role="main" class="ui-content">
+                               <div class="ui-field-contain">
+                               </div>
+                               </div>
+</div>
+<!--MECANICA-->
+<div data-role="page" id="Trampa_tipo_MECANICA">
+                               <div data-role="header"><h2>Status de la trampa</h2></div> 
+                               <div data-role="main" class="ui-content">
+                               <div class="ui-field-contain">
+                               </div>
+                               </div>
+</div>
 
 
 <script src="phonegap.js"></script>

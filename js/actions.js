@@ -186,6 +186,7 @@ var fn = {
     Registrar_trampas : function(){
         $("#DESCRIPCION_PLANTA").text("");
         $("#DIRECCION_PLANTA").text("");
+        $("#TIPO_TRAMPA").text("");
         $("#DESCRIPCION_TIPO_TRAMPA").text("");
         $("#DESCRIPCION_CONTROL_TRAMPA").text("");
         $("#UBICACION").text("");
