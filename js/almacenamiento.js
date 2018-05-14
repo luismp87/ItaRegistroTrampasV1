@@ -197,5 +197,44 @@ var almacen = {
 		},
 									EliminarTrampas: function(tx){
 									tx.executeSql("DELETE FROM trampas");
+	},
+/*FUNCION PARA LEER EN BASE DE DATOS DEL CELULAR*/
+		LeerInformacionTRAMPA: function(tx){
+			almacen.db = window.openDatabase("ItaSHRT","1.0","ItaSHRT Storage",20000);
+			almacen.db.transaction(almacen.CreaSINOExisteTrampas, almacen.error, null);
+			almacen.db.transaction(almacen.leerinformacionTRAMPA, almacen.error, null);
+
+	},
+									leerinformacionTRAMPA: function(tx){
+										
+									tx.executeSql("SELECT descripcion_planta,descripcion_tipo_trampa,descripcion_control_trampa,ubicacion FROM trampas where upper(id_trampa) = upper('" +$('#txt_id_trampa').val()+ "')", [], function(tx2, t){
+									var encontroEXT = 0;
+											for(i = 0; i < t.rows.length; i++){
+									encontroTRAMPA= 1;
+									navigator.vibrate(500);
+									navigator.notification.beep(1)
+									$("#DESCRIPCION_PLANTA").text(t.rows.item(i).descripcion_planta);
+									$("#DESCRIPCION_TIPO_TRAMPA").text(t.rows.item(i).descripcion_tipo_trampa);
+		                            $("#DESCRIPCION_CONTROL_TRAMPA").text(t.rows.item(i).descripcion_control_trampa);
+		                            $("#UBICACION").text(t.rows.item(i).ubicacion);
+                                          
+										
+
+												/*navigator.notification.confirm("Personas: " + t.rows.item(i).pr + "\n"
+																			   + "Días: " + t.rows.item(i).di + "\n"
+																			   + "Tipo de Habitación: " + t.rows.item(i).th,
+																			  function(btn){
+																				  if(btn == 1) navigator.vibrate(500);
+																				  if(btn == 2) navigator.notification.beep(1);
+																			  }, "Tabla Reservas","Vibrar,Sonar,Cancelar");*/
+												//server.sincronizar(t.rows.item(i).pr,t.rows.item(i).di,t.rows.item(i).th);
+												//alert("id_ext: " + t.rows.item(i).id_ext);
+												//navigator.notification.alert("ubicacion: " + t.rows.item(i).id_ext, null, "Correcto", "Aceptar");
+											}
+									if(encontroTRAMPA == 0)
+									{
+										navigator.notification.alert("Sin resultados verifique el ID del Extintor", null, "Advertencia", "Aceptar");
+									}
+										});	
 	}										
 }																		

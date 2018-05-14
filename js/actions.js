@@ -27,6 +27,10 @@ var fn = {
         $('#BtnMigrar_trampas_a_celular').tap(fn.Migrar_trampas_a_celular);
         $('#BtnEliminar_trampas_de_celular').tap(fn.Eliminar_trampas_de_celular);
         $('#BtnManto_catalogos').tap(fn.Manto_catalogos);
+        $('#BtnLeerCodigo').tap(fn.LeerCodigo);
+        $('#BtnBuscar_info_trampa').tap(fn.Buscar_info_trampa);
+        
+        
                    
         
         //PARA MOVIL
@@ -137,7 +141,6 @@ var fn = {
                     {
                        navigator.notification.alert("Se tienen registros en la base de datos, antes eliminelos",null,"Advertencia","Aceptar");    
                     }
-
     },
         Eliminar_trampas_de_celular : function(){
             almacen.eliminarTrampas();            
@@ -147,8 +150,35 @@ var fn = {
         Manto_catalogos : function(){
             almacen.leerTrampa();    
             window.location.href = '#Opcion_manto_catalogos';         
-        }
+        },
+        LeerCodigo: function(){
+        cordova.plugins.barcodeScanner.scan(
+          function (result) {             
+                            $("#txt_id_trampa").val("" + result.text); 
+                            Buscar_info_trampa();
+          }, 
+          function (error) {
+              navigator.notification.alert("Scanning failed: " + error,null,"Error","Aceptar");
+              //alert("Scanning failed: " + error);
+          }
+       );
 
+        },
+    Buscar_info_trampa : function(){         
+        var id = $('#txt_id_trampa').val();      
+        if(id != ''){   
+            $.mobile.loading("show",{theme: 'b'});
+            almacen.LeerInformacionTRAMPA();
+            $.mobile.loading("hide");
+        }
+        else{
+            navigator.notification.alert("Ingrese el ID de la trampa",null,"Error al Ingresar","Aceptar");
+            //alert("Ingrese el ID del extintor");
+        }   
+    },
+    Buscar_info_trampa : function(){
+       Buscar_info_trampa(); 
+    }
 };
 //$(fn.init);
 $(fn.ready);
