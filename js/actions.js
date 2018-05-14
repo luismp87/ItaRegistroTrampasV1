@@ -93,7 +93,7 @@ var fn = {
         var usr = window.localStorage.getItem("usuario");
 
         navigator.notification.alert("var usr: " + usr,null,"Mensaje desarrollo","Aceptar");     
-        
+
         if(usr == undefined || usr == '' || usr == null)
         {
             return false;
@@ -156,7 +156,7 @@ var fn = {
         cordova.plugins.barcodeScanner.scan(
           function (result) {             
                             $("#txt_id_trampa").val("" + result.text); 
-                            Buscar_info_trampa();
+                            consulta_info_trampa();
           }, 
           function (error) {
               navigator.notification.alert("Scanning failed: " + error,null,"Error","Aceptar");
@@ -165,7 +165,7 @@ var fn = {
        );
 
         },
-    Buscar_info_trampa : function(){         
+    consulta_info_trampa : function(){         
         var id = $('#txt_id_trampa').val();      
         if(id != ''){   
             $.mobile.loading("show",{theme: 'b'});
@@ -178,7 +178,7 @@ var fn = {
         }   
     },
     Buscar_info_trampa : function(){
-       Buscar_info_trampa(); 
+       consulta_info_trampa(); 
     },
     Registrar_trampas : function(){
         window.location.href = '#Busqueda_por_id_de_trampa'; 
