@@ -9,7 +9,9 @@ var fn = {
         fn.btnMigrarUsuarios();  
         }
         
- 
+        navigator.notification.alert("verifica variable" + fn.estaRegistrado(),null,"Mensaje desarrollo","Aceptar");     
+        
+
         if(fn.estaRegistrado() == false)
         {
         window.location.href = '#login';      
