@@ -89,9 +89,11 @@ var fn = {
             //alert("Ingrese los datos requeridos");///*PARAWEB
         }   
     },
-    estaRegistrado: function(){
+    estaRegistrado: function(){        
         var usr = window.localStorage.getItem("usuario");
 
+        navigator.notification.alert("var usr: " + usr,null,"Mensaje desarrollo","Aceptar");     
+        
         if(usr == undefined || usr == '' || usr == null)
         {
             return false;
