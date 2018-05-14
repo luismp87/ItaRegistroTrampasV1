@@ -194,7 +194,9 @@ var fn = {
         window.location.href = '#Busqueda_por_id_de_trampa'; 
     },
     Captura: function(){
-        var tipo_trampa = $('#TIPO_TRAMPA').val();
+        var tipo_trampa = $('#TIPO_TRAMPA').text();
+        navigator.notification.alert("TIPO_TRAMPA: " + tipo_trampa,null,"Mensaje desarrollo","Aceptar");     
+
         if(tipo_trampa == '1' || tipo_trampa == '4')
         {
             window.location.href = '#Trampa_tipo_CEBO'; 
