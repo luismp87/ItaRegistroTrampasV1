@@ -197,22 +197,35 @@ var fn = {
         var tipo_trampa = $('#TIPO_TRAMPA').text();
         navigator.notification.alert("TIPO_TRAMPA: '" + tipo_trampa+"'",null,"Mensaje desarrollo","Aceptar");     
 
-        if((tipo_trampa == 1) || (tipo_trampa == 4))
+        if(tipo_trampa == "1")
         {
             window.location.href = '#Trampa_tipo_CEBO'; 
         }
-        if(tipo_trampa == 2)
+        else if(tipo_trampa == "4")
+        {
+            window.location.href = '#Trampa_tipo_CEBO'; 
+        }
+        else if(tipo_trampa == "2")
         {
             window.location.href = '#Trampa_tipo_GOMA'; 
         }
-        if(tipo_trampa == 6)
+        else if(tipo_trampa == "6")
         {
             window.location.href = '#Trampa_tipo_LUZ_NEGRA'; 
         }
-        if((tipo_trampa == 3) || (tipo_trampa == 5))
+        else if(tipo_trampa == "3")
         {
             window.location.href = '#Trampa_tipo_MECANICA'; 
         }
+        else if(tipo_trampa == "5")
+        {
+            window.location.href = '#Trampa_tipo_MECANICA'; 
+        }
+        else
+        {
+            navigator.notification.alert("No entro a ninguno",null,"Mensaje desarrollo","Aceptar"); 
+        }
+        
         navigator.notification.alert("paso los ifs TIPO_TRAMPA: '" + tipo_trampa + "'",null,"Mensaje desarrollo","Aceptar"); 
     }
 };
