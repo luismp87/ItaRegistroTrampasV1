@@ -197,36 +197,36 @@ var fn = {
     },
     Captura: function(){
         var tipo_trampa = $('#TIPO_TRAMPA').text();
-        navigator.notification.alert("TIPO_TRAMPA: '" + tipo_trampa+"'",null,"Mensaje desarrollo","Aceptar");     
 
         if(tipo_trampa == "1")
         {
-            navigator.notification.alert("1",null,"Mensaje desarrollo","Aceptar"); 
-            window.location.href = '#Trampa_tipo_CEBO'; 
+            window.location.href = '#Trampa_tipo_CEBO';
+            $("#cebo_in_consumo").val("0").change();
+            $("#cebo_in_cambio").val("NO").change();
+            $("#cebo_in_estado_EDC").val("BUEN ESTADO").change();
+            $("#cebo_in_localizador").val("NO").change();
+            $("#cebo_in_registro").val("NO").change();
+            $("#txt_cebo_notas").val("");
+             
         }
         else if(tipo_trampa == "4")
         {
-            navigator.notification.alert("4",null,"Mensaje desarrollo","Aceptar"); 
             window.location.href = '#Trampa_tipo_CEBO'; 
         }
         else if(tipo_trampa == "2")
         {
-            navigator.notification.alert("2",null,"Mensaje desarrollo","Aceptar"); 
             window.location.href = '#Trampa_tipo_GOMA'; 
         }
         else if(tipo_trampa == "6")
         {
-            navigator.notification.alert("6",null,"Mensaje desarrollo","Aceptar"); 
             window.location.href = '#Trampa_tipo_LUZ_NEGRA'; 
         }
         else if(tipo_trampa == "3")
         {
-            navigator.notification.alert("3",null,"Mensaje desarrollo","Aceptar"); 
             window.location.href = '#Trampa_tipo_MECANICA'; 
         }
         else if(tipo_trampa == "5")
         {
-            navigator.notification.alert("5",null,"Mensaje desarrollo","Aceptar"); 
             window.location.href = '#Trampa_tipo_MECANICA'; 
         }
         else
@@ -234,7 +234,6 @@ var fn = {
             navigator.notification.alert("No entro a ninguno",null,"Mensaje desarrollo","Aceptar"); 
         }
         
-        navigator.notification.alert("paso los ifs TIPO_TRAMPA: '" + tipo_trampa + "'",null,"Mensaje desarrollo","Aceptar"); 
     },
     cebo_CancelarRegistro: function(){
         $("#DESCRIPCION_PLANTA").text("");
