@@ -207,13 +207,14 @@ var almacen = {
 	},
 									leerinformacionTRAMPA: function(tx){
 
-									tx.executeSql("SELECT descripcion_planta,direccion_planta,descripcion_tipo_trampa,tipo_trampa,descripcion_control_trampa,ubicacion,cinturon,control FROM trampas where upper(id_trampa) = upper('" +$('#txt_id_trampa').val()+ "')", [], function(tx2, t){
+									tx.executeSql("SELECT descripcion_planta,direccion_planta,descripcion_tipo_trampa,tipo_trampa,descripcion_control_trampa,ubicacion,cinturon,control,planta FROM trampas where upper(id_trampa) = upper('" +$('#txt_id_trampa').val()+ "')", [], function(tx2, t){
 									var encontroTRAMPA = 0;
 											for(i = 0; i < t.rows.length; i++){
 									encontroTRAMPA= 1;
 									navigator.vibrate(500);
 									navigator.notification.beep(1)
-									$("#DESCRIPCION_PLANTA").text(t.rows.item(i).descripcion_planta);
+									$("#CODIGO_PLANTA").text("");
+									$("#DESCRIPCION_PLANTA").text(t.rows.item(i).planta);
 									$("#DIRECCION_PLANTA").text(t.rows.item(i).direccion_planta);
 									$("#TIPO_TRAMPA").text(t.rows.item(i).tipo_trampa);
 									$("#CONTROL_TRAMPA").text(t.rows.item(i).control);
