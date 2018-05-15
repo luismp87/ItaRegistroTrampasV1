@@ -213,8 +213,8 @@ var almacen = {
 									encontroTRAMPA= 1;
 									navigator.vibrate(500);
 									navigator.notification.beep(1)
-									$("#CODIGO_PLANTA").text("");
-									$("#DESCRIPCION_PLANTA").text(t.rows.item(i).planta);
+									$("#CODIGO_PLANTA").text(t.rows.item(i).planta);
+									$("#DESCRIPCION_PLANTA").text(t.rows.item(i).direccion_planta);
 									$("#DIRECCION_PLANTA").text(t.rows.item(i).direccion_planta);
 									$("#TIPO_TRAMPA").text(t.rows.item(i).tipo_trampa);
 									$("#CONTROL_TRAMPA").text(t.rows.item(i).control);
