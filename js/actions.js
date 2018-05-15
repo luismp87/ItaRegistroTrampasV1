@@ -30,11 +30,9 @@ var fn = {
         $('#BtnRegistrar_trampas').tap(fn.Registrar_trampas);
         $('#BtnCaptura').tap(fn.Captura);
         $('#Btn_cebo_CancelarRegistro').tap(fn.cebo_CancelarRegistro);
-        
+        $('#Btn_cebo_GuardarRegistro').tap(fn.cebo_GuardarRegistro);
 
-        
-    
-        
+           
         //PARA MOVIL
          document.addEventListener("online", almacen.leerinformacionregistrada_en_movil, false);
         ////////////
@@ -202,10 +200,10 @@ var fn = {
         {
             window.location.href = '#Trampa_tipo_CEBO';
             $("#cebo_in_consumo").val("0").change();
-            $("#cebo_in_cambio").val("NO").change();
-            $("#cebo_in_estado_EDC").val("BUEN ESTADO").change();
-            $("#cebo_in_localizador").val("NO").change();
-            $("#cebo_in_registro").val("NO").change();
+            $("#cebo_in_cambio").val("0").change();
+            $("#cebo_in_estado_EDC").val("1").change();
+            $("#cebo_in_localizador").val("N").change();
+            $("#cebo_in_registro").val("N").change();
             $("#txt_cebo_notas").val("");
              
         }
@@ -244,6 +242,9 @@ var fn = {
         $("#UBICACION").text("");
         $("#txt_id_trampa").val(""); 
          window.location.href = '#Busqueda_por_id_de_trampa';
+    },
+    cebo_GuardarRegistro: function(){
+
     }
 };
 //$(fn.init);
