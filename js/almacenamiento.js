@@ -207,7 +207,7 @@ var almacen = {
 	},
 									leerinformacionTRAMPA: function(tx){
 
-									tx.executeSql("SELECT descripcion_planta,direccion_planta,descripcion_tipo_trampa,tipo_trampa,descripcion_control_trampa,ubicacion FROM trampas where upper(id_trampa) = upper('" +$('#txt_id_trampa').val()+ "')", [], function(tx2, t){
+									tx.executeSql("SELECT descripcion_planta,direccion_planta,descripcion_tipo_trampa,tipo_trampa,descripcion_control_trampa,ubicacion,cinturon,control FROM trampas where upper(id_trampa) = upper('" +$('#txt_id_trampa').val()+ "')", [], function(tx2, t){
 									var encontroTRAMPA = 0;
 											for(i = 0; i < t.rows.length; i++){
 									encontroTRAMPA= 1;
@@ -216,6 +216,8 @@ var almacen = {
 									$("#DESCRIPCION_PLANTA").text(t.rows.item(i).descripcion_planta);
 									$("#DIRECCION_PLANTA").text(t.rows.item(i).direccion_planta);
 									$("#TIPO_TRAMPA").text(t.rows.item(i).tipo_trampa);
+									$("#CONTROL_TRAMPA").text(t.rows.item(i).control);
+									$("#CINTURON").text(t.rows.item(i).cinturon);
 									$("#DESCRIPCION_TIPO_TRAMPA").text(t.rows.item(i).descripcion_tipo_trampa);
 		                            $("#DESCRIPCION_CONTROL_TRAMPA").text(t.rows.item(i).descripcion_control_trampa);
 		                            $("#UBICACION").text(t.rows.item(i).ubicacion);

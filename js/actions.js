@@ -187,6 +187,8 @@ var fn = {
         $("#DESCRIPCION_PLANTA").text("");
         $("#DIRECCION_PLANTA").text("");
         $("#TIPO_TRAMPA").text("");
+        $("#CONTROL_TRAMPA").text("");
+        $("#CINTURON").text("");
         $("#DESCRIPCION_TIPO_TRAMPA").text("");
         $("#DESCRIPCION_CONTROL_TRAMPA").text("");
         $("#UBICACION").text("");
@@ -204,7 +206,7 @@ var fn = {
             $("#cebo_in_estado_EDC").val("1").change();
             $("#cebo_in_localizador").val("N").change();
             $("#cebo_in_registro").val("N").change();
-            $("#txt_cebo_notas").val("");
+            $("#cebo_notas").val("");
              
         }
         else if(tipo_trampa == "4")
@@ -237,6 +239,8 @@ var fn = {
         $("#DESCRIPCION_PLANTA").text("");
         $("#DIRECCION_PLANTA").text("");
         $("#TIPO_TRAMPA").text("");
+        $("#CONTROL_TRAMPA").text("");
+        $("#CINTURON").text("");
         $("#DESCRIPCION_TIPO_TRAMPA").text("");
         $("#DESCRIPCION_CONTROL_TRAMPA").text("");
         $("#UBICACION").text("");
