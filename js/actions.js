@@ -184,6 +184,7 @@ var fn = {
         }
     },
     Registrar_trampas : function(){
+        $("#CODIGO_PLANTA").text("");
         $("#DESCRIPCION_PLANTA").text("");
         $("#DIRECCION_PLANTA").text("");
         $("#TIPO_TRAMPA").text("");
@@ -236,6 +237,8 @@ var fn = {
         
     },
     cebo_CancelarRegistro: function(){
+        
+        $("#CODIGO_PLANTA").text("");
         $("#DESCRIPCION_PLANTA").text("");
         $("#DIRECCION_PLANTA").text("");
         $("#TIPO_TRAMPA").text("");
@@ -248,6 +251,24 @@ var fn = {
          window.location.href = '#Busqueda_por_id_de_trampa';
     },
     cebo_GuardarRegistro: function(){
+        /*fn.SYS_DATE
+        fn.USUARIO = window.localStorage.getItem("usuario");
+        fn.PLANTA
+        fn.ID_TRAMPA
+        fn.CONTROL_TRAMPA
+        fn.NOTAS
+        fn.CINTURON
+        fn.RESPONSABLEAUT
+        fn.FOLIO
+        fn.CAPTURA
+        fn.FECHAAUT
+        fn.CEB_CAMBIO
+        fn.CEB_EDC
+        fn.CEB_LOCALIZADOR
+        fn.CEB_REGISTRO*/
+
+
+
 
     }
 };
