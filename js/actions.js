@@ -29,6 +29,8 @@ var fn = {
         $('#BtnBuscar_info_trampa').tap(fn.Buscar_info_trampa);
         $('#BtnRegistrar_trampas').tap(fn.Registrar_trampas);
         $('#BtnCaptura').tap(fn.Captura);
+        $('#Btn_cebo_CancelarRegistro').tap(fn.cebo_CancelarRegistro);
+        
 
         
     
@@ -233,6 +235,16 @@ var fn = {
         }
         
         navigator.notification.alert("paso los ifs TIPO_TRAMPA: '" + tipo_trampa + "'",null,"Mensaje desarrollo","Aceptar"); 
+    },
+    cebo_CancelarRegistro: function(){
+        $("#DESCRIPCION_PLANTA").text("");
+        $("#DIRECCION_PLANTA").text("");
+        $("#TIPO_TRAMPA").text("");
+        $("#DESCRIPCION_TIPO_TRAMPA").text("");
+        $("#DESCRIPCION_CONTROL_TRAMPA").text("");
+        $("#UBICACION").text("");
+        $("#txt_id_trampa").val(""); 
+         window.location.href = '#Busqueda_por_id_de_trampa';
     }
 };
 //$(fn.init);
