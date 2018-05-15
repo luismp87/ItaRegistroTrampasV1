@@ -251,6 +251,9 @@ var fn = {
          window.location.href = '#Busqueda_por_id_de_trampa';
     },
     cebo_GuardarRegistro: function(){
+
+        var DATOS = "";
+
         var d = new Date();
 
         fn.SYS_DATE = d.getDate() + "/" + (d.getMonth() +1) + "/" + d.getFullYear() + ' '+d.getHours() + ':'+d.getMinutes() +':'+d.getSeconds();     
@@ -269,22 +272,21 @@ var fn = {
         fn.CEB_LOCALIZADOR = $('#cebo_in_localizador').val();
         fn.CEB_REGISTRO = $('#cebo_in_registro').val();
 
-        navigator.notification.alert("fn.SYS_DATE " + fn.SYS_DATE,null,"Mensaje desarrollo","Aceptar"); 
-        navigator.notification.alert("fn.USUARIO " + fn.USUARIO,null,"Mensaje desarrollo","Aceptar"); 
-        navigator.notification.alert("fn.PLANTA " + fn.PLANTA,null,"Mensaje desarrollo","Aceptar"); 
-        navigator.notification.alert("fn.ID_TRAMPA " + fn.ID_TRAMPA,null,"Mensaje desarrollo","Aceptar"); 
-        navigator.notification.alert("fn.CONTROL_TRAMPA " + fn.CONTROL_TRAMPA,null,"Mensaje desarrollo","Aceptar"); 
-        navigator.notification.alert("fn.NOTAS " + fn.NOTAS,null,"Mensaje desarrollo","Aceptar"); 
-        navigator.notification.alert("fn.CINTURON " + fn.CINTURON,null,"Mensaje desarrollo","Aceptar"); 
-        navigator.notification.alert("fn.RESPONSABLEAUT " + fn.RESPONSABLEAUT,null,"Mensaje desarrollo","Aceptar"); 
-        navigator.notification.alert("fn.FOLIO " + fn.FOLIO,null,"Mensaje desarrollo","Aceptar"); 
-        navigator.notification.alert("fn.CAPTURA " + fn.CAPTURA,null,"Mensaje desarrollo","Aceptar"); 
-        navigator.notification.alert("fn.FECHAAUT " + fn.FECHAAUT,null,"Mensaje desarrollo","Aceptar"); 
-        navigator.notification.alert("fn.CEB_CAMBIO " + fn.CEB_CAMBIO,null,"Mensaje desarrollo","Aceptar");   
-        navigator.notification.alert("fn.CEB_EDC " + fn.CEB_EDC,null,"Mensaje desarrollo","Aceptar");   
-        navigator.notification.alert("fn.CEB_LOCALIZADOR " + fn.CEB_LOCALIZADOR,null,"Mensaje desarrollo","Aceptar");   
-        navigator.notification.alert("fn.CEB_REGISTRO " + fn.CEB_REGISTRO,null,"Mensaje desarrollo","Aceptar");   
-          
+        DATOS = "['CEBO',"+fn.SYS_DATE+"','"+fn.USUARIO+"','"+fn.PLANTA+"','"+fn.ID_TRAMPA+"','"+fn.CONTROL_TRAMPA+"','"+fn.NOTAS+"','"+fn.CINTURON+"','"+fn.RESPONSABLEAUT+"','"+fn.FOLIO+"','"+fn.CAPTURA+"','"+fn.FECHAAUT+"','"+fn.CEB_CAMBIO+"','"+fn.CEB_EDC+"','"+fn.CEB_LOCALIZADOR+"','"+fn.CEB_REGISTRO+"']";
+
+        navigator.notification.alert(""+DATOS,null,"Mensaje desarrollo","Aceptar");     
+
+
+        if(navigator.connection.type != Connection.NONE)
+            {
+
+
+            }
+            else
+            {
+
+            }
+
 
 
 
