@@ -251,21 +251,41 @@ var fn = {
          window.location.href = '#Busqueda_por_id_de_trampa';
     },
     cebo_GuardarRegistro: function(){
-        /*fn.SYS_DATE
+        var d = new Date();
+
+        fn.SYS_DATE = d.getDate() + "/" + (d.getMonth() +1) + "/" + d.getFullYear() + ' '+d.getHours() + ':'+d.getMinutes() +':'+d.getSeconds();     
         fn.USUARIO = window.localStorage.getItem("usuario");
-        fn.PLANTA
-        fn.ID_TRAMPA
-        fn.CONTROL_TRAMPA
-        fn.NOTAS
-        fn.CINTURON
-        fn.RESPONSABLEAUT
-        fn.FOLIO
-        fn.CAPTURA
-        fn.FECHAAUT
-        fn.CEB_CAMBIO
-        fn.CEB_EDC
-        fn.CEB_LOCALIZADOR
-        fn.CEB_REGISTRO*/
+        fn.PLANTA = $('#CODIGO_PLANTA').text();
+        fn.ID_TRAMPA = $("#txt_id_trampa").val().toUpperCase();
+        fn.CONTROL_TRAMPA = $('#CONTROL_TRAMPA').text();
+        fn.NOTAS = $("#cebo_notas").val().toUpperCase();
+        fn.CINTURON = $('#CINTURON').text();
+        fn.RESPONSABLEAUT = "HECTORAND";
+        fn.FOLIO = "0"
+        fn.CAPTURA = $('#cebo_in_consumo').val();
+        fn.FECHAAUT = d.getDate() + "/" + (d.getMonth() +1) + "/" + d.getFullYear() + ' '+d.getHours() + ':'+d.getMinutes() +':'+d.getSeconds();     
+        fn.CEB_CAMBIO = $('#cebo_in_cambio').val();
+        fn.CEB_EDC = $('#cebo_in_estado_EDC').val();
+        fn.CEB_LOCALIZADOR = $('#cebo_in_localizador').val();
+        fn.CEB_REGISTRO = $('#cebo_in_registro').val();
+
+        navigator.notification.alert("fn.SYS_DATE " + fn.SYS_DATE,null,"Mensaje desarrollo","Aceptar"); 
+        navigator.notification.alert("fn.USUARIO " + fn.USUARIO,null,"Mensaje desarrollo","Aceptar"); 
+        navigator.notification.alert("fn.PLANTA " + fn.PLANTA,null,"Mensaje desarrollo","Aceptar"); 
+        navigator.notification.alert("fn.ID_TRAMPA " + fn.ID_TRAMPA,null,"Mensaje desarrollo","Aceptar"); 
+        navigator.notification.alert("fn.CONTROL_TRAMPA " + fn.CONTROL_TRAMPA,null,"Mensaje desarrollo","Aceptar"); 
+        navigator.notification.alert("fn.NOTAS " + fn.NOTAS,null,"Mensaje desarrollo","Aceptar"); 
+        navigator.notification.alert("fn.CINTURON " + fn.CINTURON,null,"Mensaje desarrollo","Aceptar"); 
+        navigator.notification.alert("fn.RESPONSABLEAUT " + fn.RESPONSABLEAUT,null,"Mensaje desarrollo","Aceptar"); 
+        navigator.notification.alert("fn.FOLIO " + fn.FOLIO,null,"Mensaje desarrollo","Aceptar"); 
+        navigator.notification.alert("fn.CAPTURA " + fn.CAPTURA,null,"Mensaje desarrollo","Aceptar"); 
+        navigator.notification.alert("fn.FECHAAUT " + fn.FECHAAUT,null,"Mensaje desarrollo","Aceptar"); 
+        navigator.notification.alert("fn.CEB_CAMBIO " + fn.CEB_CAMBIO,null,"Mensaje desarrollo","Aceptar");   
+        navigator.notification.alert("fn.CEB_EDC " + fn.CEB_EDC,null,"Mensaje desarrollo","Aceptar");   
+        navigator.notification.alert("fn.CEB_LOCALIZADOR " + fn.CEB_LOCALIZADOR,null,"Mensaje desarrollo","Aceptar");   
+        navigator.notification.alert("fn.CEB_REGISTRO " + fn.CEB_REGISTRO,null,"Mensaje desarrollo","Aceptar");   
+          
+
 
 
 
