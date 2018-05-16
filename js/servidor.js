@@ -16,34 +16,17 @@ sincroniza_CEBO: function(DATOS)
                         if(msg[i].valor1 == "encontro")
                             {                           
                            navigator.notification.alert("Los datos se guardaron en el servidor de forma correcta ",null,"Advertencia" ,"Aceptar");
-                           almacen.GuardarRegistro_LOCAL(server.DATOS.replace("['CEBO',", "").replace("]", ""),"sys_date,usuario,planta,id_trampa,control_trampa,notas,cinturon,responsableaut,folio,captura,fechaaut,ceb_cambio,ceb_edc,ceb_localizador,ceb_registro,num_empleado,nom_empleado");
                             }
                         else
                             {
                             navigator.notification.alert("Verifique la fecha del dispositivo no se guardo la información",null,"Error","Aceptar");   
-                            almacen.GuardarRegistro_LOCAL(server.DATOS.replace("['CEBO',", "").replace("]", ""),"sys_date,usuario,planta,id_trampa,control_trampa,notas,cinturon,responsableaut,folio,captura,fechaaut,ceb_cambio,ceb_edc,ceb_localizador,ceb_registro,num_empleado,nom_empleado");
                             }                        
                     });					
                 },
 				error: function(jq, txt){					
-                    navigator.notification.alert("Error de comunicación, se guarda la información en el dispositivo",null,"Error 785","Aceptar");
-                    			//le quito a la cadena DATOS los "['CEBO'" y "]"
-                                almacen.GuardarRegistro_LOCAL(server.DATOS.replace("['CEBO',", "").replace("]", ""),"sys_date,usuario,planta,id_trampa,control_trampa,notas,cinturon,responsableaut,folio,captura,fechaaut,ceb_cambio,ceb_edc,ceb_localizador,ceb_registro,num_empleado,nom_empleado");
-
-                                /*$("#txtitaextiV1").val("");
-                                $("#textPRESION").val("OK").change();
-                                $("#textMANOMETRO").val("OK").change();
-                                $("#textSEGUROSELLO").val("OK").change();
-                                $("#textMANGUERA").val("OK").change();
-                                $("#textSOPORTE").val("OK").change();
-                                $("#textPINTURA").val("OK").change();
-                                $("#textVALVULA").val("OK").change();
-                                $("#textCILINDRO").val("OK").change();
-                                $("#textNEMOTECNIA").val("OK").change();
-                                $("#textSENALAMIENTO").val("OK").change();
-                                $("#textGABINETE").val("OK").change();
-                                $("#textOBSERVACIONES").val("");
-                                window.location.href = '#TiposDeCaptura';*/
+                    		navigator.notification.alert("Error de comunicación, se guarda la información en el dispositivo",null,"Error 785","Aceptar");
+                    		//le quito a la cadena DATOS los "['CEBO'" y "]"
+                    		almacen.GuardarRegistro_LOCAL(server.DATOS.replace("['CEBO',", "").replace("]", ""),"sys_date,usuario,planta,id_trampa,control_trampa,notas,cinturon,responsableaut,folio,captura,fechaaut,ceb_cambio,ceb_edc,ceb_localizador,ceb_registro,num_empleado,nom_empleado");                                
 				}
 			}).done(server.sincronizado);
 
