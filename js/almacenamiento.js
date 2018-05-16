@@ -250,5 +250,11 @@ var almacen = {
 										navigator.notification.alert("Sin resultados verifique el ID del Extintor", null, "Advertencia", "Aceptar");
 									}
 										});	
+	},
+	guardarRegistro_LOCAL: function(DATOS,CAMPOS){
+
+		navigator.notification.alert("DATOS: " + DATOS,null,"Mensaje desarrollo","Aceptar");    
+		navigator.notification.alert("CAMPOS: " + CAMPOS,null,"Mensaje desarrollo","Aceptar");     
+
 	}										
 }																		
