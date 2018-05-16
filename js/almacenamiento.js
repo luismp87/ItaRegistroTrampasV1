@@ -266,17 +266,14 @@ var almacen = {
 		//navigator.notification.alert("CAMPOS: " + CAMPOS,null,"Mensaje desarrollo","Aceptar"); 
 
 			almacen.db = window.openDatabase("ItaSHRT","1.0","ItaSHRT Storage",20000);
-	        navigator.notification.alert("1",null,"Mensaje desarrollo","Aceptar"); 
 			almacen.db.transaction(almacen.CreaSINOExisteRegistro, almacen.error, null);
-			navigator.notification.alert("2",null,"Mensaje desarrollo","Aceptar"); 
 			almacen.db.transaction(almacen.guardarRegistro_LOCAL, almacen.error, almacen.GuardadoCorrectoLocaldeRegistro); 
-			navigator.notification.alert("3",null,"Mensaje desarrollo","Aceptar");    
 	},
 									guardarRegistro_LOCAL: function(tx){
 										navigator.notification.alert("DATOS: " + almacen.DATOS,null,"Mensaje desarrollo","Aceptar"); 
 										tx.executeSql("CREATE TABLE IF NOT EXISTS registro (sys_date,usuario,planta,id_trampa,control_trampa,notas,cinturon,responsableaut,folio,captura,fechaaut,ceb_cambio,ceb_edc,ceb_localizador,ceb_registro,luz_estado,luz_registro,luz_area,luz_goma,luz_mos_casera,luz_palomilla,luz_chicharrita,luz_escarabajo,luz_mosquito,luz_zancudo,luz_abeja,luz_chinche,luz_mos_drena,luz_mos_jorob,luz_mos_forid,luz_avispa,luz_total,meca_arana,meca_alemana,meca_americana,meca_grillo,meca_escarabajo,meca_mosquito,meca_raton,meca_tijerilla,meca_otros,meca_estado_edc,meca_localizador,meca_registro,goma_cam_goma,goma_arana,goma_alemana,goma_americana,goma_grillo,goma_escarabajo,goma_mosquito,goma_raton,goma_tijerilla,goma_otros,goma_estado_edc,goma_localizador,goma_registro,luz_mos_calipho,num_empleado,nom_empleado)");
-										//navigator.notification.alert("CAMPOS: " + CAMPOS,null,"Mensaje desarrollo","Aceptar"); 
-										//tx.executeSql("INSERT INTO registro ("+ CAMPOS +") VALUES ("+DATOS+")");       
+										navigator.notification.alert("CAMPOS: " + almacen.CAMPOS,null,"Mensaje desarrollo","Aceptar"); 
+										tx.executeSql("INSERT INTO registro ("+ almacen.CAMPOS +") VALUES ("+almacen.DATOS+")");       
 										//alert("- "+ almacen.usuario + " - " + almacen.fechaderegistro);
 									}										
 }																		
