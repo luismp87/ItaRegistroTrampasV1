@@ -83,8 +83,8 @@ var fn = {
         
     },
         autentificarSQL: function(){
-        var usu = $('#txtusuario').val();      
-        var con = $('#txtcontrasena').val();         
+        var usu = $('#txtusuario').val().toLowerCase();      
+        var con = $('#txtcontrasena').val().toLowerCase();         
 
         if((usu != '') || (con != '')){   
             $.mobile.loading("show",{theme: 'b'});
@@ -278,10 +278,12 @@ var fn = {
         fn.CEB_EDC = $('#cebo_in_estado_EDC').val();
         fn.CEB_LOCALIZADOR = $('#cebo_in_localizador').val();
         fn.CEB_REGISTRO = $('#cebo_in_registro').val();
+        fn.NUM_EMPLEADO = $('#Numero_empleado').text();
+        fn.NOM_EMPLEADO = $('#Nombre_empleado').text().toUpperCase();
 
-        DATOS = "['CEBO',"+fn.SYS_DATE+"','"+fn.USUARIO+"','"+fn.PLANTA+"','"+fn.ID_TRAMPA+"','"+fn.CONTROL_TRAMPA+"','"+fn.NOTAS+"','"+fn.CINTURON+"','"+fn.RESPONSABLEAUT+"','"+fn.FOLIO+"','"+fn.CAPTURA+"','"+fn.FECHAAUT+"','"+fn.CEB_CAMBIO+"','"+fn.CEB_EDC+"','"+fn.CEB_LOCALIZADOR+"','"+fn.CEB_REGISTRO+"']";
+        DATOS = "['CEBO',"+fn.SYS_DATE+"','"+fn.USUARIO+"','"+fn.PLANTA+"','"+fn.ID_TRAMPA+"','"+fn.CONTROL_TRAMPA+"','"+fn.NOTAS+"','"+fn.CINTURON+"','"+fn.RESPONSABLEAUT+"','"+fn.FOLIO+"','"+fn.CAPTURA+"','"+fn.FECHAAUT+"','"+fn.CEB_CAMBIO+"','"+fn.CEB_EDC+"','"+fn.CEB_LOCALIZADOR+"','"+fn.CEB_REGISTRO+"','"+fn.NUM_EMPLEADO+"','"+fn.NOM_EMPLEADO+"']";
 
-        //navigator.notification.alert(""+DATOS,null,"Mensaje desarrollo","Aceptar");     
+        navigator.notification.alert(""+DATOS,null,"Mensaje desarrollo","Aceptar");     
 
 
         if(navigator.connection.type != Connection.NONE)

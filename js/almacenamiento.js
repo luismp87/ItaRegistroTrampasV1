@@ -79,7 +79,7 @@ var almacen = {
 	},
 									leerinfoUsuario: function(tx){
 										
-									tx.executeSql("SELECT usuario,pass,origen FROM usuarios where upper(usuario) = upper('" +$('#txtusuario').val()+ "') and upper(pass) = upper('" +$('#txtcontrasena').val()+ "')", [], function(tx2, t){
+									tx.executeSql("SELECT usuario,pass,origen FROM usuarios where upper(usuario) = upper('" +$('#txtusuario').val().toLowerCase()+ "') and upper(pass) = upper('" +$('#txtcontrasena').val().toLowerCase()+ "')", [], function(tx2, t){
 									var encontroUsuario = 0;
 									var usuariof = "";
 									var origenf = "";
