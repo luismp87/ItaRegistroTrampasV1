@@ -19,6 +19,31 @@
                                       <a id="Migrar_a_servidor" class="ui-btn ui-icon-alert ui-btn-icon-left">Migrar Info. A Server</a>
                                     </div>
                                 </div>
+
+                                <p><b>Sesión iniciada con::</b></p>     
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <label><b>Número de empleado: </b><span id="Numero_empleado" class="texto_informativo"></span></label>
+                                        </td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label><b>Nombre del empleado: </b><span id="Nombre_empleado" class="texto_informativo"></span></label>
+                                        </td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label><b>Origen: </b><span id="Origen" class="texto_informativo"></span></label>
+                                        </td>
+                                        
+                                    </tr>
+                                </table>
+
+
+
                                 <div data-role="footer" data-position="fixed">    
                                     <div data-role="navbar">
                                         <ul>
@@ -52,7 +77,7 @@
                                     <td colspan="2"><input type="submit" class="btnverde" value="Autentificar"  id="btnautentificar">                                
                                     </td>
                                 </tr>                                
-                                </table>
+                                </table>                                
                                 </div>
                                 <div data-role="footer" data-position="fixed"><span style="font-size:8pt;">Sistemas 2018 PK</span></div>
 </div>
@@ -76,6 +101,8 @@
                                 <div data-role="header"><h2>Configuración</h2></div> 
                                 <div data-role="main" class="ui-content">
                                 <input type="text" placeholder="Registrados localmente" id="NumUsuarios" readonly> 
+                                <input type="text" placeholder="Numero de empleado" id="Numero_empleado_conf" readonly> 
+                                <input type="text" placeholder="Nombre del empleado" id="Nombre_empleado_conf" readonly> 
                                 </div>
 </div>
 <!--LEER CODIGO DE BARRAS Y MOSTRAR INFORMACION-->

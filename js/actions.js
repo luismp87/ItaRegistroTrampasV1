@@ -274,7 +274,7 @@ var fn = {
 
         DATOS = "['CEBO',"+fn.SYS_DATE+"','"+fn.USUARIO+"','"+fn.PLANTA+"','"+fn.ID_TRAMPA+"','"+fn.CONTROL_TRAMPA+"','"+fn.NOTAS+"','"+fn.CINTURON+"','"+fn.RESPONSABLEAUT+"','"+fn.FOLIO+"','"+fn.CAPTURA+"','"+fn.FECHAAUT+"','"+fn.CEB_CAMBIO+"','"+fn.CEB_EDC+"','"+fn.CEB_LOCALIZADOR+"','"+fn.CEB_REGISTRO+"']";
 
-        navigator.notification.alert(""+DATOS,null,"Mensaje desarrollo","Aceptar");     
+        //navigator.notification.alert(""+DATOS,null,"Mensaje desarrollo","Aceptar");     
 
 
         if(navigator.connection.type != Connection.NONE)

@@ -109,12 +109,20 @@ var almacen = {
 									                    $.mobile.loading("hide");
 									                    $.each(msg,function(i,item){
 									                    	if(msg[i].Respuesta == "encontro")
-									                            {                             	
-									                        		//$('#textREVISO').val(""+ msg[i].Nombre);
+									                            {                             										                        		
+									                        		$("#Nombre_empleado_conf").val(""+ msg[i].Nombre);
+									                        		$("#Nombre_empleado").text(""+ msg[i].Nombre);	
+
+									                        		$("#Numero_empleado_conf").val(""+ $("txtnumero_Empleado_Que_Revisa").val());
+									                        		$("#Numero_empleado").text(""+ $("txtnumero_Empleado_Que_Revisa").val());									                        		
+
 									                        		window.localStorage.setItem("Nombre_usuario_revisa",""+ msg[i].Nombre);
+									                        		window.localStorage.setItem("Numero_usuario_revisa",""+ $("txtnumero_Empleado_Que_Revisa").val();
 									                        		window.localStorage.setItem("usuario",usuariof);
 																	window.localStorage.setItem("origen",origenf);
-																	//$("#textORIGEN").text("Origen de usuario: " + window.localStorage.getItem("origen").toUpperCase());
+
+																	$("#Origen").text("" + window.localStorage.getItem("origen").toUpperCase());
+
 																	$('#txtusuario').val(""); 
 									        						$('#txtcontrasena').val("");
 									        						$('#txtnumero_Empleado_Que_Revisa').val("");									        						
