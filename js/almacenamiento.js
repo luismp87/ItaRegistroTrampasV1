@@ -20,7 +20,7 @@ var almacen = {
     GuardadoCorrectoLocaldeRegistro: function(){										
 										navigator.notification.alert("Se guardo la información en el dispositivo", null, "Correcto", "Aceptar");										
 										
-									}																		
+									},																		
 	error: function(){
 										//alert("Error al acceder a la Base de Datos");
 										navigator.notification.alert("Error al acceder a la Base de Datos", null, "Error", "Aceptar");
