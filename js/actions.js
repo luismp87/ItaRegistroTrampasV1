@@ -268,7 +268,7 @@ var fn = {
         fn.PLANTA = $('#CODIGO_PLANTA').text();
         fn.ID_TRAMPA = $("#txt_id_trampa").val().toUpperCase();
         fn.CONTROL_TRAMPA = $('#CONTROL_TRAMPA').text();
-        fn.NOTAS = $("#cebo_notas").val().toUpperCase();
+        fn.NOTAS = $("#cebo_notas").val().replace(/[^a-zA-Z 0-9.]+/g,' ').toUpperCase();
         fn.CINTURON = $('#CINTURON').text();
         fn.RESPONSABLEAUT = "HECTORAND";
         fn.FOLIO = "0"
@@ -286,7 +286,6 @@ var fn = {
 
         if(navigator.connection.type != Connection.NONE)
             {
-
                 server.sincroniza_CEBO(DATOS);
             }
             else

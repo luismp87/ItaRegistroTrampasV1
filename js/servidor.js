@@ -5,8 +5,6 @@ sincroniza_CEBO: function(DATOS)
 {
 				server.DATOS = DATOS;				
 
-navigator.notification.alert(" servidor "+server.DATOS,null,"Mensaje desarrollo","Aceptar");    
-
 				$.ajax({
                 method: 'POST',
 				url: 'http://servidoriis.laitaliana.com.mx/LM/wsshregistrotrampas/WebService1.asmx/inserta_registro',				
@@ -22,15 +20,15 @@ navigator.notification.alert(" servidor "+server.DATOS,null,"Mensaje desarrollo"
                         else
                             {
                             navigator.notification.alert("Verifique la fecha del dispositivo no se guardo la información",null,"Error","Aceptar");   
-                            //alert("Usuario o contraseña incorrectos");
                             }                        
                     });					
                 },
 				error: function(jq, txt){					
                     navigator.notification.alert("Error de comunicación, se guarda la información en el dispositivo",null,"Error 785","Aceptar");
-/*
-                    almacen.guardarRegistroEXT(server.id_ext,server.presion,server.manometro,server.segurosello,server.manguera,server.soporte,server.pintura,server.valvula,server.cilindro,server.nemotecnia,server.senalamiento,server.gabinete,server.observaciones.replace(/[^a-zA-Z 0-9.]+/g,' '),server.usuario);
-                                 $("#txtitaextiV1").val("");
+
+                                almacen.guardarRegistroCEBO_LOCAL(server.DATOS);
+
+                                /*$("#txtitaextiV1").val("");
                                 $("#textPRESION").val("OK").change();
                                 $("#textMANOMETRO").val("OK").change();
                                 $("#textSEGUROSELLO").val("OK").change();
