@@ -110,8 +110,8 @@ var almacen = {
 									                    $.each(msg,function(i,item){
 									                    	if(msg[i].Respuesta == "encontro")
 									                            {                             										                        		
-									                        		//$("#Nombre_empleado_conf").val(""+ msg[i].Nombre);
-									                        		//$("#Nombre_empleado").text(""+ msg[i].Nombre);	
+									                        		$("#Nombre_empleado_conf").val(""+ msg[i].Nombre);
+									                        		$("#Nombre_empleado").text(""+ msg[i].Nombre);	
 
 									                        		//$("#Numero_empleado_conf").val(""+ $("txtnumero_Empleado_Que_Revisa").val());
 									                        		//$("#Numero_empleado").text(""+ $("txtnumero_Empleado_Que_Revisa").val());									                        		
@@ -121,7 +121,7 @@ var almacen = {
 									                        		window.localStorage.setItem("usuario",usuariof);
 																	window.localStorage.setItem("origen",origenf);
 
-																	//$("#Origen").text("" + window.localStorage.getItem("origen").toUpperCase());
+																	$("#Origen").text("" + window.localStorage.getItem("origen").toUpperCase());
 
 																	$('#txtusuario').val(""); 
 									        						$('#txtcontrasena').val("");
