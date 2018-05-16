@@ -302,7 +302,7 @@ var fn = {
             }
             else
             {
-                                navigator.notification.alert("No tiene conexión a la red, se guarda la información en el dispositivo",null,"Error 788","Aceptar");
+                                //navigator.notification.alert("No tiene conexión a la red, se guarda la información en el dispositivo",null,"Error 788","Aceptar");
                                 //le quito a la cadena DATOS los "['CEBO'" y "]"
                                 almacen.GuardarRegistro_LOCAL(DATOS.replace("['CEBO',", "").replace("]", ""),"sys_date,usuario,planta,id_trampa,control_trampa,notas,cinturon,responsableaut,folio,captura,fechaaut,ceb_cambio,ceb_edc,ceb_localizador,ceb_registro,num_empleado,nom_empleado");
             }
