@@ -3,7 +3,7 @@ var fn = {
 		document.addEventListener("deviceready",fn.init,false);
 	},
 	init: function(){ 
-    //$('#textREVISO').val(""+ window.localStorage.getItem("Nombre_usuario_revisa"));          
+            
         if(window.localStorage.getItem("ya_se_migraron_usuarios") != "SI")
         {          
         fn.btnMigrarUsuarios();  
@@ -16,7 +16,21 @@ var fn = {
         }
         else
         {
+        //$('#textREVISO').val(""+ window.localStorage.getItem("Nombre_usuario_revisa"));  
         //$("#textORIGEN").text("Origen de usuario: " + window.localStorage.getItem("origen").toUpperCase());
+        //$('#textREVISO').val(""+ window.localStorage.getItem("Nombre_usuario_revisa"));
+
+        $("#Nombre_empleado_conf").val(""+ window.localStorage.getItem("Nombre_usuario_revisa"));
+        $("#Nombre_empleado").text(""+ window.localStorage.getItem("Nombre_usuario_revisa"));  
+
+        $("#Numero_empleado_conf").val(""+ window.localStorage.getItem("Numero_usuario_revisa"));
+        $("#Numero_empleado").text(""+ window.localStorage.getItem("Numero_usuario_revisa"));     
+
+        $("#Origen").text(""+ window.localStorage.getItem("origen").toUpperCase());
+        $("#Origen_conf").val(""+ window.localStorage.getItem("origen").toUpperCase());
+                                                             
+
+
         window.location.href = '#MenuOpciones';     
         }
         //PARA MOVIL
