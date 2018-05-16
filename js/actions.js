@@ -281,15 +281,11 @@ var fn = {
         fn.NUM_EMPLEADO = $('#Numero_empleado').text();
         fn.NOM_EMPLEADO = $('#Nombre_empleado').text().toUpperCase();
 
-        DATOS = "['CEBO',"+fn.SYS_DATE+"','"+fn.USUARIO+"','"+fn.PLANTA+"','"+fn.ID_TRAMPA+"','"+fn.CONTROL_TRAMPA+"','"+fn.NOTAS+"','"+fn.CINTURON+"','"+fn.RESPONSABLEAUT+"','"+fn.FOLIO+"','"+fn.CAPTURA+"','"+fn.FECHAAUT+"','"+fn.CEB_CAMBIO+"','"+fn.CEB_EDC+"','"+fn.CEB_LOCALIZADOR+"','"+fn.CEB_REGISTRO+"','"+fn.NUM_EMPLEADO+"','"+fn.NOM_EMPLEADO+"']";
-
-        navigator.notification.alert(" actions "+DATOS,null,"Mensaje desarrollo","Aceptar");    
- 
+        DATOS = "['CEBO',"+fn.SYS_DATE+"','"+fn.USUARIO+"','"+fn.PLANTA+"','"+fn.ID_TRAMPA+"','"+fn.CONTROL_TRAMPA+"','"+fn.NOTAS+"','"+fn.CINTURON+"','"+fn.RESPONSABLEAUT+"','"+fn.FOLIO+"','"+fn.CAPTURA+"','"+fn.FECHAAUT+"','"+fn.CEB_CAMBIO+"','"+fn.CEB_EDC+"','"+fn.CEB_LOCALIZADOR+"','"+fn.CEB_REGISTRO+"','"+fn.NUM_EMPLEADO+"','"+fn.NOM_EMPLEADO+"']"; 
 
 
         if(navigator.connection.type != Connection.NONE)
             {
-                navigator.notification.alert(" tenemos conexion ",null,"Mensaje desarrollo","Aceptar");    
 
                 server.sincroniza_CEBO(DATOS);
             }

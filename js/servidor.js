@@ -10,7 +10,7 @@ navigator.notification.alert(" servidor "+server.DATOS,null,"Mensaje desarrollo"
 				$.ajax({
                 method: 'POST',
 				url: 'http://servidoriis.laitaliana.com.mx/LM/wsshregistrotrampas/WebService1.asmx/inserta_registro',				
-                data: {DATOS: DATOS},
+                data: {DATOS: server.DATOS},
                 dataType: "json",
 				success: function (msg){
 					$.mobile.loading("hide");
@@ -27,8 +27,8 @@ navigator.notification.alert(" servidor "+server.DATOS,null,"Mensaje desarrollo"
                     });					
                 },
 				error: function(jq, txt){					
-                    /*navigator.notification.alert("Error de comunicación, se guarda la información en el dispositivo",null,"Error 785","Aceptar");
-
+                    navigator.notification.alert("Error de comunicación, se guarda la información en el dispositivo",null,"Error 785","Aceptar");
+/*
                     almacen.guardarRegistroEXT(server.id_ext,server.presion,server.manometro,server.segurosello,server.manguera,server.soporte,server.pintura,server.valvula,server.cilindro,server.nemotecnia,server.senalamiento,server.gabinete,server.observaciones.replace(/[^a-zA-Z 0-9.]+/g,' '),server.usuario);
                                  $("#txtitaextiV1").val("");
                                 $("#textPRESION").val("OK").change();
