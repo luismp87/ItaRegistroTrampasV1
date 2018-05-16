@@ -210,10 +210,10 @@ var fn = {
         {
             window.location.href = '#Trampa_tipo_CEBO';
             $("#cebo_in_consumo").val("0").change();
-            $("#cebo_in_cambio").val("0").change();
+            $("#cebo_in_cambio").val("1").change();
             $("#cebo_in_estado_EDC").val("1").change();
-            $("#cebo_in_localizador").val("N").change();
-            $("#cebo_in_registro").val("N").change();
+            $("#cebo_in_localizador").val("S").change();
+            $("#cebo_in_registro").val("S").change();
             $("#cebo_notas").val("");
              
         }
@@ -302,9 +302,20 @@ var fn = {
             }
             else
             {
-                                //navigator.notification.alert("No tiene conexión a la red, se guarda la información en el dispositivo",null,"Error 788","Aceptar");
                                 //le quito a la cadena DATOS los "['CEBO'" y "]"
                                 almacen.GuardarRegistro_LOCAL(DATOS.replace("['CEBO',", "").replace("]", ""),"sys_date,usuario,planta,id_trampa,control_trampa,notas,cinturon,responsableaut,folio,captura,fechaaut,ceb_cambio,ceb_edc,ceb_localizador,ceb_registro,num_empleado,nom_empleado");
+                            
+                                $("#CODIGO_PLANTA").text("");
+                                $("#DESCRIPCION_PLANTA").text("");
+                                $("#DIRECCION_PLANTA").text("");
+                                $("#TIPO_TRAMPA").text("");
+                                $("#CONTROL_TRAMPA").text("");
+                                $("#CINTURON").text("");
+                                $("#DESCRIPCION_TIPO_TRAMPA").text("");
+                                $("#DESCRIPCION_CONTROL_TRAMPA").text("");
+                                $("#UBICACION").text("");
+                                $("#txt_id_trampa").val("");
+                                window.location.href = '#Busqueda_por_id_de_trampa';
             }
 
     }

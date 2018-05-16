@@ -247,7 +247,7 @@ var almacen = {
 											}
 									if(encontroTRAMPA == 0)
 									{
-										navigator.notification.alert("Sin resultados verifique el ID del Extintor", null, "Advertencia", "Aceptar");
+										navigator.notification.alert("Sin resultados verifique el ID de la TRAMPA", null, "Advertencia", "Aceptar");
 									}
 										});	
 	},
