@@ -202,7 +202,7 @@
                                 <div data-role="navbar">
                                     <ul>
                                         <li><a href="#" id="Btn_cebo_CancelarRegistro">Atrás</a></li>
-                                        <li><a href="#" id="Btn_cebo_GuardarRegistro">[>GUARDAR<]</a></li>                                                
+                                        <li><a href="#" id="Btn_cebo_GuardarRegistro">[>GUARDAR<]</a></li>                             
                                     </ul>                                
                                 </div>
                                 </div>
@@ -212,9 +212,98 @@
                                <div data-role="header"><h2>Status de la trampa tipo GOMA</h2></div> 
                                <div data-role="main" class="ui-content">
                                <div class="ui-field-contain">
-                                goma
+                                <ul data-role="listview"> 
+                                    <li><b>Cam. goma:</b>
+                                                    <select id="goma_in_cam_goma">
+                                                        <option value="0" selected="selected">NO</option>
+                                                        <option value="1">SI</option>                                                  
+                                                    </select>
+                                    </li>
+                                    <li><b>Araña:</b>
+                                                    <select id="goma_in_arana">
+                                                        <option value="2" selected="selected">NO</option>
+                                                        <option value="1">SI</option>
+                                                    </select>
+                                    </li>
+                                    <li><b>C. Alemana:</b>
+                                                    <select id="goma_in_c_alemana">
+                                                        <option value="2" selected="selected">NO</option>
+                                                        <option value="1">SI</option>
+                                                    </select>
+                                    </li>
+                                    <li><b>C. Americana:</b>
+                                                    <select id="goma_in_c_americana">
+                                                        <option value="2" selected="selected">NO</option>
+                                                        <option value="1">SI</option>
+                                                    </select>
+                                    </li>
+                                    <li><b>Grillo:</b>
+                                                    <select id="goma_in_grillo">
+                                                        <option value="2" selected="selected">NO</option>
+                                                        <option value="1">SI</option>
+                                                    </select>
+                                    </li>
+                                    <li><b>Escarabajo:</b>
+                                                    <select id="goma_in_escarabajo">
+                                                        <option value="2" selected="selected">NO</option>
+                                                        <option value="1">SI</option>
+                                                    </select>
+                                    </li>
+                                    <li><b>Mosquito:</b>
+                                                    <select id="goma_in_mosquito">
+                                                        <option value="2" selected="selected">NO</option>
+                                                        <option value="1">SI</option>
+                                                    </select>
+                                    </li>
+                                    <li><b>Raton:</b>
+                                                    <select id="goma_in_raton">
+                                                        <option value="2" selected="selected">NO</option>
+                                                        <option value="1">SI</option>
+                                                    </select>
+                                    </li>
+                                    <li><b>Tijerilla:</b>
+                                                    <select id="goma_in_tijerilla">
+                                                        <option value="2" selected="selected">NO</option>
+                                                        <option value="1">SI</option>
+                                                    </select>
+                                    </li>
+                                    <li><b>Otros:</b>
+                                                    <select id="goma_in_Otros">
+                                                        <option value="2" selected="selected">NO</option>
+                                                        <option value="1">SI</option>
+                                                    </select>
+                                    </li>
+                                    <li><b>Estado EDC:</b>
+                                                    <select id="goma_in_estado_EDC">
+                                                        <option value="1" selected="selected">FUNCIONAL</option>
+                                                        <option value="2">CAMBIAR</option>
+                                                        <option value="3">EXTRAVIADA</option>
+                                                        <option value="4">OCULTA</option>
+                                                    </select>
+                                    </li>
+                                    <li><b>Localizador:</b>
+                                                    <select id="goma_in_localizador">
+                                                        <option value="N" selected="selected">NO</option>
+                                                        <option value="S">SI</option>
+                                                    </select>
+                                    </li>
+                                    <li><b>Registro:</b>
+                                                    <select id="goma_in_registro">
+                                                        <option value="N" selected="selected">NO</option>
+                                                        <option value="S">SI</option>
+                                                    </select>
+                                    </li>
+                                </ul>
                                </div>
                                </div>
+                                <div data-role="footer" data-position="fixed">    
+                                <div data-role="navbar">
+                                    <ul>
+                                        <li><a href="#" id="Btn_goma_CancelarRegistro">Atrás</a></li>
+                                        <li><a href="#" id="Btn_goma_GuardarRegistro">[>GUARDAR<]</a></li>                             
+                                    </ul>                                
+                                </div>
+                                </div>
 </div>
 <!--LUZ NEGRA-->
 <div data-role="page" id="Trampa_tipo_LUZ_NEGRA">
