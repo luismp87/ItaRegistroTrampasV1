@@ -288,8 +288,7 @@ var fn = {
 
         if(navigator.connection.type != Connection.NONE)
             {
-
-
+                server.sincroniza_CEBO(DATOS);
             }
             else
             {

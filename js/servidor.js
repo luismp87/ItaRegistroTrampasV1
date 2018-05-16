@@ -7,7 +7,7 @@ sincroniza_CEBO: function(DATOS)
 
 				$.ajax({
                 method: 'POST',
-				url: 'http://servidoriis.laitaliana.com.mx/LM/wsitaextiv1/Service1.asmx/insertarregextintores',				
+				url: 'http://servidoriis.laitaliana.com.mx/LM/wsshregistrotrampas/WebService1.asmx/inserta_registro',				
                 data: {DATOS: DATOS},
                 dataType: "json",
 				success: function (msg){
