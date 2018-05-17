@@ -277,11 +277,6 @@ var fn = {
             $("#luz_negra_in_avispa").val("0");
             $("#luz_negra_in_otros").val("0");
             $("#luz_negra_notas").val("");
-
-
-
-
-
         }
         else if(tipo_trampa == "3")
         {
