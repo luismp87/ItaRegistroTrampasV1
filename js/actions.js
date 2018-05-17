@@ -514,9 +514,7 @@ var fn = {
                                 $("#txt_id_trampa").val("");
                                 window.location.href = '#Busqueda_por_id_de_trampa';
             }
-
     }
-
 };
 //$(fn.init);
 $(fn.ready);
