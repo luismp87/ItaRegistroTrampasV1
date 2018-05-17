@@ -35,12 +35,9 @@ sincroniza_CEBO: function(DATOS)
 	},
 	sincroniza_GOMA: function(DATOS)
 {
-				server.DATOS = DATOS;
+				server.DATOS = DATOS;				
 
-				navigator.notification.alert("DATOS: " + server.DATOS,null,"Mensaje desarrollo","Aceptar");     
-				
 
-/*
 				$.ajax({
                 method: 'POST',
 				url: 'http://servidoriis.laitaliana.com.mx/LM/wsshregistrotrampas/WebService1.asmx/inserta_registro',				
@@ -61,10 +58,10 @@ sincroniza_CEBO: function(DATOS)
                 },
 				error: function(jq, txt){					
                     		//le quito a la cadena DATOS los "['CEBO'" y "]"
-                    		almacen.GuardarRegistro_LOCAL(server.DATOS.replace("['CEBO',", "").replace("]", ""),"sys_date,usuario,planta,id_trampa,control_trampa,notas,cinturon,responsableaut,folio,captura,fechaaut,ceb_cambio,ceb_edc,ceb_localizador,ceb_registro,num_empleado,nom_empleado");                                
+                    		almacen.GuardarRegistro_LOCAL(server.DATOS.replace("['GOMA',", "").replace("]", ""),"sys_date,usuario,planta,id_trampa,control_trampa,notas,cinturon,responsableaut,folio,fechaaut,goma_cam_goma,goma_arana,goma_alemana,goma_americana,goma_grillo,goma_escarabajo,goma_mosquito,goma_raton,goma_tijerilla,goma_otros,goma_estado_edc,goma_localizador,goma_registro,num_empleado,nom_empleado");                                
 				}
 			}).done(server.sincronizado);
-				*/
+				
 
 }				
 
