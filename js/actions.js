@@ -296,7 +296,17 @@ var fn = {
         
     },
     cebo_CancelarRegistro: function(){        
-        funcion_para_regresar_a_la_busqueda();
+        $("#CODIGO_PLANTA").text("");
+        $("#DESCRIPCION_PLANTA").text("");
+        $("#DIRECCION_PLANTA").text("");
+        $("#TIPO_TRAMPA").text("");
+        $("#CONTROL_TRAMPA").text("");
+        $("#CINTURON").text("");
+        $("#DESCRIPCION_TIPO_TRAMPA").text("");
+        $("#DESCRIPCION_CONTROL_TRAMPA").text("");
+        $("#UBICACION").text("");
+        $("#txt_id_trampa").val(""); 
+         window.location.href = '#Busqueda_por_id_de_trampa';
     },
     cebo_GuardarRegistro: function(){
 
@@ -361,9 +371,6 @@ var fn = {
 
     },
     goma_CancelarRegistro: function(){
-        funcion_para_regresar_a_la_busqueda();        
-    },
-    funcion_para_regresar_a_la_busqueda: function(){
         $("#CODIGO_PLANTA").text("");
         $("#DESCRIPCION_PLANTA").text("");
         $("#DIRECCION_PLANTA").text("");
@@ -374,7 +381,7 @@ var fn = {
         $("#DESCRIPCION_CONTROL_TRAMPA").text("");
         $("#UBICACION").text("");
         $("#txt_id_trampa").val(""); 
-         window.location.href = '#Busqueda_por_id_de_trampa';
+         window.location.href = '#Busqueda_por_id_de_trampa';      
     },
         goma_GuardarRegistro: function(){
 
@@ -450,7 +457,17 @@ var fn = {
     mecanica_CancelarRegistro: function(){
         navigator.notification.alert("ss1",null,"Mensaje desarrollo","Aceptar");     
 
-        funcion_para_regresar_a_la_busqueda();
+        $("#CODIGO_PLANTA").text("");
+        $("#DESCRIPCION_PLANTA").text("");
+        $("#DIRECCION_PLANTA").text("");
+        $("#TIPO_TRAMPA").text("");
+        $("#CONTROL_TRAMPA").text("");
+        $("#CINTURON").text("");
+        $("#DESCRIPCION_TIPO_TRAMPA").text("");
+        $("#DESCRIPCION_CONTROL_TRAMPA").text("");
+        $("#UBICACION").text("");
+        $("#txt_id_trampa").val(""); 
+         window.location.href = '#Busqueda_por_id_de_trampa';
 navigator.notification.alert("ss2",null,"Mensaje desarrollo","Aceptar");     
 
     },
