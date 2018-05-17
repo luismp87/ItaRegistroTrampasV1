@@ -41,6 +41,7 @@ var fn = {
         $('#Btn_goma_CancelarRegistro').tap(fn.goma_CancelarRegistro);
         $('#Btn_goma_GuardarRegistro').tap(fn.goma_GuardarRegistro);
         $('#Btn_mecanica_CancelarRegistro').tap(fn.mecanica_CancelarRegistro);
+        $('#Btn_mecanica_GuardarRegistro').tap(fn.mecanica_GuardarRegistro);
         
         
            
@@ -455,7 +456,6 @@ var fn = {
 
     },
     mecanica_CancelarRegistro: function(){
-        navigator.notification.alert("ss1",null,"Mensaje desarrollo","Aceptar");     
 
         $("#CODIGO_PLANTA").text("");
         $("#DESCRIPCION_PLANTA").text("");
@@ -468,7 +468,6 @@ var fn = {
         $("#UBICACION").text("");
         $("#txt_id_trampa").val(""); 
          window.location.href = '#Busqueda_por_id_de_trampa';
-navigator.notification.alert("ss2",null,"Mensaje desarrollo","Aceptar");     
 
     },
     mecanica_GuardarRegistro: function(){
