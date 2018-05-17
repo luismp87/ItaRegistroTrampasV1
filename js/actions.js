@@ -38,7 +38,9 @@ var fn = {
         $('#BtnCaptura').tap(fn.Captura);
         $('#Btn_cebo_CancelarRegistro').tap(fn.cebo_CancelarRegistro);
         $('#Btn_cebo_GuardarRegistro').tap(fn.cebo_GuardarRegistro);
-
+        $('#Btn_goma_CancelarRegistro').tap(fn.goma_CancelarRegistro);
+        $('#Btn_goma_GuardarRegistro').tap(fn.goma_GuardarRegistro);
+        
            
         //PARA MOVIL
          document.addEventListener("online", almacen.leerinformacionregistrada_en_movil, false);
@@ -243,19 +245,8 @@ var fn = {
         }
         
     },
-    cebo_CancelarRegistro: function(){
-        
-        $("#CODIGO_PLANTA").text("");
-        $("#DESCRIPCION_PLANTA").text("");
-        $("#DIRECCION_PLANTA").text("");
-        $("#TIPO_TRAMPA").text("");
-        $("#CONTROL_TRAMPA").text("");
-        $("#CINTURON").text("");
-        $("#DESCRIPCION_TIPO_TRAMPA").text("");
-        $("#DESCRIPCION_CONTROL_TRAMPA").text("");
-        $("#UBICACION").text("");
-        $("#txt_id_trampa").val(""); 
-         window.location.href = '#Busqueda_por_id_de_trampa';
+    cebo_CancelarRegistro: function(){        
+        funcion_para_regresar_a_la_busqueda();
     },
     cebo_GuardarRegistro: function(){
 
@@ -318,7 +309,95 @@ var fn = {
                                 window.location.href = '#Busqueda_por_id_de_trampa';
             }
 
+    },
+    goma_CancelarRegistro: function(){
+        funcion_para_regresar_a_la_busqueda();        
+    },
+    funcion_para_regresar_a_la_busqueda: function(){
+        $("#CODIGO_PLANTA").text("");
+        $("#DESCRIPCION_PLANTA").text("");
+        $("#DIRECCION_PLANTA").text("");
+        $("#TIPO_TRAMPA").text("");
+        $("#CONTROL_TRAMPA").text("");
+        $("#CINTURON").text("");
+        $("#DESCRIPCION_TIPO_TRAMPA").text("");
+        $("#DESCRIPCION_CONTROL_TRAMPA").text("");
+        $("#UBICACION").text("");
+        $("#txt_id_trampa").val(""); 
+         window.location.href = '#Busqueda_por_id_de_trampa';
+    },
+        goma_GuardarRegistro: function(){
+
+        var DATOS = "";
+
+        var d = new Date();
+
+        fn.SYS_DATE = d.getDate() + "/" + (d.getMonth() +1) + "/" + d.getFullYear() + ' '+d.getHours() + ':'+d.getMinutes() +':'+d.getSeconds();     
+        fn.USUARIO = window.localStorage.getItem("usuario");
+        fn.PLANTA = $('#CODIGO_PLANTA').text();
+        fn.ID_TRAMPA = $("#txt_id_trampa").val().toUpperCase();
+        fn.CONTROL_TRAMPA = $('#CONTROL_TRAMPA').text();
+        fn.NOTAS = $("#cebo_notas").val().replace(/[^a-zA-Z 0-9.]+/g,' ').toUpperCase();
+        fn.CINTURON = $('#CINTURON').text();
+        fn.RESPONSABLEAUT = "HECTORAND";
+        fn.FOLIO = "0"
+        fn.FECHAAUT = d.getDate() + "/" + (d.getMonth() +1) + "/" + d.getFullYear() + ' '+d.getHours() + ':'+d.getMinutes() +':'+d.getSeconds();     
+        fn.GOMA_CAM_GOMA = $('#goma_in_cam_goma').val();
+        fn.GOMA_ARANA = $('#goma_in_arana').val();
+        fn.GOMA_ALEMANA = $('#goma_in_c_alemana').val();
+        fn.GOMA_AMERICANA = $('#goma_in_c_americana').val();
+        fn.GOMA_GRILLO = $('#goma_in_grillo').val();
+        fn.GOMA_ESCARABAJO = $('#goma_in_escarabajo').val();
+        fn.GOMA_MOSQUITO = $('#goma_in_mosquito').val();
+        fn.GOMA_RATON = $('#goma_in_raton').val();
+        fn.GOMA_TIJERILLA = $('#goma_in_tijerilla').val();
+        fn.GOMA_OTROS = $('#goma_in_Otros').val();
+        fn.GOMA_ESTADO_EDC = $('#goma_in_estado_EDC').val();
+        fn.GOMA_LOCALIZADOR = $('#goma_in_localizador').val();
+        fn.GOMA_REGISTRO = $('#goma_in_registro').val();
+        fn.NUM_EMPLEADO = $('#Numero_empleado').text();
+        fn.NOM_EMPLEADO = $('#Nombre_empleado').text().toUpperCase();
+
+
+        DATOS = "['GOMA','"+fn.SYS_DATE+"','"+fn.USUARIO+"','"+fn.PLANTA+"','"+fn.ID_TRAMPA+"','"+fn.CONTROL_TRAMPA+"','"+fn.NOTAS+"','"+fn.CINTURON+"','"+fn.RESPONSABLEAUT+"','"+fn.FOLIO+"','"+fn.FECHAAUT+"','"+fn.GOMA_CAM_GOMA+"','"+fn.GOMA_ARANA+"','"+fn.GOMA_ALEMANA+"','"+fn.GOMA_AMERICANA+"','"+fn.GOMA_GRILLO+"','"+fn.GOMA_ESCARABAJO+"','"+fn.GOMA_MOSQUITO+"','"+fn.GOMA_RATON+"','"+fn.GOMA_TIJERILLA+"','"+fn.GOMA_OTROS+"','"+fn.GOMA_ESTADO_EDC+"','"+fn.GOMA_LOCALIZADOR+"','"+fn.GOMA_REGISTRO+"','"+fn.NUM_EMPLEADO+"','"+fn.NOM_EMPLEADO+"']"; 
+
+
+        if(navigator.connection.type != Connection.NONE)
+            {
+                                server.sincroniza_GOMA(DATOS);
+                                
+                                $("#CODIGO_PLANTA").text("");
+                                $("#DESCRIPCION_PLANTA").text("");
+                                $("#DIRECCION_PLANTA").text("");
+                                $("#TIPO_TRAMPA").text("");
+                                $("#CONTROL_TRAMPA").text("");
+                                $("#CINTURON").text("");
+                                $("#DESCRIPCION_TIPO_TRAMPA").text("");
+                                $("#DESCRIPCION_CONTROL_TRAMPA").text("");
+                                $("#UBICACION").text("");
+                                $("#txt_id_trampa").val("");
+                                window.location.href = '#Busqueda_por_id_de_trampa';
+            }
+            else
+            {
+                                //le quito a la cadena DATOS los "['CEBO'" y "]"
+                                //almacen.GuardarRegistro_LOCAL(DATOS.replace("['CEBO',", "").replace("]", ""),"sys_date,usuario,planta,id_trampa,control_trampa,notas,cinturon,responsableaut,folio,captura,fechaaut,ceb_cambio,ceb_edc,ceb_localizador,ceb_registro,num_empleado,nom_empleado");
+                            
+                                $("#CODIGO_PLANTA").text("");
+                                $("#DESCRIPCION_PLANTA").text("");
+                                $("#DIRECCION_PLANTA").text("");
+                                $("#TIPO_TRAMPA").text("");
+                                $("#CONTROL_TRAMPA").text("");
+                                $("#CINTURON").text("");
+                                $("#DESCRIPCION_TIPO_TRAMPA").text("");
+                                $("#DESCRIPCION_CONTROL_TRAMPA").text("");
+                                $("#UBICACION").text("");
+                                $("#txt_id_trampa").val("");
+                                window.location.href = '#Busqueda_por_id_de_trampa';
+            }
+
     }
+
 };
 //$(fn.init);
 $(fn.ready);
