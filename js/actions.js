@@ -45,7 +45,7 @@ var fn = {
         
            
         //PARA MOVIL
-         document.addEventListener("online", almacen.leerinformacionregistrada_en_movil, false);
+         //document.addEventListener("online", almacen.leerinformacionregistrada_en_movil, false);
         ////////////
  
 	},
@@ -247,6 +247,7 @@ var fn = {
             $("#goma_in_estado_EDC").val("1").change();
             $("#goma_in_localizador").val("S").change();
             $("#goma_in_registro").val("S").change();
+            $("#goma_notas").val("");
         }
         else if(tipo_trampa == "6")
         {
@@ -254,6 +255,7 @@ var fn = {
         }
         else if(tipo_trampa == "3")
         {
+            window.location.href = '#Trampa_tipo_MECANICA'; 
             $("#mecanica_in_arana").val("1").change();
             $("#mecanica_in_c_alemana").val("1").change();
             $("#mecanica_in_c_americana").val("1").change();
@@ -266,10 +268,12 @@ var fn = {
             $("#mecanica_in_estado_EDC").val("1").change();
             $("#mecanica_in_localizador").val("S").change();
             $("#mecanica_in_registro").val("S").change();
-            window.location.href = '#Trampa_tipo_MECANICA'; 
+            $("#mecanica_notas").val("");
+            
         }
         else if(tipo_trampa == "5")
         {
+             window.location.href = '#Trampa_tipo_MECANICA';
             $("#mecanica_in_arana").val("1").change();
             $("#mecanica_in_c_alemana").val("1").change();
             $("#mecanica_in_c_americana").val("1").change();
@@ -282,8 +286,8 @@ var fn = {
             $("#mecanica_in_estado_EDC").val("1").change();
             $("#mecanica_in_localizador").val("S").change();
             $("#mecanica_in_registro").val("S").change();
-            window.location.href = '#Trampa_tipo_MECANICA'; 
-            window.location.href = '#Trampa_tipo_MECANICA'; 
+            $("#mecanica_notas").val("");
+            
         }
         else
         {
@@ -383,7 +387,7 @@ var fn = {
         fn.PLANTA = $('#CODIGO_PLANTA').text();
         fn.ID_TRAMPA = $("#txt_id_trampa").val().toUpperCase();
         fn.CONTROL_TRAMPA = $('#CONTROL_TRAMPA').text();
-        fn.NOTAS = $("#cebo_notas").val().replace(/[^a-zA-Z 0-9.]+/g,' ').toUpperCase();
+        fn.NOTAS = $("#goma_notas").val().replace(/[^a-zA-Z 0-9.]+/g,' ').toUpperCase();
         fn.CINTURON = $('#CINTURON').text();
         fn.RESPONSABLEAUT = "HECTORAND";
         fn.FOLIO = "0"
@@ -444,7 +448,11 @@ var fn = {
 
     },
     mecanica_CancelarRegistro: function(){
-        funcion_para_regresar_a_la_busqueda();   
+        navigator.notification.alert("ss1",null,"Mensaje desarrollo","Aceptar");     
+
+        funcion_para_regresar_a_la_busqueda();
+navigator.notification.alert("ss2",null,"Mensaje desarrollo","Aceptar");     
+
     },
     mecanica_GuardarRegistro: function(){
 
@@ -457,7 +465,7 @@ var fn = {
         fn.PLANTA = $('#CODIGO_PLANTA').text();
         fn.ID_TRAMPA = $("#txt_id_trampa").val().toUpperCase();
         fn.CONTROL_TRAMPA = $('#CONTROL_TRAMPA').text();
-        fn.NOTAS = $("#cebo_notas").val().replace(/[^a-zA-Z 0-9.]+/g,' ').toUpperCase();
+        fn.NOTAS = $("#mecanica_notas").val().replace(/[^a-zA-Z 0-9.]+/g,' ').toUpperCase();
         fn.CINTURON = $('#CINTURON').text();
         fn.RESPONSABLEAUT = "HECTORAND";
         fn.FOLIO = "0"
