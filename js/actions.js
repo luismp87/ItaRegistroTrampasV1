@@ -42,6 +42,11 @@ var fn = {
         $('#Btn_goma_GuardarRegistro').tap(fn.goma_GuardarRegistro);
         $('#Btn_mecanica_CancelarRegistro').tap(fn.mecanica_CancelarRegistro);
         $('#Btn_mecanica_GuardarRegistro').tap(fn.mecanica_GuardarRegistro);
+        $('#Btn_luz_negra_CancelarRegistro').tap(fn.luz_negra_CancelarRegistro);
+        $('#Btn_luz_negra_GuardarRegistro').tap(fn.luz_negra_GuardarRegistro);
+
+
+        
         
         
            
@@ -253,6 +258,30 @@ var fn = {
         else if(tipo_trampa == "6")
         {
             window.location.href = '#Trampa_tipo_LUZ_NEGRA'; 
+            $("#luz_negra_in_estado").val("1").change();
+            $("#luz_negra_in_tipo_area").val("1").change();
+            $("#luz_negra_in_registro").val("SI").change();
+            $("#luz_negra_in_cam_goma").val("SI").change();
+            $("#luz_negra_in_mosca_casera").val("0");
+            $("#luz_negra_in_palomilla").val("0");
+            $("#luz_negra_in_chicharrita").val("0");
+            $("#luz_negra_in_escarabajo").val("0");
+            $("#luz_negra_in_mosquito").val("0");
+            $("#luz_negra_in_zancudo").val("0");
+            $("#luz_negra_in_m_caliphora").val("0");
+            $("#luz_negra_in_abeja").val("0");
+            $("#luz_negra_in_chinche_jar").val("0");
+            $("#luz_negra_in_mos_drena").val("0");
+            $("#luz_negra_in_mos_jorob").val("0");
+            $("#luz_negra_in_mos_forid").val("0");
+            $("#luz_negra_in_avispa").val("0");
+            $("#luz_negra_in_otros").val("0");
+            $("#luz_negra_notas").val("");
+
+
+
+
+
         }
         else if(tipo_trampa == "3")
         {
@@ -538,7 +567,99 @@ var fn = {
                                 $("#txt_id_trampa").val("");
                                 window.location.href = '#Busqueda_por_id_de_trampa';
             }
+    },
+    luz_negra_CancelarRegistro: function(){
+        $("#CODIGO_PLANTA").text("");
+        $("#DESCRIPCION_PLANTA").text("");
+        $("#DIRECCION_PLANTA").text("");
+        $("#TIPO_TRAMPA").text("");
+        $("#CONTROL_TRAMPA").text("");
+        $("#CINTURON").text("");
+        $("#DESCRIPCION_TIPO_TRAMPA").text("");
+        $("#DESCRIPCION_CONTROL_TRAMPA").text("");
+        $("#UBICACION").text("");
+        $("#txt_id_trampa").val(""); 
+         window.location.href = '#Busqueda_por_id_de_trampa';
+    },
+    luz_negra_GuardarRegistro: function(){
+
+        var DATOS = "";
+
+        var d = new Date();
+
+        fn.SYS_DATE = d.getDate() + "/" + (d.getMonth() +1) + "/" + d.getFullYear() + ' '+d.getHours() + ':'+d.getMinutes() +':'+d.getSeconds();     
+        fn.USUARIO = window.localStorage.getItem("usuario");
+        fn.PLANTA = $('#CODIGO_PLANTA').text();
+        fn.ID_TRAMPA = $("#txt_id_trampa").val().toUpperCase();
+        fn.CONTROL_TRAMPA = $('#CONTROL_TRAMPA').text();
+        fn.NOTAS = $("#luz_negra_notas").val().replace(/[^a-zA-Z 0-9.]+/g,' ').toUpperCase();
+        fn.CINTURON = $('#CINTURON').text();
+        fn.RESPONSABLEAUT = "HECTORAND";
+        fn.FOLIO = "0"
+        fn.FECHAAUT = d.getDate() + "/" + (d.getMonth() +1) + "/" + d.getFullYear() + ' '+d.getHours() + ':'+d.getMinutes() +':'+d.getSeconds();     
+        fn.LUZ_ESTADO = $('#luz_negra_in_estado').val();
+        fn.LUZ_REGISTRO = $('#luz_negra_in_registro').val();
+        fn.LUZ_AREA = $('#luz_negra_in_tipo_area').val();
+        fn.LUZ_GOMA = $('#luz_negra_in_cam_goma').val();
+        fn.LUZ_MOS_CASERA = $('#luz_negra_in_mosca_casera').val();
+        fn.LUZ_PALOMILLA = $('#luz_negra_in_palomilla').val();
+        fn.LUZ_CHICHARRITA = $('#luz_negra_in_chicharrita').val();
+        fn.LUZ_ESCARABAJO = $('#luz_negra_in_escarabajo').val();
+        fn.LUZ_MOSQUITO = $('#luz_negra_in_mosquito').val();
+        fn.LUZ_ZANCUDO = $('#luz_negra_in_zancudo').val();
+        fn.LUZ_ABEJA = $('#luz_negra_in_abeja').val();
+        fn.LUZ_CHINCHE = $('#luz_negra_in_chinche_jar').val();
+        fn.LUZ_MOS_DRENA = $('#luz_negra_in_mos_drena').val();
+        fn.LUZ_MOS_JOROB = $('#luz_negra_in_mos_jorob').val();
+        fn.LUZ_MOS_FORID = $('#luz_negra_in_mos_forid').val();
+        fn.LUZ_AVISPA =  $('#luz_negra_in_avispa').val();
+        //OTROS se va a luz total
+        fn.LUZ_TOTAL = $('#luz_negra_in_otros').val();
+        fn.LUZ_MOS_CALIPHO = $('#luz_negra_in_m_caliphora').val();
+        fn.NUM_EMPLEADO = $('#Numero_empleado').text();
+        fn.NOM_EMPLEADO = $('#Nombre_empleado').text().toUpperCase();
+
+
+        
+        
+        DATOS = "['LUZ_NEGRA','"+fn.SYS_DATE+"','"+fn.USUARIO+"','"+fn.PLANTA+"','"+fn.ID_TRAMPA+"','"+fn.CONTROL_TRAMPA+"','"+fn.NOTAS+"','"+fn.CINTURON+"','"+fn.RESPONSABLEAUT+"','"+fn.FOLIO+"','"+fn.FECHAAUT+"','"+fn.LUZ_ESTADO+"','"+fn.LUZ_REGISTRO+"','"+fn.LUZ_AREA+"','"+fn.LUZ_GOMA+"','"+fn.LUZ_MOS_CASERA+"','"+fn.LUZ_PALOMILLA+"','"+fn.LUZ_CHICHARRITA+"','"+fn.LUZ_ESCARABAJO+"','"+fn.LUZ_MOSQUITO+"','"+fn.LUZ_ZANCUDO+"','"+fn.LUZ_ABEJA+"','"+fn.LUZ_CHINCHE+"','"+fn.LUZ_MOS_DRENA+"','"+fn.LUZ_MOS_JOROB+"','"+fn.LUZ_MOS_FORID+"','"+fn.LUZ_AVISPA+"','"+fn.LUZ_TOTAL+"','"+fn.LUZ_MOS_CALIPHO+"','"+fn.NUM_EMPLEADO+"','"+fn.NOM_EMPLEADO+"']"; 
+
+
+        if(navigator.connection.type != Connection.NONE)
+            {
+                                server.sincroniza_LUZ_NEGRA(DATOS);
+                                
+                                $("#CODIGO_PLANTA").text("");
+                                $("#DESCRIPCION_PLANTA").text("");
+                                $("#DIRECCION_PLANTA").text("");
+                                $("#TIPO_TRAMPA").text("");
+                                $("#CONTROL_TRAMPA").text("");
+                                $("#CINTURON").text("");
+                                $("#DESCRIPCION_TIPO_TRAMPA").text("");
+                                $("#DESCRIPCION_CONTROL_TRAMPA").text("");
+                                $("#UBICACION").text("");
+                                $("#txt_id_trampa").val("");
+                                window.location.href = '#Busqueda_por_id_de_trampa';
+            }
+            else
+            {
+                                //le quito a la cadena DATOS los "['CEBO'" y "]"
+                                almacen.GuardarRegistro_LOCAL(DATOS.replace("['LUZ_NEGRA',", "").replace("]", ""),"sys_date,usuario,planta,id_trampa,control_trampa,notas,cinturon,responsableaut,folio,fechaaut,luz_estado,luz_registro,luz_area,luz_goma,luz_mos_casera,luz_palomilla,luz_chicharrita,luz_escarabajo,luz_mosquito,luz_zancudo,luz_abeja,luz_chinche,luz_mos_drena,luz_mos_jorob,luz_mos_forid,luz_avispa,luz_total,luz_mos_calipho,num_empleado,nom_empleado");
+                            
+                                $("#CODIGO_PLANTA").text("");
+                                $("#DESCRIPCION_PLANTA").text("");
+                                $("#DIRECCION_PLANTA").text("");
+                                $("#TIPO_TRAMPA").text("");
+                                $("#CONTROL_TRAMPA").text("");
+                                $("#CINTURON").text("");
+                                $("#DESCRIPCION_TIPO_TRAMPA").text("");
+                                $("#DESCRIPCION_CONTROL_TRAMPA").text("");
+                                $("#UBICACION").text("");
+                                $("#txt_id_trampa").val("");
+                                window.location.href = '#Busqueda_por_id_de_trampa';
+            }
     }
+
 };
 //$(fn.init);
 $(fn.ready);
