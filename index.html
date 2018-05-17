@@ -313,9 +313,83 @@
                                <div data-role="header"><h2>Status de la trampa tipo LUZ NEGRA</h2></div> 
                                <div data-role="main" class="ui-content">
                                <div class="ui-field-contain">
-                                luz negra
+                                <ul data-role="listview"> 
+                                    <li><b>Estado:</b>
+                                                    <select class="texto_informativo" id="luz_negra_in_estado">
+                                                        <option value="1" selected="selected">FUNCIONAL</option>
+                                                        <option value="2">CAMBIAR</option> 
+                                                        <option value="3">EXTRAVIADA</option>
+                                                        <option value="4">OCULTA</option>                            
+                                                    </select>
+                                    </li>
+                                    <li><b>Tipo area:</b>
+                                                    <select class="texto_informativo" id="luz_negra_in_tipo_area">
+                                                        <option value="1" selected="selected">PRODUCTIVA</option>
+                                                        <option value="2">NO PRODUCTIVA</option>                
+                                                    </select>
+                                    </li>
+                                    <li><b>Registro:</b>
+                                                    <select class="texto_informativo" id="luz_negra_in_registro">
+                                                        <option value="NO" selected="selected">NO</option>
+                                                        <option value="SI">SI</option>                
+                                                    </select>
+                                    </li>
+                                    <li><b>Cam. goma:</b>
+                                                    <select class="texto_informativo" id="luz_negra_in_cam_goma">
+                                                        <option value="NO" selected="selected">NO</option>
+                                                        <option value="SI">SI</option>                
+                                                    </select>
+                                    </li>
+                                    <li><b>Mosca casera:</b>
+                                                    <input type="number" class="texto_informativo" id="luz_negra_in_mosca_casera" placeholder="Cantidad" value="0">
+                                    </li>
+                                    <li><b>Palomilla:</b>
+                                                    <input type="number" class="texto_informativo" id="luz_negra_in_palomilla" placeholder="Cantidad" value="0">
+                                    </li>
+                                    <li><b>Chicharrita:</b>
+                                                    <input type="number" class="texto_informativo" id="luz_negra_in_chicharrita" placeholder="Cantidad" value="0">
+                                    </li>
+                                    <li><b>Escarabajo:</b>
+                                                    <input type="number" class="texto_informativo" id="luz_negra_in_escarabajo" placeholder="Cantidad" value="0">
+                                    </li>
+                                    <li><b>Mosquito:</b>
+                                                    <input type="number" class="texto_informativo" id="luz_negra_in_mosquito" placeholder="Cantidad" value="0">
+                                    </li>
+                                    <li><b>M. caliphora:</b>
+                                                    <input type="number" class="texto_informativo" id="luz_negra_in_m_caliphora" placeholder="Cantidad" value="0">
+                                    </li>
+                                    <li><b>Abeja:</b>
+                                                    <input type="number" class="texto_informativo" id="luz_negra_in_abeja" placeholder="Cantidad" value="0">
+                                    </li>
+                                    <li><b>Chinche jar.:</b>
+                                                    <input type="number" class="texto_informativo" id="luz_negra_in_chinche_jar" placeholder="Cantidad" value="0">
+                                    </li>
+                                    <li><b>Mos. drena.:</b>
+                                                    <input type="number" class="texto_informativo" id="luz_negra_in_mos_drena" placeholder="Cantidad" value="0">
+                                    </li>
+                                    <li><b>Mos. jorob.:</b>
+                                                    <input type="number" class="texto_informativo" id="luz_negra_in_mos_jorob" placeholder="Cantidad" value="0">
+                                    </li>
+                                    <li><b>Mos. Forid.:</b>
+                                                    <input type="number" class="texto_informativo" id="luz_negra_in_mos_forid" placeholder="Cantidad" value="0">
+                                    </li>
+                                    <li><b>Avispas:</b>
+                                                    <input type="number" class="texto_informativo" id="luz_negra_in_avispas" placeholder="Cantidad" value="0">
+                                    </li>
+                                    <li><b>Otros:</b>
+                                                    <input type="number" class="texto_informativo" id="luz_negra_in_otros" placeholder="Cantidad" value="0">
+                                    </li>
+                                </ul>
                                </div>
                                </div>
+                                <div data-role="footer" data-position="fixed">    
+                                <div data-role="navbar">
+                                    <ul>
+                                        <li><a href="#" id="Btn_luz_negra_CancelarRegistro">Atrás</a></li>
+                                        <li><a href="#" id="Btn_luz_negra_GuardarRegistro">[>GUARDAR<]</a></li>                             
+                                    </ul>                                
+                                </div>
+                                </div>
 </div>
 <!--MECANICA-->
 <div data-role="page" id="Trampa_tipo_MECANICA">
