@@ -316,7 +316,7 @@ var fn = {
         }
         else
         {
-            navigator.notification.alert("No entro a ninguno",null,"Mensaje desarrollo","Aceptar"); 
+            navigator.notification.alert("Para [>REGISTRAR<] necesita buscar una TRAMPA",null,"Mensaje desarrollo","Aceptar"); 
         }
         
     },
