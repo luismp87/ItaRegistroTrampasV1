@@ -221,11 +221,30 @@ var fn = {
         }
         else if(tipo_trampa == "4")
         {
-            window.location.href = '#Trampa_tipo_CEBO'; 
+            window.location.href = '#Trampa_tipo_CEBO';
+            $("#cebo_in_consumo").val("0").change();
+            $("#cebo_in_cambio").val("1").change();
+            $("#cebo_in_estado_EDC").val("1").change();
+            $("#cebo_in_localizador").val("S").change();
+            $("#cebo_in_registro").val("S").change();
+            $("#cebo_notas").val(""); 
         }
         else if(tipo_trampa == "2")
         {
             window.location.href = '#Trampa_tipo_GOMA'; 
+            $("#goma_in_cam_goma").val("1").change();
+            $("#goma_in_arana").val("1").change();
+            $("#goma_in_c_alemana").val("1").change();
+            $("#goma_in_c_americana").val("1").change();
+            $("#goma_in_grillo").val("1").change();
+            $("#goma_in_escarabajo").val("1").change();
+            $("#goma_in_mosquito").val("1").change();
+            $("#goma_in_raton").val("1").change();
+            $("#goma_in_tijerilla").val("1").change();
+            $("#goma_in_Otros").val("1").change();
+            $("#goma_in_estado_EDC").val("1").change();
+            $("#goma_in_localizador").val("S").change();
+            $("#goma_in_registro").val("S").change();
         }
         else if(tipo_trampa == "6")
         {
@@ -381,8 +400,8 @@ var fn = {
             else
             {
                                 //le quito a la cadena DATOS los "['CEBO'" y "]"
-                                //almacen.GuardarRegistro_LOCAL(DATOS.replace("['CEBO',", "").replace("]", ""),"sys_date,usuario,planta,id_trampa,control_trampa,notas,cinturon,responsableaut,folio,captura,fechaaut,ceb_cambio,ceb_edc,ceb_localizador,ceb_registro,num_empleado,nom_empleado");
-                            
+                                almacen.GuardarRegistro_LOCAL(server.DATOS.replace("['GOMA',", "").replace("]", ""),"sys_date,usuario,planta,id_trampa,control_trampa,notas,cinturon,responsableaut,folio,fechaaut,goma_cam_goma,goma_arana,goma_alemana,goma_americana,goma_grillo,goma_escarabajo,goma_mosquito,goma_raton,goma_tijerilla,goma_otros,goma_estado_edc,goma_localizador,goma_registro,num_empleado,nom_empleado");
+
                                 $("#CODIGO_PLANTA").text("");
                                 $("#DESCRIPCION_PLANTA").text("");
                                 $("#DIRECCION_PLANTA").text("");
