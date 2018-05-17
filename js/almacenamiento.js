@@ -18,7 +18,7 @@ var almacen = {
 										tx.executeSql("CREATE TABLE IF NOT EXISTS registro (sys_date,usuario,planta,id_trampa,control_trampa,notas,cinturon,responsableaut,folio,captura,fechaaut,ceb_cambio,ceb_edc,ceb_localizador,ceb_registro,luz_estado,luz_registro,luz_area,luz_goma,luz_mos_casera,luz_palomilla,luz_chicharrita,luz_escarabajo,luz_mosquito,luz_zancudo,luz_abeja,luz_chinche,luz_mos_drena,luz_mos_jorob,luz_mos_forid,luz_avispa,luz_total,meca_arana,meca_alemana,meca_americana,meca_grillo,meca_escarabajo,meca_mosquito,meca_raton,meca_tijerilla,meca_otros,meca_estado_edc,meca_localizador,meca_registro,goma_cam_goma,goma_arana,goma_alemana,goma_americana,goma_grillo,goma_escarabajo,goma_mosquito,goma_raton,goma_tijerilla,goma_otros,goma_estado_edc,goma_localizador,goma_registro,luz_mos_calipho,num_empleado,nom_empleado)");										
 									},
     GuardadoCorrectoLocaldeRegistro: function(){										
-										navigator.notification.alert("Problemas de conexion, Se guardo la información en el dispositivo", null, "Advertencia", "Aceptar");																				
+										navigator.notification.alert("Problemas de conexion, En cuanto se restablezca se guardara el registro en el servidor", null, "Advertencia", "Aceptar");																				
 									},																		
 	error: function(){
 										//alert("Error al acceder a la Base de Datos");
@@ -223,7 +223,7 @@ var almacen = {
 									navigator.vibrate(500);
 									navigator.notification.beep(1)
 									$("#CODIGO_PLANTA").text(t.rows.item(i).planta);
-									$("#DESCRIPCION_PLANTA").text(t.rows.item(i).planta);
+									$("#DESCRIPCION_PLANTA").text(t.rows.item(i).descripcion_planta);
 									$("#DIRECCION_PLANTA").text(t.rows.item(i).direccion_planta);
 									$("#TIPO_TRAMPA").text(t.rows.item(i).tipo_trampa);
 									$("#CONTROL_TRAMPA").text(t.rows.item(i).control);

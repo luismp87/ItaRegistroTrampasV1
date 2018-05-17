@@ -40,6 +40,8 @@ var fn = {
         $('#Btn_cebo_GuardarRegistro').tap(fn.cebo_GuardarRegistro);
         $('#Btn_goma_CancelarRegistro').tap(fn.goma_CancelarRegistro);
         $('#Btn_goma_GuardarRegistro').tap(fn.goma_GuardarRegistro);
+        $('#Btn_mecanica_CancelarRegistro').tap(fn.mecanica_CancelarRegistro);
+        
         
            
         //PARA MOVIL
@@ -124,7 +126,7 @@ var fn = {
                 $.ajax({
                     async: true,
                 method: 'POST',
-                url: 'http://servidoriis.laitaliana.com.mx/LM/wsshregistrotrampas/WebService1.asmx/enviarcatalogocompletodetrampas',              
+                url: 'https://servidoriis.laitaliana.com.mx/LM/wsshregistrotrampas/WebService1.asmx/enviarcatalogocompletodetrampas',              
                 //data: {usuario: nom, contrasena: passw},
                 dataType: "json",
                 success: function (msg){
@@ -402,6 +404,79 @@ var fn = {
                                 //le quito a la cadena DATOS los "['CEBO'" y "]"
                                 almacen.GuardarRegistro_LOCAL(server.DATOS.replace("['GOMA',", "").replace("]", ""),"sys_date,usuario,planta,id_trampa,control_trampa,notas,cinturon,responsableaut,folio,fechaaut,goma_cam_goma,goma_arana,goma_alemana,goma_americana,goma_grillo,goma_escarabajo,goma_mosquito,goma_raton,goma_tijerilla,goma_otros,goma_estado_edc,goma_localizador,goma_registro,num_empleado,nom_empleado");
 
+                                $("#CODIGO_PLANTA").text("");
+                                $("#DESCRIPCION_PLANTA").text("");
+                                $("#DIRECCION_PLANTA").text("");
+                                $("#TIPO_TRAMPA").text("");
+                                $("#CONTROL_TRAMPA").text("");
+                                $("#CINTURON").text("");
+                                $("#DESCRIPCION_TIPO_TRAMPA").text("");
+                                $("#DESCRIPCION_CONTROL_TRAMPA").text("");
+                                $("#UBICACION").text("");
+                                $("#txt_id_trampa").val("");
+                                window.location.href = '#Busqueda_por_id_de_trampa';
+            }
+
+    },
+    mecanica_CancelarRegistro: function(){
+        funcion_para_regresar_a_la_busqueda();   
+    },
+    mecanica_GuardarRegistro: function(){
+
+        var DATOS = "";
+
+        var d = new Date();
+
+        fn.SYS_DATE = d.getDate() + "/" + (d.getMonth() +1) + "/" + d.getFullYear() + ' '+d.getHours() + ':'+d.getMinutes() +':'+d.getSeconds();     
+        fn.USUARIO = window.localStorage.getItem("usuario");
+        fn.PLANTA = $('#CODIGO_PLANTA').text();
+        fn.ID_TRAMPA = $("#txt_id_trampa").val().toUpperCase();
+        fn.CONTROL_TRAMPA = $('#CONTROL_TRAMPA').text();
+        fn.NOTAS = $("#cebo_notas").val().replace(/[^a-zA-Z 0-9.]+/g,' ').toUpperCase();
+        fn.CINTURON = $('#CINTURON').text();
+        fn.RESPONSABLEAUT = "HECTORAND";
+        fn.FOLIO = "0"
+        fn.FECHAAUT = d.getDate() + "/" + (d.getMonth() +1) + "/" + d.getFullYear() + ' '+d.getHours() + ':'+d.getMinutes() +':'+d.getSeconds();     
+        fn.MECA_ARANA = $('#mecanica_in_arana').val();
+        fn.MECA_ALEMANA = $('#mecanica_in_c_alemana').val();
+        fn.MECA_AMERICANA = $('#mecanica_in_c_americana').val();
+        fn.MECA_GRILLO = $('#mecanica_in_grillo').val();
+        fn.MECA_ESCARABAJO = $('#mecanica_in_escarabajo').val();
+        fn.MECA_MOSQUITO = $('#mecanica_in_mosquito').val();
+        fn.MECA_RATON = $('#mecanica_in_raton').val();
+        fn.MECA_TIJERILLA = $('#mecanica_in_tijerilla').val();
+        fn.MECA_OTROS = $('#mecanica_in_otros').val();
+        fn.MECA_ESTADO_EDC = $('#mecanica_in_estado_EDC').val();
+        fn.MECA_LOCALIZADOR = $('#mecanica_in_localizador').val();
+        fn.MECA_REGISTRO = $('#mecanica_in_registro').val();
+        fn.NUM_EMPLEADO = $('#Numero_empleado').text();
+        fn.NOM_EMPLEADO = $('#Nombre_empleado').text().toUpperCase();
+        
+
+        DATOS = "['MECANICA','"+fn.SYS_DATE+"','"+fn.USUARIO+"','"+fn.PLANTA+"','"+fn.ID_TRAMPA+"','"+fn.CONTROL_TRAMPA+"','"+fn.NOTAS+"','"+fn.CINTURON+"','"+fn.RESPONSABLEAUT+"','"+fn.FOLIO+"','"+fn.FECHAAUT+"','"+fn.MECA_ARANA+"','"+fn.MECA_ALEMANA+"','"+fn.MECA_AMERICANA+"','"+fn.MECA_GRILLO+"','"+fn.MECA_ESCARABAJO+"','"+fn.MECA_MOSQUITO+"','"+fn.MECA_RATON+"','"+fn.MECA_TIJERILLA+"','"+fn.MECA_OTROS+"','"+fn.MECA_ESTADO_EDC+"','"+fn.MECA_LOCALIZADOR+"','"+fn.MECA_REGISTRO+"','"+fn.NUM_EMPLEADO+"','"+fn.NOM_EMPLEADO+"']"; 
+
+
+        if(navigator.connection.type != Connection.NONE)
+            {
+                                server.sincroniza_MECANICA(DATOS);
+                                
+                                $("#CODIGO_PLANTA").text("");
+                                $("#DESCRIPCION_PLANTA").text("");
+                                $("#DIRECCION_PLANTA").text("");
+                                $("#TIPO_TRAMPA").text("");
+                                $("#CONTROL_TRAMPA").text("");
+                                $("#CINTURON").text("");
+                                $("#DESCRIPCION_TIPO_TRAMPA").text("");
+                                $("#DESCRIPCION_CONTROL_TRAMPA").text("");
+                                $("#UBICACION").text("");
+                                $("#txt_id_trampa").val("");
+                                window.location.href = '#Busqueda_por_id_de_trampa';
+            }
+            else
+            {
+                                //le quito a la cadena DATOS los "['CEBO'" y "]"
+                                almacen.GuardarRegistro_LOCAL(DATOS.replace("['MECANICA',", "").replace("]", ""),"sys_date,usuario,planta,id_trampa,control_trampa,notas,cinturon,responsableaut,folio,fechaaut,meca_arana,meca_alemana,meca_americana,meca_grillo,meca_escarabajo,meca_mosquito,meca_raton,meca_tijerilla,meca_otros,meca_estado_edc,meca_localizador,meca_registro,num_empleado,nom_empleado");
+                            
                                 $("#CODIGO_PLANTA").text("");
                                 $("#DESCRIPCION_PLANTA").text("");
                                 $("#DIRECCION_PLANTA").text("");
