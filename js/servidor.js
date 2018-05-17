@@ -35,8 +35,12 @@ sincroniza_CEBO: function(DATOS)
 	},
 	sincroniza_GOMA: function(DATOS)
 {
-				server.DATOS = DATOS;				
+				server.DATOS = DATOS;
 
+				navigator.notification.alert("DATOS: " + server.DATOS,null,"Mensaje desarrollo","Aceptar");     
+				
+
+/*
 				$.ajax({
                 method: 'POST',
 				url: 'http://servidoriis.laitaliana.com.mx/LM/wsshregistrotrampas/WebService1.asmx/inserta_registro',				
@@ -60,6 +64,7 @@ sincroniza_CEBO: function(DATOS)
                     		almacen.GuardarRegistro_LOCAL(server.DATOS.replace("['CEBO',", "").replace("]", ""),"sys_date,usuario,planta,id_trampa,control_trampa,notas,cinturon,responsableaut,folio,captura,fechaaut,ceb_cambio,ceb_edc,ceb_localizador,ceb_registro,num_empleado,nom_empleado");                                
 				}
 			}).done(server.sincronizado);
+				*/
 
 }				
 
