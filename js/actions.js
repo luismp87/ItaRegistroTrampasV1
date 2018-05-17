@@ -254,10 +254,35 @@ var fn = {
         }
         else if(tipo_trampa == "3")
         {
+            $("#mecanica_in_arana").val("1").change();
+            $("#mecanica_in_c_alemana").val("1").change();
+            $("#mecanica_in_c_americana").val("1").change();
+            $("#mecanica_in_grillo").val("1").change();
+            $("#mecanica_in_escarabajo").val("1").change();
+            $("#mecanica_in_mosquito").val("1").change();
+            $("#mecanica_in_raton").val("1").change();
+            $("#mecanica_in_tijerilla").val("1").change();
+            $("#mecanica_in_otros").val("1").change();
+            $("#mecanica_in_estado_EDC").val("1").change();
+            $("#mecanica_in_localizador").val("S").change();
+            $("#mecanica_in_registro").val("S").change();
             window.location.href = '#Trampa_tipo_MECANICA'; 
         }
         else if(tipo_trampa == "5")
         {
+            $("#mecanica_in_arana").val("1").change();
+            $("#mecanica_in_c_alemana").val("1").change();
+            $("#mecanica_in_c_americana").val("1").change();
+            $("#mecanica_in_grillo").val("1").change();
+            $("#mecanica_in_escarabajo").val("1").change();
+            $("#mecanica_in_mosquito").val("1").change();
+            $("#mecanica_in_raton").val("1").change();
+            $("#mecanica_in_tijerilla").val("1").change();
+            $("#mecanica_in_otros").val("1").change();
+            $("#mecanica_in_estado_EDC").val("1").change();
+            $("#mecanica_in_localizador").val("S").change();
+            $("#mecanica_in_registro").val("S").change();
+            window.location.href = '#Trampa_tipo_MECANICA'; 
             window.location.href = '#Trampa_tipo_MECANICA'; 
         }
         else
