@@ -1,28 +1,28 @@
-.entrada_texto{
-    color: black !important;
-    font-family: fantasy;        
-}
+	.entrada_texto{
+	    color: black !important;
+	    font-family: fantasy;        
+	}
 
-.texto_informativo{
-color:green !important;; 
-font-weight: bold;
-}
+	.texto_informativo{
+	color:green !important;; 
+	font-weight: bold;
+	}
 
-#imagenita{
-text-align: center;
+	#imagenita{
+	text-align: center;
 
-}
+	}
 
+	.btn {
+	  color:green !important;; 
+	  font-weight: bold;
+	  font-size: 120%;
+	  text-decoration: underline;
+	}
 
-.btn {
-  color:green !important;; 
-  font-weight: bold;
-  font-size: 120%;
-  text-decoration: underline;
-}
-
-.btn_footer {
-  color:green !important;; 
-  font-weight: bold;
-  text-decoration: underline;
-}
+	.btn_footer {
+	  color:green !important;;
+	  font-size: 110%; 
+	  font-weight: bold;
+	  text-decoration: underline;
+	}
