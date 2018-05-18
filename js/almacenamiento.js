@@ -264,5 +264,100 @@ var almacen = {
 									guardarRegistro_LOCAL: function(tx){
 										tx.executeSql("CREATE TABLE IF NOT EXISTS registro (sys_date,usuario,planta,id_trampa,control_trampa,notas,cinturon,responsableaut,folio,captura,fechaaut,ceb_cambio,ceb_edc,ceb_localizador,ceb_registro,luz_estado,luz_registro,luz_area,luz_goma,luz_mos_casera,luz_palomilla,luz_chicharrita,luz_escarabajo,luz_mosquito,luz_zancudo,luz_abeja,luz_chinche,luz_mos_drena,luz_mos_jorob,luz_mos_forid,luz_avispa,luz_total,meca_arana,meca_alemana,meca_americana,meca_grillo,meca_escarabajo,meca_mosquito,meca_raton,meca_tijerilla,meca_otros,meca_estado_edc,meca_localizador,meca_registro,goma_cam_goma,goma_arana,goma_alemana,goma_americana,goma_grillo,goma_escarabajo,goma_mosquito,goma_raton,goma_tijerilla,goma_otros,goma_estado_edc,goma_localizador,goma_registro,luz_mos_calipho,num_empleado,nom_empleado)");
 										tx.executeSql("INSERT INTO registro ("+ almacen.CAMPOS +") VALUES ("+almacen.DATOS+")");       
-									}										
+									},
+/*FUNCION PARA LEER EN BASE DE DATOS LOS REGISTROS CAPTURADOS Y GUARDADOS EN EL CELULAR*/
+		LeerInformacionRegistradaTrampas: function(tx){
+			almacen.db = window.openDatabase("ItaSHRT","1.0","ItaSHRT Storage",20000);
+			almacen.db.transaction(almacen.CreaSINOExisteRegistro, null, null);			
+			almacen.db.transaction(almacen.leerinformaciontegistradaTrampas, null, null);
+
+	},
+									leerinformaciontegistradaTrampas: function(tx){
+									tx.executeSql("SELECT sys_date,usuario,planta,id_trampa,control_trampa,notas,cinturon,responsableaut,folio,captura,fechaaut,ceb_cambio,ceb_edc,ceb_localizador,ceb_registro,luz_estado,luz_registro,luz_area,luz_goma,luz_mos_casera,luz_palomilla,luz_chicharrita,luz_escarabajo,luz_mosquito,luz_zancudo,luz_abeja,luz_chinche,luz_mos_drena,luz_mos_jorob,luz_mos_forid,luz_avispa,luz_total,meca_arana,meca_alemana,meca_americana,meca_grillo,meca_escarabajo,meca_mosquito,meca_raton,meca_tijerilla,meca_otros,meca_estado_edc,meca_localizador,meca_registro,goma_cam_goma,goma_arana,goma_alemana,goma_americana,goma_grillo,goma_escarabajo,goma_mosquito,goma_raton,goma_tijerilla,goma_otros,goma_estado_edc,goma_localizador,goma_registro,luz_mos_calipho,num_empleado,nom_empleado FROM registro", [], function(tx2, t){
+									var campos = "";
+									var encontroTRAMPA = 0;
+											for(i = 0; i < t.rows.length; i++){
+												encontroTRAMPA= 1;							
+												campos = campos + "['"+t.rows.item(i).sys_date+"',"+
+												"'"+t.rows.item(i).usuario+"',"+
+												"'"+t.rows.item(i).planta+"',"+
+												"'"+t.rows.item(i).id_trampa+"',"+
+												"'"+t.rows.item(i).control_trampa+"',"+
+												"'"+t.rows.item(i).notas.replace(/[^a-zA-Z 0-9.]+/g,' ')+"',"+
+												"'"+t.rows.item(i).cinturon+"',"+
+												"'"+t.rows.item(i).responsableaut+"',"+
+												"'"+t.rows.item(i).folio+"',"+
+												"'"+t.rows.item(i).captura+"',"+
+												"'"+t.rows.item(i).fechaaut+"',"+
+												"'"+t.rows.item(i).ceb_cambio+"',"+
+												"'"+t.rows.item(i).ceb_edc+"',"+
+												"'"+t.rows.item(i).ceb_localizador+"',"+
+												"'"+t.rows.item(i).ceb_registro+"',"+
+												"'"+t.rows.item(i).luz_estado+"',"+
+												"'"+t.rows.item(i).luz_registro+"',"+
+												"'"+t.rows.item(i).luz_area+"',"+
+												"'"+t.rows.item(i).luz_goma+"',"+
+												"'"+t.rows.item(i).luz_mos_casera+"',"+
+												"'"+t.rows.item(i).luz_palomilla+"',"+
+												"'"+t.rows.item(i).luz_chicharrita+"',"+
+												"'"+t.rows.item(i).luz_escarabajo+"',"+
+												"'"+t.rows.item(i).luz_mosquito+"',"+
+												"'"+t.rows.item(i).luz_zancudo+"',"+
+												"'"+t.rows.item(i).luz_abeja+"',"+
+												"'"+t.rows.item(i).luz_chinche+"',"+
+												"'"+t.rows.item(i).luz_mos_drena+"',"+
+												"'"+t.rows.item(i).luz_mos_jorob+"',"+
+												"'"+t.rows.item(i).luz_mos_forid+"',"+
+												"'"+t.rows.item(i).luz_avispa+"',"+
+												"'"+t.rows.item(i).luz_total+"',"+
+												"'"+t.rows.item(i).meca_arana+"',"+
+												"'"+t.rows.item(i).meca_alemana+"',"+
+												"'"+t.rows.item(i).meca_americana+"',"+
+												"'"+t.rows.item(i).meca_grillo+"',"+
+												"'"+t.rows.item(i).meca_escarabajo+"',"+
+												"'"+t.rows.item(i).meca_mosquito+"',"+
+												"'"+t.rows.item(i).meca_raton+"',"+
+												"'"+t.rows.item(i).meca_tijerilla+"',"+
+												"'"+t.rows.item(i).meca_otros+"',"+
+												"'"+t.rows.item(i).meca_estado_edc+"',"+
+												"'"+t.rows.item(i).meca_localizador+"',"+
+												"'"+t.rows.item(i).meca_registro+"',"+
+												"'"+t.rows.item(i).goma_cam_goma+"',"+
+												"'"+t.rows.item(i).goma_arana+"',"+
+												"'"+t.rows.item(i).goma_alemana+"',"+
+												"'"+t.rows.item(i).goma_americana+"',"+
+												"'"+t.rows.item(i).goma_grillo+"',"+
+												"'"+t.rows.item(i).goma_escarabajo+"',"+
+												"'"+t.rows.item(i).goma_mosquito+"',"+
+												"'"+t.rows.item(i).goma_raton+"',"+
+												"'"+t.rows.item(i).goma_tijerilla+"',"+
+												"'"+t.rows.item(i).goma_otros+"',"+
+												"'"+t.rows.item(i).goma_estado_edc+"',"+
+												"'"+t.rows.item(i).goma_localizador+"',"+
+												"'"+t.rows.item(i).goma_registro+"',"+
+												"'"+t.rows.item(i).luz_mos_calipho+"',"+
+												"'"+t.rows.item(i).num_empleado+"',"+
+												"'"+t.rows.item(i).nom_empleado+"'"+
+												"]";
+											}
+											
+
+									if(encontroTRAMPA == 0)
+									{
+									}
+									else if(encontroTRAMPA == 1)
+									{
+										server.sincronizarRegistrados(campos);
+									}
+										});
+	
+	},
+	EliminarRegistrosTrampas: function(tx){
+			almacen.db = window.openDatabase("ItaSHRT","1.0","ItaSHRT Storage",20000);
+			almacen.db.transaction(almacen.CreaSINOExisteRegistro, almacen.error, null);
+			almacen.db.transaction(almacen.eliminarregistrosTrampas, almacen.error, null);
+		},
+									eliminarregistrosTrampas: function(tx){
+									tx.executeSql("DELETE FROM registro");
+	}										
 }																		

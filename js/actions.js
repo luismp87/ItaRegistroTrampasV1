@@ -45,13 +45,9 @@ var fn = {
         $('#Btn_luz_negra_CancelarRegistro').tap(fn.luz_negra_CancelarRegistro);
         $('#Btn_luz_negra_GuardarRegistro').tap(fn.luz_negra_GuardarRegistro);
 
-
-        
-        
-        
            
         //PARA MOVIL
-         //document.addEventListener("online", almacen.leerinformacionregistrada_en_movil, false);
+        document.addEventListener("online", almacen.LeerInformacionRegistradaTrampas, false);
         ////////////
  
 	},

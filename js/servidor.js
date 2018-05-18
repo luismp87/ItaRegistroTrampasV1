@@ -125,6 +125,21 @@ sincroniza_CEBO: function(DATOS)
 			}).done(server.sincronizado);
 				
 
-}	
-
+},
+sincronizarRegistrados: function(campos){
+			server.campos =campos;
+			$.ajax({
+                method: 'POST',
+				url: 'http://servidoriis.laitaliana.com.mx/LM/wsshregistrotrampas/WebService1.asmx/inserta_registro',				
+                data: { DATOS: server.campos},
+                dataType: "json",
+				success: function (msg){				
+                           almacen.EliminarRegistrosTrampas();                           
+                },
+				error: function(jq, txt){
+				}
+			}).done(server.sincronizadoRegistrados);
+	},
+	sincronizadoRegistrados: function(msg){
+	}	
 };
