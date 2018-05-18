@@ -13,3 +13,16 @@ text-align: center;
 
 }
 
+
+.btn {
+  color:green !important;; 
+  font-weight: bold;
+  font-size: 120%;
+  text-decoration: underline;
+}
+
+.btn_footer {
+  color:green !important;; 
+  font-weight: bold;
+  text-decoration: underline;
+}
