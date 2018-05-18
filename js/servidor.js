@@ -127,9 +127,7 @@ sincroniza_CEBO: function(DATOS)
 
 },
 sincronizarRegistrados: function(campos){
-				navigator.notification.alert("m5",null,"Mensaje desarrollo","Aceptar");     
 			server.campos =campos;
-			navigator.notification.alert("DATOS: " + server.campos,null,"Mensaje desarrollo","Aceptar");
 			$.ajax({
                 method: 'POST',
 				url: 'http://servidoriis.laitaliana.com.mx/LM/wsshregistrotrampas/WebService1.asmx/inserta_registro',				
@@ -139,7 +137,7 @@ sincronizarRegistrados: function(campos){
                            almacen.EliminarRegistrosTrampas();                           
                 },
 				error: function(jq, txt){
-					navigator.notification.alert("Error AJAX al mandar datos locales al server de forma automatica",null,"Error","Aceptar");     
+					//navigator.notification.alert("Error AJAX al mandar datos locales al server de forma automatica",null,"Error","Aceptar");     
 				}
 			}).done(server.sincronizadoRegistrados);
 	},

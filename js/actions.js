@@ -312,7 +312,7 @@ var fn = {
         }
         else
         {
-            navigator.notification.alert("Para [>REGISTRAR<] necesita buscar una TRAMPA",null,"Mensaje desarrollo","Aceptar"); 
+            navigator.notification.alert("Para [>REGISTRAR<] necesita buscar una TRAMPA",null,"Advertencia","Aceptar"); 
         }
         
     },
