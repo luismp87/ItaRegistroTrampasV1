@@ -459,9 +459,7 @@ var fn = {
             else
             {
                                 //le quito a la cadena DATOS los "['CEBO'" y "]"
-                                navigator.notification.alert("flag 1",null,"Mensaje desarrollo","Aceptar");     
-
-                                almacen.GuardarRegistro_LOCAL(server.DATOS.replace("['GOMA',", "").replace("]", ""),"sys_date,usuario,planta,id_trampa,control_trampa,notas,cinturon,responsableaut,folio,fechaaut,goma_cam_goma,goma_arana,goma_alemana,goma_americana,goma_grillo,goma_escarabajo,goma_mosquito,goma_raton,goma_tijerilla,goma_otros,goma_estado_edc,goma_localizador,goma_registro,num_empleado,nom_empleado");
+                                almacen.GuardarRegistro_LOCAL(DATOS.replace("['GOMA',", "").replace("]", ""),"sys_date,usuario,planta,id_trampa,control_trampa,notas,cinturon,responsableaut,folio,fechaaut,goma_cam_goma,goma_arana,goma_alemana,goma_americana,goma_grillo,goma_escarabajo,goma_mosquito,goma_raton,goma_tijerilla,goma_otros,goma_estado_edc,goma_localizador,goma_registro,num_empleado,nom_empleado");
 
                                 $("#CODIGO_PLANTA").text("");
                                 $("#DESCRIPCION_PLANTA").text("");
