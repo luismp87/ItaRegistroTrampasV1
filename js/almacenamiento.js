@@ -252,8 +252,14 @@ var almacen = {
 										});	
 	},
 	GuardarRegistro_LOCAL: function(DATOS,CAMPOS){
+		navigator.notification.alert("flag 2",null,"Mensaje desarrollo","Aceptar");     
+
 		almacen.DATOS = DATOS;
+
+		navigator.notification.alert("flag 3",null,"Mensaje desarrollo","Aceptar");     
+
 		almacen.CAMPOS = CAMPOS;
+navigator.notification.alert("flag 4",null,"Mensaje desarrollo","Aceptar");     
 
 			almacen.db = window.openDatabase("ItaSHRT","1.0","ItaSHRT Storage",20000);
 			almacen.db.transaction(almacen.CreaSINOExisteRegistro, almacen.error, null);
