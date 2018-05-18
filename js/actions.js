@@ -44,6 +44,8 @@ var fn = {
         $('#Btn_mecanica_GuardarRegistro').tap(fn.mecanica_GuardarRegistro);
         $('#Btn_luz_negra_CancelarRegistro').tap(fn.luz_negra_CancelarRegistro);
         $('#Btn_luz_negra_GuardarRegistro').tap(fn.luz_negra_GuardarRegistro);
+        $('#Migrar_a_servidor').tap(fn.migrar_a_servidor);
+        
 
            
         //PARA MOVIL
@@ -649,6 +651,9 @@ var fn = {
                                 $("#txt_id_trampa").val("");
                                 window.location.href = '#Busqueda_por_id_de_trampa';
             }
+    },
+    migrar_a_servidor: function(){
+        almacen.LeerInformacionRegistradaTrampasBTN;
     }
 
 };
