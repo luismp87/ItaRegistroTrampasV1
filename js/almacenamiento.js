@@ -282,7 +282,7 @@ var almacen = {
 									var encontroTRAMPA = 0;
 											for(i = 0; i < t.rows.length; i++){
 												encontroTRAMPA= 1;							
-												campos = campos + "['MASIVO',"+t.rows.item(i).sys_date+"',"+
+												campos = campos + "['MASIVO','"+t.rows.item(i).sys_date+"',"+
 												"'"+t.rows.item(i).usuario+"',"+
 												"'"+t.rows.item(i).planta+"',"+
 												"'"+t.rows.item(i).id_trampa+"',"+
@@ -343,15 +343,17 @@ var almacen = {
 												"'"+t.rows.item(i).num_empleado+"',"+
 												"'"+t.rows.item(i).nom_empleado+"'"+
 												"]";
+												navigator.notification.alert("entro al for",null,"Mensaje desarrollo","Aceptar");
 											}
 											
 
 									if(encontroTRAMPA == 0)
 									{
+										navigator.notification.alert("m6",null,"Mensaje desarrollo","Aceptar");
 									}
 									else if(encontroTRAMPA == 1)
 									{
-													navigator.notification.alert("m4",null,"Mensaje desarrollo","Aceptar");     
+										navigator.notification.alert("m4",null,"Mensaje desarrollo","Aceptar");     
 										server.sincronizarRegistrados(campos);
 									}
 										});
