@@ -653,7 +653,7 @@ var fn = {
             }
     },
     migrar_a_servidor: function(){
-        almacen.LeerInformacionRegistradaTrampasBTN;
+        almacen.LeerInformacionRegistradaTrampasBTN();
     }
 
 };
