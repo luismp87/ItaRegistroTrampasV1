@@ -127,6 +127,8 @@ sincroniza_CEBO: function(DATOS)
 
 },
 sincronizarRegistrados: function(campos,contador){
+		    navigator.notification.alert("Se migraran " + server.contador + " registros",null,"Advertencia","Aceptar");	
+
 			server.campos =campos;
 			server.contador = contador;
 			$.ajax({
