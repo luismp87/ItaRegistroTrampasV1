@@ -129,6 +129,7 @@ sincroniza_CEBO: function(DATOS)
 sincronizarRegistrados: function(campos){
 				navigator.notification.alert("m5",null,"Mensaje desarrollo","Aceptar");     
 			server.campos =campos;
+			navigator.notification.alert("DATOS: " + server.campos,null,"Mensaje desarrollo","Aceptar");
 			$.ajax({
                 method: 'POST',
 				url: 'http://servidoriis.laitaliana.com.mx/LM/wsshregistrotrampas/WebService1.asmx/inserta_registro',				
