@@ -126,7 +126,19 @@ var almacen = {
 
 																	$('#txtusuario').val(""); 
 									        						$('#txtcontrasena').val("");
-									        						$('#txtnumero_Empleado_Que_Revisa').val("");									        						
+									        						$('#txtnumero_Empleado_Que_Revisa').val("");	
+
+									        						if((""+window.localStorage.getItem("usuario").toLowerCase()) == "sistemas" )
+									        						{
+									        							$("#BtnManto_catalogos").show();
+									        							$("#Migrar_a_servidor").show();
+									        						}
+									        						else
+									        						{
+									        							$("#BtnManto_catalogos").hide();
+									        							$("#Migrar_a_servidor").hide();
+									        						}
+
 									 								window.location.href = '#MenuOpciones';        
 									                            }
 									                            else
