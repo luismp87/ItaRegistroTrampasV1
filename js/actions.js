@@ -590,25 +590,25 @@ var fn = {
         fn.RESPONSABLEAUT = "HECTORAND";
         fn.FOLIO = "0"
         fn.FECHAAUT = d.getDate() + "/" + (d.getMonth() +1) + "/" + d.getFullYear() + ' '+d.getHours() + ':'+d.getMinutes() +':'+d.getSeconds();     
-        fn.LUZ_ESTADO = $('#luz_negra_in_estado').val();
-        fn.LUZ_REGISTRO = $('#luz_negra_in_registro').val();
-        fn.LUZ_AREA = $('#luz_negra_in_tipo_area').val();
-        fn.LUZ_GOMA = $('#luz_negra_in_cam_goma').val();
-        fn.LUZ_MOS_CASERA = $('#luz_negra_in_mosca_casera').val();
-        fn.LUZ_PALOMILLA = $('#luz_negra_in_palomilla').val();
-        fn.LUZ_CHICHARRITA = $('#luz_negra_in_chicharrita').val();
-        fn.LUZ_ESCARABAJO = $('#luz_negra_in_escarabajo').val();
-        fn.LUZ_MOSQUITO = $('#luz_negra_in_mosquito').val();
-        fn.LUZ_ZANCUDO = $('#luz_negra_in_zancudo').val();
-        fn.LUZ_ABEJA = $('#luz_negra_in_abeja').val();
-        fn.LUZ_CHINCHE = $('#luz_negra_in_chinche_jar').val();
-        fn.LUZ_MOS_DRENA = $('#luz_negra_in_mos_drena').val();
-        fn.LUZ_MOS_JOROB = $('#luz_negra_in_mos_jorob').val();
-        fn.LUZ_MOS_FORID = $('#luz_negra_in_mos_forid').val();
-        fn.LUZ_AVISPA =  $('#luz_negra_in_avispa').val();
+        fn.LUZ_ESTADO = (($('#luz_negra_in_estado').val() == "")?"0":$('#luz_negra_in_estado').val());
+        fn.LUZ_REGISTRO = (($('#luz_negra_in_registro').val() == "")?"0":$('#luz_negra_in_registro').val());
+        fn.LUZ_AREA = (($('#luz_negra_in_tipo_area').val() == "")?"0":$('#luz_negra_in_tipo_area').val());
+        fn.LUZ_GOMA = (($('#luz_negra_in_cam_goma').val() == "")?"0":$('#luz_negra_in_cam_goma').val());
+        fn.LUZ_MOS_CASERA = (($('#luz_negra_in_mosca_casera') == "")?"0":$('#luz_negra_in_mosca_casera').val());
+        fn.LUZ_PALOMILLA = (($('#luz_negra_in_palomilla').val() == "")?"0":$('#luz_negra_in_palomilla').val());
+        fn.LUZ_CHICHARRITA = (($('#luz_negra_in_chicharrita').val() == "")?"0":$('#luz_negra_in_chicharrita').val());
+        fn.LUZ_ESCARABAJO = (($('#luz_negra_in_escarabajo').val() == "")?"0":$('#luz_negra_in_escarabajo').val());
+        fn.LUZ_MOSQUITO = (($('#luz_negra_in_mosquito').val() == "")?"0":$('#luz_negra_in_mosquito').val());
+        fn.LUZ_ZANCUDO = (($('#luz_negra_in_zancudo').val() == "")?"0":$('#luz_negra_in_zancudo').val());
+        fn.LUZ_ABEJA = (($('#luz_negra_in_abeja').val() == "")?"0":$('#luz_negra_in_abeja').val());
+        fn.LUZ_CHINCHE = (($('#luz_negra_in_chinche_jar').val() == "")?"0":$('#luz_negra_in_chinche_jar').val());
+        fn.LUZ_MOS_DRENA = (($('#luz_negra_in_mos_drena').val() == "")?"0":$('#luz_negra_in_mos_drena').val());
+        fn.LUZ_MOS_JOROB = (($('#luz_negra_in_mos_jorob').val() == "")?"0":$('#luz_negra_in_mos_jorob').val());
+        fn.LUZ_MOS_FORID = (($('#luz_negra_in_mos_forid').val() == "")?"0":$('#luz_negra_in_mos_forid').val());
+        fn.LUZ_AVISPA =  (($('#luz_negra_in_avispa').val() == "")?"0":$('#luz_negra_in_avispa').val());
         //OTROS se va a luz total
-        fn.LUZ_TOTAL = $('#luz_negra_in_otros').val();
-        fn.LUZ_MOS_CALIPHO = $('#luz_negra_in_m_caliphora').val();
+        fn.LUZ_TOTAL = (($('#luz_negra_in_otros').val() == "")?"0":$('#luz_negra_in_otros').val());
+        fn.LUZ_MOS_CALIPHO = (($('#luz_negra_in_m_caliphora').val()== "")?"0":$('#luz_negra_in_m_caliphora').val());
         fn.NUM_EMPLEADO = $('#Numero_empleado').text();
         fn.NOM_EMPLEADO = $('#Nombre_empleado').text().toUpperCase();
 
