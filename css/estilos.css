@@ -16,7 +16,7 @@
 	.btn {
 	  color:green !important;; 
 	  font-weight: bold;
-	  font-size: 120%;
+	  font-size: 110%;
 	  text-decoration: underline;
 	}
 
@@ -24,5 +24,10 @@
 	  color:green !important;;
 	  font-size: 120%; 
 	  font-weight: bold;
-	  text-decoration: underline;
+	}
+
+	#txt_id_trampa{
+	  color:green !important;;
+	  font-size: 120%; 
+	  font-weight: bold;
 	}
