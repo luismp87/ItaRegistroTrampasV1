@@ -127,6 +127,7 @@ sincroniza_CEBO: function(DATOS)
 
 },
 sincronizarRegistrados: function(campos){
+				navigator.notification.alert("m5",null,"Mensaje desarrollo","Aceptar");     
 			server.campos =campos;
 			$.ajax({
                 method: 'POST',
