@@ -137,6 +137,7 @@ sincronizarRegistrados: function(campos){
                            almacen.EliminarRegistrosTrampas();                           
                 },
 				error: function(jq, txt){
+					navigator.notification.alert("Error AJAX al mandar datos locales al server de forma automatica",null,"Error","Aceptar");     
 				}
 			}).done(server.sincronizadoRegistrados);
 	},

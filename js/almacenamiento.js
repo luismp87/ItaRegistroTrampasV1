@@ -278,7 +278,7 @@ var almacen = {
 									var encontroTRAMPA = 0;
 											for(i = 0; i < t.rows.length; i++){
 												encontroTRAMPA= 1;							
-												campos = campos + "['"+t.rows.item(i).sys_date+"',"+
+												campos = campos + "['MASIVO',"+t.rows.item(i).sys_date+"',"+
 												"'"+t.rows.item(i).usuario+"',"+
 												"'"+t.rows.item(i).planta+"',"+
 												"'"+t.rows.item(i).id_trampa+"',"+
