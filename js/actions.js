@@ -119,10 +119,10 @@ var fn = {
             return true;
         }
     },
-    CerrarSesion:function(){
-         window.localStorage.setItem("usuario",'');
+    CerrarSesion:function(){window.localStorage.setItem("usuario",'');
          window.localStorage.setItem("Nombre_usuario_revisa",'');
          window.location.href = '#login';   
+         
     },
     Migrar_trampas_a_celular:function(){
         var myArray = new Array(1200);         
