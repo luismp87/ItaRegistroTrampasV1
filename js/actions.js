@@ -16,7 +16,19 @@ var fn = {
         window.location.href = '#login';      
         }
         else
-        {        
+        {  
+
+        if((""+window.localStorage.getItem("usuario").toLowerCase()) == "sistemas" )
+            {
+                $("#BtnManto_catalogos").show();
+                $("#Migrar_a_servidor").show();
+            }
+        else
+            {
+                $("#BtnManto_catalogos").hide();
+                $("#Migrar_a_servidor").hide();
+            }  
+
         $("#Nombre_empleado_conf").val(""+ window.localStorage.getItem("Nombre_usuario_revisa"));
         $("#Nombre_empleado").text(""+ window.localStorage.getItem("Nombre_usuario_revisa"));  
 
