@@ -73,7 +73,7 @@ var fn = {
                 $.mobile.loading("show",{theme: 'b'});
                 $.ajax({
                 method: 'POST',
-                url: 'https://servidoriis.laitaliana.com.mx/LM/wsshregistrotrampas/WebService1.asmx/enviarcatalogocompletodeusuarios',              
+                url: 'http://servidoriis.laitaliana.com.mx/LM/wsshregistrotrampas/WebService1.asmx/enviarcatalogocompletodeusuarios',              
                 //data: {usuario: nom, contrasena: passw},
                 dataType: "json",
                 success: function (msg){
