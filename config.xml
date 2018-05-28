@@ -40,7 +40,7 @@
   <param name="CAMERA_USAGE_DESCRIPTION" value="To scan barcodes." />
 </plugin>-->
 
-<!--<plugin name="phonegap-plugin-barcodescanner" spec="6.3.0" />-->
+<plugin name="phonegap-plugin-barcodescanner" spec="6.3.0" />
 
 		<access origin="*" />
         <allow-intent href="*" />
