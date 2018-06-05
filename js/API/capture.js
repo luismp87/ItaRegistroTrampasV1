@@ -12,6 +12,7 @@ var capture = {
         navigator.notification.alert('Error code: ' + error.code, null, 'Capture Error');
     },
     takePhoto: function(){
+         navigator.notification.alert('takePhoto: ', null, 'Capture Error');
         navigator.device.capture.captureImage(captureSuccess, captureError, {limit:2});
     }
 }
