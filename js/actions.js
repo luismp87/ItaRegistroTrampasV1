@@ -57,6 +57,9 @@ var fn = {
         $('#Btn_luz_negra_CancelarRegistro').tap(fn.luz_negra_CancelarRegistro);
         $('#Btn_luz_negra_GuardarRegistro').tap(fn.luz_negra_GuardarRegistro);
         $('#Migrar_a_servidor').tap(fn.migrar_a_servidor);
+        $('#BtnPruebas_camara').tap(fn.Pruebas_camara);
+
+
         
 
            
@@ -668,6 +671,26 @@ var fn = {
     },
     migrar_a_servidor: function(){
         almacen.LeerInformacionRegistradaTrampasBTN();
+    },
+    Pruebas_camara: function(){
+
+                                // capture callback
+                        var captureSuccess = function(mediaFiles) {
+                            var i, path, len;
+                            for (i = 0, len = mediaFiles.length; i < len; i += 1) {
+                                path = mediaFiles[i].fullPath;
+                                // do something interesting with the file
+                            }
+                        };
+
+                        // capture error callback
+                        var captureError = function(error) {
+                            navigator.notification.alert('Error code: ' + error.code, null, 'Capture Error');
+                        };
+
+                        // start image capture
+                        navigator.device.capture.captureImage(captureSuccess, captureError, {limit:2});
+
     }
 
 };
