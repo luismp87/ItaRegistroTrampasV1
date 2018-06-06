@@ -57,7 +57,7 @@ var fn = {
         $('#Btn_luz_negra_CancelarRegistro').tap(fn.luz_negra_CancelarRegistro);
         $('#Btn_luz_negra_GuardarRegistro').tap(fn.luz_negra_GuardarRegistro);
         $('#Migrar_a_servidor').tap(fn.migrar_a_servidor);
-        $('#BtnPruebas_camara').tap(capture.takePhoto);
+        
 
 
         
