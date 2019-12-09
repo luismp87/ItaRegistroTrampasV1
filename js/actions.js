@@ -17,7 +17,7 @@ var fn = {
         else
         {  
 
-        if((""+window.localStorage.getItem("usuario").toLowerCase()) == "sistemas" )
+        if((""+window.localStorage.getItem("usuario").toLowerCase()) == "root" )
             {
                 $("#BtnManto_catalogos").show();
                 $("#Migrar_a_servidor").show();
@@ -39,7 +39,8 @@ var fn = {
         window.location.href = '#MenuOpciones';     
         }
         //PARA MOVIL
-        $('#btnautentificar').tap(fn.autentificarSQL); 
+        //$('#btnautentificar').tap(fn.autentificarSQL); 
+        $('#btnautentificar').tap(fn.autentificarSERVER); 
         $('#BtnCerrarSesion').tap(fn.CerrarSesion);
         $('#BtnMigrar_trampas_a_celular').tap(fn.Migrar_trampas_a_celular);
         $('#BtnEliminar_trampas_de_celular').tap(fn.Eliminar_trampas_de_celular);
@@ -104,6 +105,84 @@ var fn = {
                        navigator.notification.alert("Se tienen registros en la base de datos, antes eliminelos",null,"Advertencia","Aceptar");///*PARAMOVIL    
                     }
         
+    },
+    autentificarSERVER: function(){   
+
+if($('#origen').val() == "")
+{
+    navigator.notification.alert("Seleccione un origen",null,"Seleccione un origen","Aceptar");
+    return;
+}
+
+        var nom = $('#txtusuario').val().toLowerCase();
+        var passw = $('#txtcontrasena').val();
+        if(nom != '' && passw != ''){   
+            $.mobile.loading("show",{theme: 'b'});
+            $.ajax({
+                method: 'POST',
+                url: 'http://servidoriis.laitaliana.com.mx/LM/wsshregistrotrampas/WebService1.asmx/autentificar',              
+                data: {usuario: nom, contrasena: passw},
+                dataType: "json",
+                success: function (msg){
+                    $.mobile.loading("hide");
+                    $.each(msg,function(i,item){
+                        if(msg[i].valor1 == "correcto")
+                            {   
+                            $("#Nombre_empleado_conf").val(""+ msg[i].valor2);
+                            $("#Nombre_empleado").text(""+ msg[i].valor2);  
+
+                            $("#Numero_empleado_conf").val(""+ msg[i].valor3);
+                            $("#Numero_empleado").text(""+ msg[i].valor3);                                                                  
+
+                            window.localStorage.setItem("Nombre_usuario_revisa",""+ msg[i].valor2);
+                            window.localStorage.setItem("Numero_usuario_revisa",""+ msg[i].valor3);
+                            window.localStorage.setItem("usuario",nom);
+                            window.localStorage.setItem("origen",$('#origen').val());
+
+                            $("#Origen").text("" + window.localStorage.getItem("origen").toUpperCase());
+                            $("#Origen_conf").val("" + window.localStorage.getItem("origen").toUpperCase());
+
+                            $('#txtusuario').val(""); 
+                            $('#txtcontrasena').val("");
+                            $('#txtnumero_Empleado_Que_Revisa').val("");    
+
+                            if((""+window.localStorage.getItem("usuario").toLowerCase()) == "root" )
+                            {
+                                $("#BtnManto_catalogos").show();
+                                $("#Migrar_a_servidor").show();
+                            }
+                            else
+                            {
+                                $("#BtnManto_catalogos").hide();
+                                $("#Migrar_a_servidor").hide();
+                            }
+
+                                                                    window.location.href = '#MenuOpciones';   
+                            navigator.notification.alert("Usuario o contraseña autentificado: " + msg[i].valor2,null,"Error al Ingresar","Aceptar");
+                            return;
+                            }
+                            else if(msg[i].valor2 == "El_usuario_no_es_de_SEGURIDAD_E_HIGIENE")
+                            {
+                            navigator.notification.alert("El usuario no pertenece a SEGURIDAD E HIGIENE",null,"Error al Ingresar","Aceptar");
+                            return;                        
+                            }
+                            else
+                            {
+                            navigator.notification.alert("Usuario o contraseña incorrectos",null,"Error al Ingresar","Aceptar");   
+                            //alert("Usuario o contraseña incorrectos");
+                            }                        
+                    });                 
+                },
+                error: function(jq, txt){
+                    //alert(jq + txt.responseText);
+                    navigator.notification.alert(jq + txt.responseText,null,"Error al Ingresar","Aceptar");
+                }
+            });
+        }
+        else{
+            navigator.notification.alert("Todos Los Campos Son Requeridos",null,"Error al Ingresar","Aceptar");
+            //alert("todos los campos son requeridos");
+        }   
     },
         autentificarSQL: function(){
         var usu = $('#txtusuario').val().toLowerCase();      
