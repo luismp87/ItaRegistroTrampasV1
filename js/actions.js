@@ -4,10 +4,10 @@ var fn = {
 	},
 	init: function(){ 
             
-        if(window.localStorage.getItem("ya_se_migraron_usuarios") != "SI")
+        /*if(window.localStorage.getItem("ya_se_migraron_usuarios") != "SI")
         {          
         fn.btnMigrarUsuarios();  
-        }
+        }*/
               
 
         if(fn.estaRegistrado() == false)
