@@ -158,7 +158,7 @@ if($('#origen').val() == "")
                             }
 
                                                                     window.location.href = '#MenuOpciones';   
-                            navigator.notification.alert("Usuario o contraseña autentificado: " + msg[i].valor2,null,"Error al Ingresar","Aceptar");
+                            navigator.notification.alert("Usuario y contraseña autentificado: " + msg[i].valor2,null,"Error al Ingresar","Aceptar");
                             return;
                             }
                             else if(msg[i].valor2 == "El_usuario_no_es_de_SEGURIDAD_E_HIGIENE")
