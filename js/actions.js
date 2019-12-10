@@ -158,12 +158,12 @@ if($('#origen').val() == "")
                             }*/
 
                                                                     window.location.href = '#MenuOpciones';   
-                            navigator.notification.alert("Usuario y contraseña autentificados:  " + msg[i].valor2,null,"Error al Ingresar","Aceptar");
+                            navigator.notification.alert("Usuario y contraseña autentificados:  " + msg[i].valor2,null,"","Aceptar");
                             return;
                             }
                             else if(msg[i].valor2 == "El_usuario_no_es_de_SEGURIDAD_E_HIGIENE")
                             {
-                            navigator.notification.alert("El usuario no pertenece a SEGURIDAD E HIGIENE",null,"Error al Ingresar","Aceptar");
+                            navigator.notification.alert("El usuario no pertenece a SEGURIDAD E HIGIENE",null,"Advertencia","Aceptar");
                             return;                        
                             }
                             else
