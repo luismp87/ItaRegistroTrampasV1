@@ -102,7 +102,7 @@ var almacen = {
 									almacen.numero_Empleado_Que_Revisa =  $('#txtnumero_Empleado_Que_Revisa').val();
 									$.ajax({
 									                method: 'POST',
-									                url: 'http://servidoriis.laitaliana.com.mx/LM/wsshregistrotrampas/WebService1.asmx/validaNumeroEmpleado',              
+									                url: 'https://wsgili.laitaliana.com.mx:8081/wsSHRegistroTrampas/WebService1.asmx/validaNumeroEmpleado',              
 									                data: {numeroEmpleado: almacen.numero_Empleado_Que_Revisa},
 									                dataType: "json",
 									                success: function (msg){

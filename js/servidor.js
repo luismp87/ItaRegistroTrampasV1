@@ -7,7 +7,7 @@ sincroniza_CEBO: function(DATOS)
 
 				$.ajax({
                 method: 'POST',
-				url: 'http://servidoriis.laitaliana.com.mx/LM/wsshregistrotrampas/WebService1.asmx/inserta_registro',				
+				url: 'https://wsgili.laitaliana.com.mx:8081/wsSHRegistroTrampas/WebService1.asmx/inserta_registro',				
                 data: {DATOS: server.DATOS},
                 dataType: "json",
 				success: function (msg){
@@ -40,7 +40,7 @@ sincroniza_CEBO: function(DATOS)
 
 				$.ajax({
                 method: 'POST',
-				url: 'http://servidoriis.laitaliana.com.mx/LM/wsshregistrotrampas/WebService1.asmx/inserta_registro',				
+				url: 'https://wsgili.laitaliana.com.mx:8081/wsSHRegistroTrampas/WebService1.asmx/inserta_registro',				
                 data: {DATOS: server.DATOS},
                 dataType: "json",
 				success: function (msg){
@@ -71,7 +71,7 @@ sincroniza_CEBO: function(DATOS)
 
 				$.ajax({
                 method: 'POST',
-				url: 'http://servidoriis.laitaliana.com.mx/LM/wsshregistrotrampas/WebService1.asmx/inserta_registro',				
+				url: 'https://wsgili.laitaliana.com.mx:8081/wsSHRegistroTrampas/WebService1.asmx/inserta_registro',				
                 data: {DATOS: server.DATOS},
                 dataType: "json",
 				success: function (msg){
@@ -102,7 +102,7 @@ sincroniza_CEBO: function(DATOS)
 
 				$.ajax({
                 method: 'POST',
-				url: 'http://servidoriis.laitaliana.com.mx/LM/wsshregistrotrampas/WebService1.asmx/inserta_registro',				
+				url: 'https://wsgili.laitaliana.com.mx:8081/wsSHRegistroTrampas/WebService1.asmx/inserta_registro',				
                 data: {DATOS: server.DATOS},
                 dataType: "json",
 				success: function (msg){
@@ -132,7 +132,7 @@ sincronizarRegistrados: function(campos,contador){
 			
 			$.ajax({
                 method: 'POST',
-				url: 'http://servidoriis.laitaliana.com.mx/LM/wsshregistrotrampas/WebService1.asmx/inserta_registro',				
+				url: 'https://wsgili.laitaliana.com.mx:8081/wsSHRegistroTrampas/WebService1.asmx/inserta_registro',				
                 data: { DATOS: server.campos},
                 dataType: "json",
 				success: function (msg){
